@@ -1,14 +1,15 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_mysql
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: symfony
-    database_user: root
-    database_password: null
+    database_host: localhost
+    database_port: 3306
+    database_name: freche1u_devspe2
+    database_user: freche1u_appli
+    database_password: 31006883
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    locale: en
+    locale: fr
     secret: ThisTokenIsNotSoSecretChangeIt
+    app_webmaster: Foret Gael , Regnault Gerome , Debize Michael , Sardo Alexandre , Freche Banjamin
