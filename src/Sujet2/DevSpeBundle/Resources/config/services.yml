@@ -1,0 +1,7 @@
+parameters:
+#    sujet2_dev_spe.example.class: Sujet2\DevSpeBundle\Example
+
+services:
+#    sujet2_dev_spe.example:
+#        class: %sujet2_dev_spe.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

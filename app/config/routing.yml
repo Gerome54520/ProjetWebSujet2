@@ -1,3 +1,7 @@
+sujet2_dev_spe:
+    resource: "@Sujet2DevSpeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # app/config/routing.yml
  
 Sujet2WebBundle:
