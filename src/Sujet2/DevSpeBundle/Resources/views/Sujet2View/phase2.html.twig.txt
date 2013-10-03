@@ -1,0 +1,9 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2/phase2.html.twig #}
+ 
+{# extends "Sujet2DevSpeBundle::layout.html.twig" #}
+ 
+{% block title %}{{ parent() }} - Index{% endblock %}
+ 
+{% block body %}
+    {% include "Sujet2DevSpeBundle:formulaire_phase2.html.twig %}
+{% endblock %}

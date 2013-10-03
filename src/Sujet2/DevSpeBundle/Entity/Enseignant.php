@@ -64,13 +64,6 @@ class Enseignant
     private $ensAdresse;
     
     /**
-     * @var unknown
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
-     */
-    private $lot;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -216,20 +209,5 @@ class Enseignant
     public function getEnsAdresse()
     {
         return $this->ensAdresse;
-    }
-    
-/**
- * Set lot
- * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
- */
-    public function setLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot=$lot;
-    }
-    
-    /**
-     * @return Sujet2\DevSpeBundle\Entity\Lot
-     */
-    public function getLot(){
-    	return $this->lot;
-    }
+    }    
 }

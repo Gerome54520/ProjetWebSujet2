@@ -34,6 +34,11 @@ class Stage
      */
     private $etudiant;
 
+    /**
+     * @var object
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
+     */
+    private $lot;
 
     /**
      * Get id
@@ -80,5 +85,20 @@ class Stage
      */
     public function getEtudiant(){
     	return $this->etudiant;
+    }    
+    
+    /**
+     * Set lot
+     * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
+     */
+    public function setLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
+    	$this->lot= $lot;
+    }
+    
+    /**
+     * @return \Sujet2\DevSpeBundle\Entity\Lot
+     */
+    public function getLots(){
+    	return $this->lot;
     }
 }

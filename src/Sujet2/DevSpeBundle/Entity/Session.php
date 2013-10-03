@@ -48,12 +48,12 @@ class Session
      * @ORM\Column(name="date_ouv", type="datetime")
      */
     private $dateOuv;
-    
+        
     /**
-     * @var unknown
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
+     * @var object
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Parametre")
      */
-    private $lot;
+    private $parametre;
 
 
     /**
@@ -158,19 +158,21 @@ class Session
     	return $this->dateOuv;
     }
     
-    
     /**
-     * Set lot
-     * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
+     * Set Parametre
+     * @param Sujet2\DevSpeBundle\Entity\Parametre $parametre
      */
-    public function setLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot=$lot;
+    public function setParametre(Sujet2\DevSpeBundle\Entity\Parametre $parametre) {
+    	$this->parametre = $parametre;
     }
     
     /**
-     * @return Sujet2\DevSpeBundle\Entity\Lot
+     * Get parametre
+     * @return Sujet2\DevSpeBundle\Entity\Parametre
      */
-    public function getLot(){
-    	return $this->lot;
+    public function  getParametre(){
+    	return $this->parametre;
     }
+    
+    
 }

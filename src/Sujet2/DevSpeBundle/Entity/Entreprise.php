@@ -65,12 +65,6 @@ class Entreprise
     private $entTel;
 
     /**
-     * @var Object
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
-     */
-    private $lot;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -216,21 +210,5 @@ class Entreprise
     public function getEntTel()
     {
         return $this->entTel;
-    }
-    
-    /**
-     * Set lot
-     * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
-     */
-    public function SetLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot=$lot;
-    }
-    
-    /**
-     * Get lot
-     * @return Sujet2\DevSpeBundle\Entity\Lot lot
-     */
-    public function getLot(){
-    	return $this->lot;
-    }
+    }    
 }

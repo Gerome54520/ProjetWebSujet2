@@ -26,13 +26,6 @@ class Type_Pts {
 	private $libelle;
 	
 	/**
-	 *
-	 * @var object 
-	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Contrainte")
-	 */
-	private $contrainte;
-	
-	/**
 	 * Get id
 	 *
 	 * @return integer
@@ -60,21 +53,5 @@ class Type_Pts {
 	 */
 	public function getLibelle() {
 		return $this->libelle;
-	}
-	
-	/**
-	 * Set Contrainte
-	 * @param Sujet2\DevSpeBundle\Entity\Contrainte $contrainte
-	 */
-	public function setContrainte(Sujet2\DevSpeBundle\Entity\Contrainte $contrainte) {
-		$this->contrainte = $contrainte;
-	}
-	
-	/**
-	 * @return Sujet2\DevSpeBundle\Entity\Contrainte
-	 */
-	public function  getContrainte(){
-		return $this->contrainte;
-	}
-	
+	}	
 }

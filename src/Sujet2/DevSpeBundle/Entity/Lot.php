@@ -70,12 +70,24 @@ class Lot
      * @ORM\Column(name="tut_portable", type="string", length=15)
      */
     private $tutPortable;
+        
+    /**
+     * @var object
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Enseignant")
+     */
+    private $enseignant;
     
     /**
      * @var Object
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Stage")
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Entreprise")
      */
-    private $stage;
+    private $entreprise;
+    
+    /**
+     * @var object
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Session")
+     */
+    private $session;
     
 
 
@@ -251,18 +263,52 @@ class Lot
     }
     
     /**
-     * Set stage
-     * @param \Sujet2\DevSpeBundle\Entity\Stage $stage
+     * Set enseignant
+     * @param \Sujet2\DevSpeBundle\Entity\Enseignant $enseignant
      */
-    public function setStage(\Sujet2\DevSpeBundle\Entity\Stage $stage){
-    	$this->stage=$stage;    	
+    public function setEnseignant(\Sujet2\DevSpeBundle\Entity\Enseignant $enseignant){
+    	$this->enseignant=$enseignant;
     }
     
     /**
-     * @return \Sujet2\DevSpeBundle\Entity\Stage $stage
+     * @return Sujet2\DevSpeBundle\Entity\Enseignant
      */
-    public function getStage(){
-    	return $this->stage;
+    public function getEnseignant(){
+    	return $this->enseignant;
+    }
+    
+    /**
+     * Set entreprise
+     * @param \Sujet2\DevSpeBundle\Entity\Entreprise $entreprise
+     */
+    public function SetLot(\Sujet2\DevSpeBundle\Entity\Entreprise $entreprise){
+    	$this->entreprise=$entreprise;
+    }
+    
+    /**
+     * Get entreprise
+     * @return Sujet2\DevSpeBundle\Entity\Entreprise entreprise
+     */
+    public function getEntreprise(){
+    	return $this->entreprise;
+    }
+    
+    /**
+     * Set session
+     *
+     * @param Sujet2\DevSpeBundle\Entity\Session $session
+     */
+    public function setSession(Sujet2\DevSpeBundle\Entity\Contrainte $session) {
+    	$this->session = $session;
+    }
+    
+    /**
+     * Get session
+     *
+     * @return Sujet2\DevSpeBundle\Entity\Session
+     */
+    public function getSession() {
+    	return $this->session;
     }
     
 }

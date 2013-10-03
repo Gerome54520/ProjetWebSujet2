@@ -41,20 +41,7 @@ class Parametre
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
-    
-    /**
-     * @var object 
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Contrainte")
-     */
-    private $contrainte;
-    
-    /**
-     * @var object 
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Session")
-     */
-    private $session;
-    
-
+      
     /**
      * Get id
      *
@@ -134,37 +121,4 @@ class Parametre
         return $this->libelle;
     }
     
-    /**
-     * Set Contrainte
-     * @param Sujet2\DevSpeBundle\Entity\Contrainte $contrainte
-     */
-    public function setContrainte(Sujet2\DevSpeBundle\Entity\Contrainte $contrainte) {
-    	$this->contrainte = $contrainte;
-    }
-    
-    /**
-     * Get contrainte
-     * @return Sujet2\DevSpeBundle\Entity\Contrainte
-     */
-    public function  getContrainte(){
-    	return $this->contrainte;
-    }
-	
-	/**
-	 * Set session
-	 * 
-	 * @param Sujet2\DevSpeBundle\Entity\Session $session        	
-	 */
-	public function setSession(Sujet2\DevSpeBundle\Entity\Contrainte $session) {
-		$this->session = $session;
-	}
-	
-	/**
-	 * Get session
-	 * 
-	 * @return Sujet2\DevSpeBundle\Entity\Session
-	 */
-	public function getSession() {
-		return $this->session;
-	}
 }
