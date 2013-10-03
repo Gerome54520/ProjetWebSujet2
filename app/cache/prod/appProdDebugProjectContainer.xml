@@ -16,16 +16,16 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
-      <parameter key="Sujet2WebBundle">Sujet2\WebBundle\Sujet2WebBundle</parameter>
+      <parameter key="Sujet2DevSpeBundle">Sujet2\DevSpeBundle\Sujet2DevSpeBundle</parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appProdDebugProjectContainer</parameter>
     <parameter key="database_driver">pdo_mysql</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
+    <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">3306</parameter>
-    <parameter key="database_name">regnault4u_essai</parameter>
-    <parameter key="database_user">regnault4u</parameter>
-    <parameter key="database_password">rg90749074</parameter>
+    <parameter key="database_name">freche1u_devspe2</parameter>
+    <parameter key="database_user">freche1u_appli</parameter>
+    <parameter key="database_password">31006883</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -1297,6 +1297,11 @@
             <argument>true</argument>
           </service>
         </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+            <argument>524c8c35e22a7</argument>
+          </service>
+        </argument>
       </argument>
       <argument>true</argument>
       <call method="setEventDispatcher">
@@ -1357,7 +1362,7 @@
             </argument>
             <argument key="security.firewall.map.context.secured_area" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/demo/secured/</argument>
+                <argument>^/</argument>
               </service>
             </argument>
           </argument>
@@ -1444,6 +1449,17 @@
                   </argument>
                   <argument>null</argument>
                 </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>https</argument>
+                </call>
               </service>
             </argument>
             <argument type="service">
@@ -1524,7 +1540,7 @@
                   </service>
                 </argument>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/login</argument>
                   <argument key="always_use_default_target_path">false</argument>
                   <argument key="default_target_path">/</argument>
                   <argument key="target_path_parameter">_target_path</argument>
@@ -1545,7 +1561,7 @@
                   </service>
                 </argument>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/login</argument>
                   <argument key="failure_path">null</argument>
                   <argument key="failure_forward">false</argument>
                   <argument key="failure_path_parameter">_failure_path</argument>
@@ -1554,7 +1570,7 @@
               </service>
             </argument>
             <argument type="collection">
-              <argument key="check_path">_security_check</argument>
+              <argument key="check_path">/login_check</argument>
               <argument key="use_forward">false</argument>
               <argument key="require_previous_session">true</argument>
               <argument key="username_parameter">_username</argument>
@@ -1565,6 +1581,34 @@
             </argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="event_dispatcher" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument>secured_area</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+                <argument type="service" id="http_kernel"/>
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>/login</argument>
+                <argument>false</argument>
+              </service>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument>524c8c35e22a7</argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
         <argument type="service">
@@ -1584,6 +1628,17 @@
                     <argument>ROLE_ADMIN</argument>
                   </argument>
                   <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>https</argument>
                 </call>
               </service>
             </argument>
@@ -1612,7 +1667,7 @@
                   <argument type="service" id="router" on-invalid="null"/>
                 </service>
               </argument>
-              <argument>_demo_login</argument>
+              <argument>/login</argument>
               <argument>false</argument>
             </service>
           </argument>
@@ -1874,12 +1929,12 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">regnault4u_essai</argument>
-        <argument key="host">127.0.0.1</argument>
+        <argument key="dbname">freche1u_devspe2</argument>
+        <argument key="host">localhost</argument>
         <argument key="port">3306</argument>
-        <argument key="user">regnault4u</argument>
-        <argument key="password">rg90749074</argument>
-        <argument key="charset">UTF8</argument>
+        <argument key="user">freche1u_appli</argument>
+        <argument key="password">31006883</argument>
+        <argument key="charset">null</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
@@ -1940,7 +1995,7 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="Sujet2WebBundle">Sujet2\WebBundle\Entity</argument>
+              <argument key="Sujet2DevSpeBundle">Sujet2\DevSpeBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -1978,11 +2033,11 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\WebBundle\Entity</argument>
+                        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\DevSpeBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
-                  <argument>Sujet2\WebBundle\Entity</argument>
+                  <argument>Sujet2\DevSpeBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2047,11 +2102,6 @@
     </service>
     <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener">
       <tag name="kernel.event_subscriber"/>
-    </service>
-    <service id="sujet2_web.antispam" class="Sujet2\WebBundle\Antispam\SdzAntispam">
-      <argument type="service" id="swiftmailer.mailer.default"/>
-      <argument>fr</argument>
-      <argument>4</argument>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -2208,8 +2258,8 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\WebBundle/Resources/views</argument>
-        <argument>Sujet2Web</argument>
+        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\DevSpeBundle/Resources/views</argument>
+        <argument>Sujet2DevSpe</argument>
       </call>
       <call method="addPath">
         <argument>C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/Resources/views</argument>

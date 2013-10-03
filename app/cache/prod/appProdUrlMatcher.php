@@ -25,33 +25,20 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $allow = array();
         $pathinfo = rawurldecode($pathinfo);
 
-        if (0 === strpos($pathinfo, '/blog')) {
-            // sdzStage_accueil
-            if (preg_match('#^/blog(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sdzStage_accueil')), array (  '_controller' => 'Sujet2\\WebBundle\\Controller\\StageController::indexAction',  'page' => 1,));
+        // sujet2devspe_homepage
+        if ($pathinfo === '/index') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  '_route' => 'sujet2devspe_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/Creation/phase')) {
+            // sujet2devspe_phase2
+            if ($pathinfo === '/Creation/phase2') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase2Action',  '_route' => 'sujet2devspe_phase2',);
             }
 
-            if (0 === strpos($pathinfo, '/blog/a')) {
-                // sdzStage_voir
-                if (0 === strpos($pathinfo, '/blog/article') && preg_match('#^/blog/article(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sdzStage_voir')), array (  '_controller' => 'Sujet2\\WebBundle\\Controller\\StageController::voirAction',  'id' => 1,));
-                }
-
-                // sdzStage_ajouter
-                if ($pathinfo === '/blog/ajouter') {
-                    return array (  '_controller' => 'Sujet2\\WebBundle\\Controller\\StageController::ajouterAction',  '_route' => 'sdzStage_ajouter',);
-                }
-
-            }
-
-            // sdzStage_modifier
-            if (0 === strpos($pathinfo, '/blog/modifier') && preg_match('#^/blog/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sdzStage_modifier')), array (  '_controller' => 'Sujet2\\WebBundle\\Controller\\StageController::modifierAction',));
-            }
-
-            // sdzStage_supprimer
-            if (0 === strpos($pathinfo, '/blog/supprimer') && preg_match('#^/blog/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sdzStage_supprimer')), array (  '_controller' => 'Sujet2\\WebBundle\\Controller\\StageController::supprimerAction',));
+            // sujet2devspe_phase1
+            if ($pathinfo === '/Creation/phase1') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase1Action',  '_route' => 'sujet2devspe_phase1',);
             }
 
         }

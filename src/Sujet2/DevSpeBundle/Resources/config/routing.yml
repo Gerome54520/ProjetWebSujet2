@@ -1,3 +1,11 @@
-sujet2_dev_spe_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: Sujet2DevSpeBundle:Default:index }
+# src/Sujet2/DevSpeBundle/Resources/config/routing.yml
+
+sujet2devspe_homepage:
+    path:  /index
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index }
+sujet2devspe_phase2:
+    path: /Creation/phase2
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase2 }
+sujet2devspe_phase1:
+    path: /Creation/phase1
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase1 }

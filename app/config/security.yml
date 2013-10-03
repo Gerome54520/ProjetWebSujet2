@@ -12,8 +12,7 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-                    regnault4u: { password: rg90749074, roles: [ 'ROLE_ADMIN'] }
-
+                   
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
@@ -25,15 +24,15 @@ security:
 
         secured_area:
             pattern:    ^/
-            form_login: ~
-               # check_path: /login_check
-                #login_path: /login
-            logout: ~
-                #path:   _demo_logout
-                #target: _demo
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+            form_login: 
+                check_path: /login_check
+                login_path: /login
+            logout: 
+                path:   _demo_logout
+                target: _demo
+            anonymous: ~
+            http_basic:
+                realm: "Secured Demo Area"
 
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }

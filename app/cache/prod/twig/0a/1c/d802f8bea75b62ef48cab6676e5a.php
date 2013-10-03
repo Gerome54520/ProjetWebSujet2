@@ -41,32 +41,23 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
     <div class=\"container\">
       <div id=\"header\" class=\"hero-unit\">
         <h1>Mon Projet Symfony2</h1>
-        <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
-        <p><a class=\"btn btn-primary btn-large\" href=\"http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2\">
-          Lire le tutoriel »
-        </a></p>
       </div>
  
       <div class=\"row\">
         <div id=\"menu\" class=\"span3\">
           <h3>Le blog</h3>
           <ul class=\"nav nav-pills nav-stacked\">
-            <li><a href=\"";
-        // line 29
-        echo $this->env->getExtension('routing')->getPath("sdzStage_accueil");
-        echo "\">Accueil du blog</a></li>
-            <li><a href=\"";
-        // line 30
-        echo $this->env->getExtension('routing')->getPath("sdzStage_ajouter");
-        echo "\">Ajouter un article</a></li>
+              <a href='#' >Accueil</a>
+\t\t\t  <a href='#' >Contact</a>
+\t\t\t  <a href='#' >Plan du site</a>
           </ul>
                     
         </div>
         <div id=\"content\" class=\"span9\">
           ";
-        // line 35
+        // line 32
         $this->displayBlock('body', $context, $blocks);
-        // line 37
+        // line 34
         echo "        </div>
       </div>
  
@@ -78,9 +69,9 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
     </div>
  
   ";
-        // line 47
+        // line 44
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 52
+        // line 49
         echo " 
   </body>
 </html>";
@@ -102,22 +93,22 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
     ";
     }
 
-    // line 35
+    // line 32
     public function block_body($context, array $blocks = array())
     {
-        // line 36
+        // line 33
         echo "          ";
     }
 
-    // line 47
+    // line 44
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 48
+        // line 45
         echo "    ";
-        // line 49
+        // line 46
         echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 50
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
   ";
@@ -128,13 +119,8 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
         return "::layout.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  121 => 50,  118 => 49,  116 => 48,  113 => 47,  109 => 36,  106 => 35,  99 => 11,  96 => 10,  90 => 8,  84 => 52,  82 => 47,  70 => 37,  68 => 35,  60 => 30,  56 => 29,  38 => 13,  36 => 10,  31 => 8,  23 => 2,);
+        return array (  112 => 47,  109 => 46,  107 => 45,  104 => 44,  100 => 33,  97 => 32,  90 => 11,  87 => 10,  81 => 8,  75 => 49,  73 => 44,  61 => 34,  59 => 32,  38 => 13,  36 => 10,  31 => 8,  23 => 2,);
     }
 }
