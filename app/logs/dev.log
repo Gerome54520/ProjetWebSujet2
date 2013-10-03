@@ -6970,6 +6970,7 @@
 [2013-09-30 17:08:19] doctrine.DEBUG: CREATE TABLE Stage (id INT AUTO_INCREMENT NOT NULL, stage_comment VARCHAR(200) NOT NULL, stage_pts INT NOT NULL, lot_no INT NOT NULL, etud_no INT NOT NULL, ses_no INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB [] []
 [2013-09-30 17:08:19] doctrine.DEBUG: CREATE TABLE type_point (id INT AUTO_INCREMENT NOT NULL, libelle VARCHAR(50) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB [] []
 <<<<<<< HEAD
+<<<<<<< HEAD
 [2013-10-03 12:41:54] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
 [2013-10-03 12:42:21] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
 [2013-10-03 12:42:21] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
@@ -7071,6 +7072,8 @@
 [2013-10-03 13:03:39] doctrine.DEBUG: ALTER TABLE voeux_lot ADD CONSTRAINT FK_4016A7252C631E75 FOREIGN KEY (voeux_id) REFERENCES Voeux (id) ON DELETE CASCADE [] []
 [2013-10-03 13:03:39] doctrine.DEBUG: ALTER TABLE voeux_lot ADD CONSTRAINT FK_4016A725A8CBA5F7 FOREIGN KEY (lot_id) REFERENCES Lot (id) ON DELETE CASCADE [] []
 =======
+=======
+>>>>>>> 1ba6eec5c75fb4e4c12387da5765c29e6ff2b8db
 [2013-10-02 16:15:50] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
 [2013-10-02 16:15:50] doctrine.DEBUG: SELECT COLUMN_NAME AS Field, COLUMN_TYPE AS Type, IS_NULLABLE AS `Null`, COLUMN_KEY AS `Key`, COLUMN_DEFAULT AS `Default`, EXTRA AS Extra, COLUMN_COMMENT AS Comment, CHARACTER_SET_NAME AS CharacterSet, COLLATION_NAME AS CollactionName FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'freche1u_devspe2' AND TABLE_NAME = 'Entreprise' [] []
 [2013-10-02 16:15:50] doctrine.DEBUG: SELECT DISTINCT k.`CONSTRAINT_NAME`, k.`COLUMN_NAME`, k.`REFERENCED_TABLE_NAME`, k.`REFERENCED_COLUMN_NAME` /*!50116 , c.update_rule, c.delete_rule */ FROM information_schema.key_column_usage k /*!50116 INNER JOIN information_schema.referential_constraints c ON   c.constraint_name = k.constraint_name AND   c.table_name = 'Entreprise' */ WHERE k.table_name = 'Entreprise' AND k.table_schema = 'freche1u_devspe2' /*!50116 AND c.constraint_schema = 'freche1u_devspe2' */ AND k.`REFERENCED_COLUMN_NAME` is not NULL [] []
@@ -7181,4 +7184,7 @@
 [2013-10-02 16:21:51] doctrine.DEBUG: ALTER TABLE Voeux ADD CONSTRAINT FK_50BE5755D5DF6F5E FOREIGN KEY (lieuDepart_id) REFERENCES Lieu_Depart (id) [] []
 [2013-10-02 16:21:51] doctrine.DEBUG: ALTER TABLE voeux_lot ADD CONSTRAINT FK_4016A7252C631E75 FOREIGN KEY (voeux_id) REFERENCES Voeux (id) ON DELETE CASCADE [] []
 [2013-10-02 16:21:51] doctrine.DEBUG: ALTER TABLE voeux_lot ADD CONSTRAINT FK_4016A725A8CBA5F7 FOREIGN KEY (lot_id) REFERENCES Lot (id) ON DELETE CASCADE [] []
+<<<<<<< HEAD
+>>>>>>> 1ba6eec5c75fb4e4c12387da5765c29e6ff2b8db
+=======
 >>>>>>> 1ba6eec5c75fb4e4c12387da5765c29e6ff2b8db
