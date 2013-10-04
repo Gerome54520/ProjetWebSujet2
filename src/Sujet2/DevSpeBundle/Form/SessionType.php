@@ -16,8 +16,8 @@ class SessionType extends AbstractType
     {
         $builder
             ->add('sesLibelle', 'text') 
-            ->add('dateClo', 'date')
-            ->add('dateOuv', 'date')
+            ->add('dateClo', 'date' ,array('widget' => 'choice','format' => 'ddMMyyyy'))
+            ->add('dateOuv', 'date' ,array('widget' => 'choice','format' => 'ddMMyyyy'))
             
         ;
     }

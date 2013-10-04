@@ -28,13 +28,22 @@ class __TwigTemplate_39f4f0923927b25ea15d07550ee69d98 extends Twig_Template
         // line 10
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo ">
-    ";
-        // line 11
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+  
+   Nom de la session : ";
+        // line 12
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "sesLibelle"), 'widget');
+        echo " </br>
+   Date Ouverture : ";
+        // line 13
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateOuv"), 'widget');
+        echo "
+   Date Fermeture : ";
+        // line 14
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateClo"), 'widget');
         echo "
     <input type=\"submit\" class=\"btn btn-primary\" value=\"Suivant\" />
   </form>
-</div>";
+</div>\t";
     }
 
     public function getTemplateName()
@@ -49,6 +58,6 @@ class __TwigTemplate_39f4f0923927b25ea15d07550ee69d98 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  33 => 11,  29 => 10,  22 => 5,  19 => 2,);
+        return array (  42 => 14,  34 => 12,  29 => 10,  22 => 5,  19 => 2,  112 => 47,  109 => 46,  107 => 45,  104 => 44,  100 => 33,  97 => 32,  90 => 11,  87 => 10,  81 => 8,  75 => 49,  73 => 44,  61 => 34,  59 => 32,  38 => 13,  36 => 10,  31 => 8,  23 => 2,);
     }
 }

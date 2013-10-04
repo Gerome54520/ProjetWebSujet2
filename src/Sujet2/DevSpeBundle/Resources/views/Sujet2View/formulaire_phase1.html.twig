@@ -8,7 +8,10 @@
 
 <div class="well">
   <form method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
+  
+   Nom de la session : {{ form_widget(form.sesLibelle) }} </br>
+   Date Ouverture : {{ form_widget(form.dateOuv) }}
+   Date Fermeture : {{ form_widget(form.dateClo) }}
     <input type="submit" class="btn btn-primary" value="Suivant" />
   </form>
-</div>
+</div>	

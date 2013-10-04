@@ -42,14 +42,14 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
       <div id=\"header\" class=\"hero-unit\">
         <h1>Mon Projet Symfony2</h1>
       </div>
- 
+      
       <div class=\"row\">
         <div id=\"menu\" class=\"span3\">
           <h3>Le blog</h3>
           <ul class=\"nav nav-pills nav-stacked\">
-              <a href='#' >Accueil</a>
-\t\t\t  <a href='#' >Contact</a>
-\t\t\t  <a href='#' >Plan du site</a>
+              <li><a href='#' >Accueil</a></li>
+\t\t\t  <li><a href='#' >Contact</a></li>
+\t\t\t  <li><a href='#' >Plan du site</a></li>
           </ul>
                     
         </div>

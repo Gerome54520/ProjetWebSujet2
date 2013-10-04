@@ -15,6 +15,7 @@ class appProdUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
     static private $declaredRoutes = array(
         'sujet2devspe_homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/index',    ),  ),  4 =>   array (  ),),
         'sujet2devspe_phase2' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase2Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/Creation/phase2',    ),  ),  4 =>   array (  ),),
+        'sujet2devspe_phase1' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase1Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/Creation/phase1',    ),  ),  4 =>   array (  ),),
     );
 
     /**
