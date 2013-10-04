@@ -48,11 +48,6 @@ class Contrainte {
 	 */
 	private $typePts;
 	
-	/**
-	 * @var object
-	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Parametre")
-	 */
-	private $parametre;
 	
 	/**
 	 * Get id
@@ -141,19 +136,4 @@ class Contrainte {
 		return $this->typePts;
 	}
 	
-	/**
-	 * Set Parametre
-	 * @param Sujet2\DevSpeBundle\Entity\Parametre $parametre
-	 */
-	public function setParametre(Sujet2\DevSpeBundle\Entity\Parametre $parametre) {
-		$this->parametre = $parametre;
-	}
-	
-	/**
-	 * Get parametre
-	 * @return Sujet2\DevSpeBundle\Entity\Parametre
-	 */
-	public function  getParametre(){
-		return $this->parametre;
-	}
 }

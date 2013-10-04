@@ -41,6 +41,16 @@ class Parametre
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
+    
+    /**
+     * @var Doctrine\Common\Collections\Collection
+     * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Contrainte")
+     */
+    private $contraintes;
+    
+    public function __construct(){
+    	$this->contraintes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
       
     /**
      * Get id
@@ -119,6 +129,25 @@ class Parametre
     public function getLibelle()
     {
         return $this->libelle;
+    }
+    
+    /**
+     * Set contraintes
+     * @param \Sujet2\DevSpeBundle\Entity\Contrainte $contrainte
+     */
+    public function addContrainte(\Sujet2\DevSpeBundle\Entity\Lot $contrainte){
+    	$this->contraintes[]=$contrainte;
+    }
+    
+    public function removeContrainte(\Sujet2\DevSpeBundle\Entity\Contrainte $contrainte){
+    	$this->contraintes->removeElement($contrainte);
+    }
+    
+    /**
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getContraintes(){
+    	return $this->contraintes;
     }
     
 }

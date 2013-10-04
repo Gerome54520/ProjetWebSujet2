@@ -46,7 +46,7 @@ class Voeux
      * @var Doctrine\Common\Collections\Collection
      * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
      */
-    private $lot;
+    private $lots;
     
     /**
      * @var object
@@ -61,7 +61,7 @@ class Voeux
 
 
     public function __construct(){
-    	$this->lot = new \Doctrine\Common\Collections\ArrayCollection();
+    	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -140,18 +140,18 @@ class Voeux
      * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
      */
     public function addLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot[]=$lot;
+    	$this->lots[]=$lot;
     }
     
     public function removeLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot->removeElement($lot);
+    	$this->lots->removeElement($lot);
     }
     
     /**
      * @return Doctrine\Common\Collections\Collection
      */
     public function getLots(){
-    	return $this->lot;
+    	return $this->lots;
     }
     
     /**
