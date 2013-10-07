@@ -2,8 +2,12 @@
  
 {% extends "::layout.html.twig" %}
  
-{% block title %}{{ parent() }} - Phase2{% endblock %}
+{% block title %}{{ parent() }} - Phase1{% endblock %}
+
+
  
 {% block body %}
+    {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+	<div class="span12" id="span12intérieur">
     {% include "Sujet2DevSpeBundle:Sujet2View:formulaire_phase1.html.twig" %}
 {% endblock %}

@@ -13,9 +13,13 @@ use Psr\Log\LoggerInterface;
 class appProdUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerator
 {
     static private $declaredRoutes = array(
-        'sujet2devspe_homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/index',    ),  ),  4 =>   array (  ),),
+        'sujet2devspe_homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/acceuil',    ),  ),  4 =>   array (  ),),
         'sujet2devspe_phase2' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase2Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/Creation/phase2',    ),  ),  4 =>   array (  ),),
         'sujet2devspe_phase1' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase1Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/Creation/phase1',    ),  ),  4 =>   array (  ),),
+        'sujet2devspe_phase3' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase3Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/Creation/phase3',    ),  ),  4 =>   array (  ),),
+        'login' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Acme\\SecurityBundle\\Controller\\SecurityController::loginAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login',    ),  ),  4 =>   array (  ),),
+        'login_check' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login_check',    ),  ),  4 =>   array (  ),),
+        'logout' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/logout',    ),  ),  4 =>   array (  ),),
     );
 
     /**

@@ -44,7 +44,7 @@ class Parametre
     
     /**
      * @var Doctrine\Common\Collections\Collection
-     * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Contrainte")
+     * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Contrainte" ,cascade={"persist", "remove" })
      */
     private $contraintes;
     

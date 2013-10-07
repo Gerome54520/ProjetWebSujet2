@@ -1,11 +1,13 @@
 # src/Sujet2/DevSpeBundle/Resources/config/routing.yml
-
 sujet2devspe_homepage:
-    path:  /index
-    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index }
+    path: /acceuil
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index } 
 sujet2devspe_phase2:
     path: /Creation/phase2
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase2 }
 sujet2devspe_phase1:
     path: /Creation/phase1
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase1 }
+sujet2devspe_phase3:
+    path: /Creation/phase3
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }

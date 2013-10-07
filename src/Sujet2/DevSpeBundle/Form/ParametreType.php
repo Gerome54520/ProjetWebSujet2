@@ -15,10 +15,12 @@ class ParametreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('distMax')
+            ->add('distMax' ,'integer' , array ('label' => 'Distance Maximun'))
             ->add('tolerance')
             ->add('libelle')
-            ->add('contrainte' )
+            ->add('contraintes' , 'collection', array('type' => new ContrainteType(),
+                                                'allow_add' => true,
+                                              'allow_delete' => true))
             
         ;
     }

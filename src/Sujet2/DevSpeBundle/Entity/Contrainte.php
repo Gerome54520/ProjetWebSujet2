@@ -44,7 +44,7 @@ class Contrainte {
 	/**
 	 *
 	 * @var object
-	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Type_Pts")
+	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\TypePts")
 	 */
 	private $typePts;
 	
@@ -123,14 +123,14 @@ class Contrainte {
 	
 	/**
 	 * Set Contrainte
-	 * @param Sujet2\DevSpeBundle\Entity\Type_Pts $type_pts
+	 * @param  Sujet2\DevSpeBundle\Entity\TypePts $type_pts
 	 */
-	public function setTypePts(Sujet2\DevSpeBundle\Entity\Type_Pts $type_pts) {
+	public function setTypePts(TypePts $type_pts) {
 		$this->typePts = $type_pts;
 	}
 	
 	/**
-	 * @return Sujet2\DevSpeBundle\Entity\Type_Pts
+	 * @return Sujet2\DevSpeBundle\Entity\TypePts
 	 */
 	public function  getTypePts(){
 		return $this->typePts;

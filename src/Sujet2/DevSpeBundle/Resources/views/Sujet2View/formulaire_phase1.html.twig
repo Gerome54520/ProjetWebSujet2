@@ -1,12 +1,7 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase1.html.twig #}
- 
-{# Cette vue n'hérite de personne, elle sera incluse par d'autres vues qui, elles, hériteront probablement du layout. #}
-{# Je dis « probablement » car, ici pour cette vue, on n'en sait rien et c'est une info qui ne nous concerne pas. #}
- 
-<h3>Choix des paramètres pour la session</h3>
- 
+ <div class="well">
 
-<div class="well">
+<legend>Choix des paramètres pour la session - Phase 1/5</legend>
   <form method="post" {{ form_enctype(form) }}>
   
    Nom de la session : {{ form_widget(form.sesLibelle) }} </br>
@@ -14,4 +9,4 @@
    Date Fermeture : {{ form_widget(form.dateClo) }}
     <input type="submit" class="btn btn-primary" value="Suivant" />
   </form>
-</div>	
+</div>

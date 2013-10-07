@@ -29,14 +29,19 @@ class __TwigTemplate_96768ac1991c9d196165efecc9ba2a89 extends Twig_Template
     public function block_title($context, array $blocks = array())
     {
         $this->displayParentBlock("title", $context, $blocks);
-        echo " - Phase2";
+        echo " - Phase1";
     }
 
-    // line 7
+    // line 9
     public function block_body($context, array $blocks = array())
     {
-        // line 8
+        // line 10
         echo "    ";
+        $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig")->display($context);
+        // line 11
+        echo "\t<div class=\"span12\" id=\"span12intérieur\">
+    ";
+        // line 12
         $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:formulaire_phase1.html.twig")->display($context);
     }
 
@@ -52,6 +57,6 @@ class __TwigTemplate_96768ac1991c9d196165efecc9ba2a89 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  39 => 8,  36 => 7,  29 => 5,);
+        return array (  45 => 12,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
     }
 }

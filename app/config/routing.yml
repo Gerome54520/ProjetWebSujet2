@@ -1,6 +1,16 @@
+acme_security:
+    resource: "@AcmeSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
 sujet2_dev_spe:
     resource: "@Sujet2DevSpeBundle/Resources/config/routing.yml"
     prefix:   
+login:
+    path:   /login
+    defaults:  { _controller: AcmeSecurityBundle:Security:login }
+login_check:
+    path:   /login_check
+logout:
+    path:   /logout
 
 
  

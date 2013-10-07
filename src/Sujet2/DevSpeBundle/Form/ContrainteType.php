@@ -15,9 +15,13 @@ class ContrainteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre',    'integer')
-            ->add('pts',       'integer')
+            ->add('nombre',    'integer' , array ('label' => 'Temps en minutes :'))
+            ->add('pts',       'integer' , array ('label' => 'Points :'))
             ->add('plus' ,   'checkbox', array('required' => false))
+		    ->add('typePts' , 'entity' , array( 'class'    => 'Sujet2DevSpeBundle:TypePts',
+												'property' => 'libelle',
+												'multiple' => false))
+												
         ;
     }
     

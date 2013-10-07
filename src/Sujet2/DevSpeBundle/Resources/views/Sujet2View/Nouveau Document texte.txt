@@ -1,0 +1,7 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/acceuil.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %} Acceuil {% endblock %}
+
+{% block body %} {% endblock %}

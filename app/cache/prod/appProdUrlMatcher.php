@@ -26,7 +26,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $pathinfo = rawurldecode($pathinfo);
 
         // sujet2devspe_homepage
-        if ($pathinfo === '/index') {
+        if ($pathinfo === '/acceuil') {
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  '_route' => 'sujet2devspe_homepage',);
         }
 
@@ -39,6 +39,32 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             // sujet2devspe_phase1
             if ($pathinfo === '/Creation/phase1') {
                 return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase1Action',  '_route' => 'sujet2devspe_phase1',);
+            }
+
+            // sujet2devspe_phase3
+            if ($pathinfo === '/Creation/phase3') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase3Action',  '_route' => 'sujet2devspe_phase3',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'Acme\\SecurityBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                }
+
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array('_route' => 'login_check');
+                }
+
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
             }
 
         }

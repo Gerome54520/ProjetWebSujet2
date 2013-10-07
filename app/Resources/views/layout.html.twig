@@ -1,51 +1,123 @@
 {# app/Resources/views/layout.html.twig #}
  
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+ {% block style %}  
+   <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+   <script src="{{ asset('js/jquery.js') }}"></script> 
+   <script src="{{ asset('js/bootstrap.min.js')}}" ></script>  
+ {% endblock %}
  
-    <title>{% block title %}Sdz{% endblock %}</title>
- 
-    {% block stylesheets %}
-      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
-    {% endblock %}
-  </head>
- 
-  <body>
+   <title>{% block title %} Gestion des stages - {% endblock %}</title>
+   
+</head>
+
+<style>
+
+body {
+    margin: 0px;
+    background: #555555;
+	margin-bottom: 20px;
+}
+
+[class*="span"] {
+	 background-color: white;
+	 margin-bottom: 0px;
+	 margin-left: 5px;
+	 border-radius: 5px 5px 5px 5px;
+	 line-height: 18px;
+}
+
+.span12 {
+   background-color: white;
+   margin: 0px;
+   padding: 0px;
+}
+
+#span12blue {
+   background-color: rgb(0,69,117);
+   padding: 7px;
+}
+
+#span12fond {
+	box-shadow: 6px 6px 6px #222222;
+	border:solid 10px white;
+}
+
+#span12intérieur {
+	background-color: rgb(202,196,255);
+	margin: 0px;
+	margin-bottom: 0px;
+	margin-top: 20px;
+}
+
+.span6 {
+	background-color: rgb(0,69,117);
+}
+
+#span4image {
+	background-color: rgb(0,69,117);
+}
+
+#navbar {
+	margin-bottom: 0px;
+}
+
+p {
+	margin: 10px;
+}
+
+h1 {
+	margin: 10px;
+	color: white;
+}
+
+.row-fluid {
+	width: 85%;
+}
+
+.formconnect {
+    text-align: center;
+}
+
+.well {
+ background-color: rgb(202,196,255);
+ margin : 0px;
+}
+
+</style>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
     <div class="container">
-      <div id="header" class="hero-unit">
-        <h1>Mon Projet Symfony2</h1>
-      </div>
-      
-      <div class="row">
-        <div id="menu" class="span3">
-          <h3>Le blog</h3>
-          <ul class="nav nav-pills nav-stacked">
-              <li><a href='#' >Accueil</a></li>
-			  <li><a href='#' >Contact</a></li>
-			  <li><a href='#' >Plan du site</a></li>
-          </ul>
-                    
-        </div>
-        <div id="content" class="span9">
-          {% block body %}
-          {% endblock %}
-        </div>
-      </div>
- 
-      <hr>
- 
-      <footer>
-        <p>The sky's the limit © 2012 and beyond.</p>
-      </footer>
+      <ul class="nav">
+		<li class="brand">Appli voeux de stages</li>
+        <li class="active"> <a href="#">Accueil</a> </li>
+        <li> <a href="{{ path('login')}}">Connexion</a> </li>
+      </ul>
     </div>
- 
-  {% block javascripts %}
-    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
-  {% endblock %}
- 
-  </body>
+  </div>
+</nav>
+<body>
+<br>
+
+<div class="row-fluid">
+    <div class="span12 offset1" id="span12fond">
+		<div class="span12" id="span12blue">
+			<div class="span6"><p><h1>Gestion des affectations des stages aux enseignants<br></h1></p></div>
+			<div class="span4 offset2" id="span4image"><img src=" {{ asset('img/logo_univ.jpg') }}" class="img-circle"></div>
+		</div>	
+
+
+
+{% block body %}
+  
+{% endblock %}
+</div>
+</div>
+</div>
+</body>
 </html>

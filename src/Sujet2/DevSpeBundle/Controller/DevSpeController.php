@@ -11,8 +11,42 @@ use Sujet2\DevSpeBundle\Form\SessionType;
 use Sujet2\DevSpeBundle\Entity\Session;
 use Sujet2\DevSpeBundle\Entity\Parametre;
 use Sujet2\DevSpeBundle\Form\ParametreType;
+use Sujet2\DevSpeBundle\Form\TypePtsType;
+use Sujet2\DevSpeBundle\Entity\TypePts;
+use Sujet2\DevSpeBundle\Form\QuotaType;
+use Sujet2\DevSpeBundle\Entity\Quota;
+
 class DevSpeController extends Controller
 {
+
+  public function indexAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig');
+  }
+  public function phase3Action()
+  {
+     //On cree l'objet Quota
+	 $quota = new Quota();
+	 
+	 // On cree le formulaire grace a la methode du controller
+	 $form = $this->createForm(new QuotaType , $quota);
+	 
+	 //On recupe la requete
+	 $request = $this->get('request');
+	 
+	 //On verifie qu'elle est de type POST
+	 if ( $request->getMethod() =='POST' ){
+	     // On fait le lien Requête <-> Formulaire
+      //À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
+	  
+      $form->bind($request);
+	    $em = $this->getDoctrine()->getManager();
+        $em->persist($quota);
+        $em->flush();
+	    return $this->redirect($this->generateUrl('sujet2devspe_phase4',301));	
+	}	 
+
+     return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array( 'form' => $form->createView() ));
+  }
  
  
   public function phase2Action()
@@ -22,13 +56,32 @@ class DevSpeController extends Controller
 	
 	// On cree le FormBuilder grace a la methode du controlleur 
 	$form = $this->createForm(new ParametreType, $parametre);
-	 
+	
+	//On recupere la requete
+	$request = $this->get('request');
+	
+	// on verfie qu'ell est de type POST
+	if ($request->getMethod() == 'POST') {
+	
+      // On fait le lien Requête <-> Formulaire
+      // À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
+	  
+      $form->bind($request);
+	    $em = $this->getDoctrine()->getManager();
+        $em->persist($parametre);
+        $em->flush();
+	    return $this->redirect($this->generateUrl('sujet2devspe_phase3',301));	
+	}	 
     return $this->render('Sujet2DevSpeBundle:Sujet2View:phase2.html.twig', array( 'form' => $form->createView() ));
   }
   
   
+  
   public function phase1Action()
   {
+    // Creation d'une session pour garder des variables de session 
+	//$sessionn = new Session();
+	//$sessionn->start();
     // On cree l'objet Contrainte
 	$session = new Session();
 	
@@ -51,6 +104,7 @@ class DevSpeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($session);
         $em->flush();
+		$_SESSION['id'] = $session->getID();
 	return $this->redirect($this->generateUrl('sujet2devspe_phase2', 301));
 	
 	 }
