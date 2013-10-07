@@ -5,12 +5,12 @@ namespace Sujet2\DevSpeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Lieu_Depart
+ * LieuDepart
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\Lieu_DepartRepository")
+ * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\LieuDepartRepository")
  */
-class Lieu_Depart
+class LieuDepart
 {
     /**
      * @var integer

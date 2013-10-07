@@ -5,12 +5,12 @@ namespace Sujet2\DevSpeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Type_Pts
+ * TypePts
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\Type_PtsRepository")
+ * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\TypePtsRepository")
  */
-class Type_Pts {
+class TypePts {
 	/**
 	 *
 	 * @var integer @ORM\Column(name="id", type="integer")
@@ -38,7 +38,7 @@ class Type_Pts {
 	 * Set libelle
 	 *
 	 * @param string $libelle        	
-	 * @return Type_Pts
+	 * @return TypePts
 	 */
 	public function setLibelle($libelle) {
 		$this->libelle = $libelle;

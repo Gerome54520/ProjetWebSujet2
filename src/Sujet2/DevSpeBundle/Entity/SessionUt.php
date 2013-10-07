@@ -5,12 +5,12 @@ namespace Sujet2\DevSpeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Session
+ * SessionUt
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\SessionRepository")
+ * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\SessionUtRepository")
  */
-class Session
+class SessionUt
 {
     /**
      * @var integer

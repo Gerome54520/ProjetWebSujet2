@@ -33,9 +33,9 @@ class Quota {
 	
 	/**
 	 * @var object 
-	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Session")
+	 * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\SessionUt")
 	 */
-	private $session;
+	private $sessionUt;
 	
 	/**
 	 * Get id
@@ -67,21 +67,21 @@ class Quota {
 	}
 	
 	/**
-	 * Set session
+	 * Set sessionUt
 	 *
-	 * @param Sujet2\DevSpeBundle\Entity\Session $session        	
+	 * @param Sujet2\DevSpeBundle\Entity\SessionUt $sessionUt        	
 	 */
-	public function setSession(Sujet2\DevSpeBundle\Entity\Contrainte $session) {
-		$this->session = $session;
+	public function setSessionUt(Sujet2\DevSpeBundle\Entity\Contrainte $sessionUt) {
+		$this->sessionUt = $sessionUt;
 	}
 	
 	/**
-	 * Get session
+	 * Get sessionUt
 	 *
-	 * @return Sujet2\DevSpeBundle\Entity\Session
+	 * @return Sujet2\DevSpeBundle\Entity\SessionUt
 	 */
-	public function getSession() {
-		return $this->session;
+	public function getSessionUt() {
+		return $this->sessionUt;
 	}
 	
 	/**
