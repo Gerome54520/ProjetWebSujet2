@@ -1,0 +1,81 @@
+body {
+    margin: 0px;
+    background: #555555;
+	margin-bottom: 20px;
+}
+
+[class*="span"] {
+	 background-color: white;
+	 margin-bottom: 0px;
+	 margin-left: 5px;
+	 border-radius: 5px 5px 5px 5px;
+	 line-height: 18px;
+}
+
+.span12 {
+   background-color: white;
+   margin: 0px;
+   padding: 0px;
+}
+
+#span12blue {
+   background-color: rgb(0,69,117);
+   padding: 7px;
+}
+
+#span12fond {
+	box-shadow: 6px 6px 6px #222222;
+	border:solid 10px white;
+}
+
+#span12intérieur {
+	background-color: rgb(202,196,255);
+	margin: 0px;
+	margin-bottom: 0px;
+	margin-top: 15px;
+}
+
+#spanfondblue {
+	background-color: rgb(202,196,255);
+}
+
+
+.span6 {
+	background-color: rgb(0,69,117);
+}
+
+#span4image {
+	background-color: rgb(0,69,117);
+}
+
+#well{
+	background-color: rgb(202,196,255);
+}
+
+#navbar {
+	margin-bottom: 0px;
+}
+
+ul {
+	color: darkblue;
+}
+
+p {
+	margin: 10px;
+	color: darkblue;
+	text-align: justify;
+}
+
+h1 {
+	margin: 10px;
+	color: white;
+}
+
+#h2title {
+	text-align: center;
+	color: rgb(0,69,117);
+}
+
+.row-fluid {
+	width: 85%;
+}

@@ -121,12 +121,13 @@ class Contrainte {
 		return $this->plus;
 	}
 	
-	/**
-	 * Set Contrainte
-	 * @param  Sujet2\DevSpeBundle\Entity\TypePts $type_pts
+	
+     /**
+	 * set type_point
+	 * @param Sujet2\DevSpeBundle\Entity\TypePts $typePts
 	 */
-	public function setTypePts(TypePts $type_pts) {
-		$this->typePts = $type_pts;
+	public function setTypePts(Sujet2\DevSpeBundle\Entity\TypePts $typePts) {
+		$this->typePts = $typePts;
 	}
 	
 	/**

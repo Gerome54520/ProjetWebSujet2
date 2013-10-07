@@ -60,7 +60,10 @@ class __TwigTemplate_bfe7c7f0eed84a70ab93ac49f2d11ea0 extends Twig_Template
     <label for=\"password\">Mot de passe :</label>
     <input type=\"password\" id=\"password\" name=\"_password\" />
     <br />
-\t
+\t<input type= \"hidden\" name= \"_target_path\" value= \"";
+        // line 24
+        echo $this->env->getExtension('routing')->getPath("sujet2redirect");
+        echo "\" />
     <input type=\"submit\" value=\"Connexion\" />
   </form>
   </div>
@@ -80,6 +83,6 @@ class __TwigTemplate_bfe7c7f0eed84a70ab93ac49f2d11ea0 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  57 => 19,  52 => 17,  46 => 13,  43 => 11,  37 => 9,  34 => 8,  31 => 6,  28 => 5,);
+        return array (  65 => 24,  57 => 19,  52 => 17,  46 => 13,  43 => 11,  37 => 9,  34 => 8,  31 => 6,  28 => 5,);
     }
 }

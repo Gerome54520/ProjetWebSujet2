@@ -5,5 +5,20 @@
 {% block title %} Acceuil {% endblock %}
 
 {% block body %} 
-{% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+
+
+<div class="span12" id="span12intérieur">
+			<legend color="dark"><h2 id="h2title">Bienvenue</h2></legend>
+			<p><b>
+			 Bienvenue sur l'application de saisie et d'attribution des stages.</p><br>
+			 <p style="text-indent:2em">
+			 Cette application à pour but d'attribuer, de façon équitable, les stages aux enseignants qui ont la fonction de parrain auprès d'étudiant en DUT informatique.
+			 </p><br>
+			 <p><u>Procédure :</u></p><br>
+			 <p style="text-indent:2em">
+			 Après vous être authentifié, à l'aide de l'onglet connexion, vous pourrez en tant qu'enseignant saisir vos voeux de visite d'étudiants. Attention cependant, un calcul de point est appliqué à vos voeux. Si votre total de points est trop faible vous pouvez vous voir attribuer des voeux que vous ne souhaitiez pas.
+			 Une fois tout vos voeux saisis, un gestionnaire consulte vos choix et prend la décision final d'attribution.
+			</b></p>
+			<br>
+		
 {% endblock %}

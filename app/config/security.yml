@@ -27,8 +27,8 @@ security:
             provider: in_memory
             form_login: 
                 always_use_default_target_path: true
-                default_target_path:            /acceuil
-                target_path_parameter:          _target_path
+                default_target_path:            /choix
+                target_path_parameter:          REDIRECT_URL
                 use_referer:                    false
                 login_path: /login
                 check_path: /login_check

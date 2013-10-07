@@ -13,6 +13,15 @@
  {% endblock %}
  
    <title>{% block title %} Gestion des stages - {% endblock %}</title>
+  <script>
+	function changeLabel(){
+		alert(app.user);
+		if ( app.user =='NULL' )
+		   document.getElementById('lienconnect').innerHTML = 'Connexion';
+		else 
+		   document.getElementById('lienconnect').innerHTML = 'Deconnexion';
+		}
+		</script> 
 </head>
 
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -21,15 +30,12 @@
       <ul class="nav">
 		<li class="brand">Appli voeux de stages</li>
         <li class="active"> <a href="{{ path('sujet2devspe_acceuil') }}" >Accueil</a> </li>
-	
-	   <li><a id="lienconnect" href="{{ path('login')}}"  >
-	   {% if ( app.user is empty ) %}
-	   Connexion 
-	   {% else %} 
-	   Deconnexion
-	   </a></li>
-	   {% endif %}
-		
+		<?php
+		   if ( app.user == 'NULL' )
+		      echo '<li> <a id="lienconnect" href="{{ path('login')}}" >Connexion</a></li>';
+		   else 
+		     echo '<li> <a id="lienconnect" href="{{ path('login')}}" >Deconnection</a></li>'; 
+       ?>
       </ul>
     </div>
   </div>
