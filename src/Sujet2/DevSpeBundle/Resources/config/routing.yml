@@ -17,3 +17,6 @@ sujet2devspe_acceuilenseignant:
 sujet2devspe_acceuilgestionnaire:
     path: /acceuilges
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }
+sujet2devspe_profilenseignant:
+    path: /profilens
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:profilens }

@@ -28,11 +28,11 @@ body {
 	border:solid 10px white;
 }
 
-#span12intérieur {
-	background-color: rgb(202,196,255);
+#span12interieur {
+	background-color: rgb(0,0,0);
 	margin: 0px;
 	margin-bottom: 0px;
-	margin-top: 15px;
+	margin-top: 50px;
 }
 
 #spanfondblue {

@@ -15,10 +15,23 @@ use Sujet2\DevSpeBundle\Form\TypePtsType;
 use Sujet2\DevSpeBundle\Entity\TypePts;
 use Sujet2\DevSpeBundle\Form\QuotaType;
 use Sujet2\DevSpeBundle\Entity\Quota;
+use Sujet2\DevSpeBundle\Form\EnseignantType;
+use Sujet2\DevSpeBundle\Entity\Enseignant;
+
 
 class DevSpeController extends Controller
 {
 
+  public function profilensAction(){
+    $repository = $this->getDoctrine()
+                   ->getManager()
+                   ->getRepository('DevSpeBundle:Enseignant');
+ 
+    $enseignant = $repository->findOneBy(array('nom' => 'user'));
+// $article est une instance de Article
+
+return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  array( 'form' => $enseignant ));
+  }
   public function acceuilensAction(){
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilens.html.twig');
   }
