@@ -1,1 +1,3 @@
-
+sujet2redirect:
+    path: /choix
+    defaults: { _controller: AcmeSecurityBundle:Security:choix }

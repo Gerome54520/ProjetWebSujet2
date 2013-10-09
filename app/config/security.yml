@@ -2,33 +2,34 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
- 
+        Acme\SecurityBundle\Entity\User: plaintext		
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
- 
     providers:
         in_memory:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }					
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }			  		
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        main_acceuil: 
+            pattern: ^/acceuil
+            anonymous: true
         main_login:
             pattern:   ^/login$
             anonymous: true 
         main:
             pattern: ^/
-            anonymous: false
-            security : true
+            anonymous: true
             provider: in_memory
             form_login: 
                 always_use_default_target_path: true
-                default_target_path:            /acceuil
-                target_path_parameter:          _target_path
+                default_target_path:            /choix
+                target_path_parameter:          REDIRECT_URL
                 use_referer:                    false
                 login_path: /login
                 check_path: /login_check

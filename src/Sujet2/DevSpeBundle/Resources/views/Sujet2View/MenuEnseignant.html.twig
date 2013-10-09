@@ -1,19 +1,11 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/menuEnseignant.html.twig #}
 
-
-<!--<div class="row-fluid">
-    <div class="span12 offset1" id="span12fond">
-		<div class="span12" id="span12blue">
-			<div class="span6"><p><h1>Gestion des affectations des stages aux enseignants<br></h1></p></div>
-			<div class="span4 offset2" id="span4image"><img src="img/logo_univ.jpg" class="img-circle"></div>
-		</div>-->
-<!-- barre Enseignant -->
-        
+ 
 		<nav class="navbar navbar-inverse" id="navbar">
 		  <div class="navbar-inner">
 			<div class="container">
 			  <ul class="nav">
-				<li class="brand">Enseignant</li>
+				<li class="brand"><a class="dropdown-toogle" data-toggle="dropdown" href="{{ path ('sujet2devspe_acceuilenseignant') }}" >Enseignant</a></li>
 				<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Voeux <b class="caret"></b> </a>
 				  <ul class="dropdown-menu">
 					<li><a href="#">Etat des voeux</a></li>

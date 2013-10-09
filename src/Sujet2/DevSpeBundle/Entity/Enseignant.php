@@ -17,21 +17,20 @@ class Enseignant
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ens_civ", type="string", length=255)
+     * @ORM\Column(name="ens_civ", type="string", length=10)
      */
     private $ensCiv;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ens_nom", type="string", length=5)
+     * @ORM\Column(name="ens_nom", type="string", length=50)
      */
     private $ensNom;
 
@@ -52,16 +51,26 @@ class Enseignant
     /**
      * @var string
      *
-     * @ORM\Column(name="ens_mdp", type="string", length=255)
+     * @ORM\Column(name="ens_mdp", type="string", length=50)
      */
     private $ensMdp;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ens_adresse", type="string", length=255)
+     * @ORM\Column(name="ens_adresse", type="string", length=100)
      */
     private $ensAdresse;
+    
+    /**
+     * Set id
+     * @param int $id
+     * @return \Sujet2\DevSpeBundle\Entity\Enseignant
+     */
+    public function setId($id){
+    	$this->id=$id;
+    	return $this;
+    }
     
     /**
      * Get id

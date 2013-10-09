@@ -5,7 +5,7 @@ namespace Acme\SecurityBundle\Controller;
  
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
- 
+use Sujet2\DevSpeBundle\Resources\views\Sujet2View;
 class SecurityController extends Controller
 {
   public function loginAction()
@@ -32,5 +32,13 @@ class SecurityController extends Controller
       'error'         => $error,
     ));
   }
+
+
+ public function choixAction() {
+     if ( true )
+	   return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilgestionnaire.html.twig');
+	 else
+	   return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilenseignant.html.twig');
+	 }
 }
 ?>

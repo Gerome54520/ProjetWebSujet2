@@ -1529,7 +1529,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5252bf1585131</argument>
+            <argument>52544a320b71b</argument>
           </service>
         </argument>
         <argument type="service">
@@ -1709,7 +1709,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5252bf1585131</argument>
+            <argument>52544a320b71b</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -1781,9 +1781,9 @@
                 <argument type="service" id="security.http_utils"/>
                 <argument type="collection">
                   <argument key="always_use_default_target_path">true</argument>
-                  <argument key="default_target_path">/acceuil</argument>
+                  <argument key="default_target_path">/choix</argument>
                   <argument key="login_path">/login</argument>
-                  <argument key="target_path_parameter">_target_path</argument>
+                  <argument key="target_path_parameter">REDIRECT_URL</argument>
                   <argument key="use_referer">false</argument>
                 </argument>
                 <call method="setProviderKey">
@@ -2183,6 +2183,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="Sujet2DevSpeBundle">Sujet2\DevSpeBundle\Entity</argument>
+              <argument key="AcmeSecurityBundle">Acme\SecurityBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2221,10 +2222,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\DevSpeBundle\Entity</argument>
+                        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Acme\SecurityBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Sujet2\DevSpeBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Sujet2\DevSpeBundle\Entity</argument>
+                        <argument>C:\Program Files\EasyPHP-12.1\www\ProjetWebSujet2\src\Acme\SecurityBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Acme\SecurityBundle\Entity</argument>
                 </call>
               </service>
             </argument>

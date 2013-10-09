@@ -28,125 +28,66 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
  ";
         // line 8
         $this->displayBlock('style', $context, $blocks);
-        // line 13
+        // line 14
         echo " 
    <title>";
-        // line 14
+        // line 15
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-   
 </head>
 
-<style>
 
-body {
-    margin: 0px;
-    background: #555555;
-\tmargin-bottom: 20px;
-}
-
-[class*=\"span\"] {
-\t background-color: white;
-\t margin-bottom: 0px;
-\t margin-left: 5px;
-\t border-radius: 5px 5px 5px 5px;
-\t line-height: 18px;
-}
-
-.span12 {
-   background-color: white;
-   margin: 0px;
-   padding: 0px;
-}
-
-#span12blue {
-   background-color: rgb(0,69,117);
-   padding: 7px;
-}
-
-#span12fond {
-\tbox-shadow: 6px 6px 6px #222222;
-\tborder:solid 10px white;
-}
-
-#span12intérieur {
-\tbackground-color: rgb(202,196,255);
-\tmargin: 0px;
-\tmargin-bottom: 0px;
-\tmargin-top: 20px;
-}
-
-.span6 {
-\tbackground-color: rgb(0,69,117);
-}
-
-#span4image {
-\tbackground-color: rgb(0,69,117);
-}
-
-#navbar {
-\tmargin-bottom: 0px;
-}
-
-p {
-\tmargin: 10px;
-}
-
-h1 {
-\tmargin: 10px;
-\tcolor: white;
-}
-
-.row-fluid {
-\twidth: 85%;
-}
-
-.formconnect {
-    text-align: center;
-}
-
-.well {
- background-color: rgb(202,196,255);
- margin : 0px;
-}
-
-</style>
-
+<body>
 <nav class=\"navbar navbar-inverse navbar-static-top\">
   <div class=\"navbar-inner\">
     <div class=\"container\">
       <ul class=\"nav\">
 \t\t<li class=\"brand\">Appli voeux de stages</li>
-        <li class=\"active\"> <a href=\"#\">Accueil</a> </li>
-        <li> <a href=\"";
-        // line 99
+        <li class=\"active\"> <a href=\"";
+        // line 25
+        echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuil");
+        echo "\" >Accueil</a> </li>
+\t
+\t   <li><a id=\"lienconnect\" href=\"";
+        // line 27
         echo $this->env->getExtension('routing')->getPath("login");
-        echo "\">Connexion</a> </li>
+        echo "\"  >
+\t   ";
+        // line 28
+        if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
+            // line 29
+            echo "\t   Connexion 
+\t   ";
+        } else {
+            // line 30
+            echo " 
+\t   Deconnexion
+\t   ";
+        }
+        // line 32
+        echo " 
+\t  </a></li>
       </ul>
     </div>
   </div>
 </nav>
-<body>
 <br>
 
 <div class=\"row-fluid\">
     <div class=\"span12 offset1\" id=\"span12fond\">
 \t\t<div class=\"span12\" id=\"span12blue\">
-\t\t\t<div class=\"span6\"><p><h1>Gestion des affectations des stages aux enseignants<br></h1></p></div>
+\t\t\t<div class=\"span6\"><h1>Gestion des affectations des stages aux enseignants</h1></div>
 \t\t\t<div class=\"span4 offset2\" id=\"span4image\"><img src=\" ";
-        // line 111
+        // line 44
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/logo_univ.jpg"), "html", null, true);
         echo "\" class=\"img-circle\"></div>
 \t\t</div>\t
 
-
-
 ";
-        // line 116
+        // line 47
         $this->displayBlock('body', $context, $blocks);
-        // line 119
+        // line 50
         echo "</div>
-</div>
 </div>
 </body>
 </html>";
@@ -159,28 +100,32 @@ h1 {
    <link href=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\">
-   <script src=\"";
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
+   <link href=\"";
         // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
+   <script src=\"";
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
         echo "\"></script> 
    <script src=\"";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\" ></script>  
  ";
     }
 
-    // line 14
+    // line 15
     public function block_title($context, array $blocks = array())
     {
         echo " Gestion des stages - ";
     }
 
-    // line 116
+    // line 47
     public function block_body($context, array $blocks = array())
     {
-        // line 117
+        // line 48
         echo "  
 ";
     }
@@ -197,6 +142,6 @@ h1 {
 
     public function getDebugInfo()
     {
-        return array (  184 => 117,  181 => 116,  175 => 14,  169 => 11,  165 => 10,  161 => 9,  156 => 8,  148 => 119,  146 => 116,  138 => 111,  123 => 99,  35 => 14,  32 => 13,  30 => 8,  22 => 2,);
+        return array (  129 => 48,  126 => 47,  120 => 15,  114 => 12,  110 => 11,  106 => 10,  102 => 9,  97 => 8,  90 => 50,  88 => 47,  82 => 44,  68 => 32,  63 => 30,  59 => 29,  57 => 28,  53 => 27,  48 => 25,  35 => 15,  32 => 14,  30 => 8,  22 => 2,);
     }
 }

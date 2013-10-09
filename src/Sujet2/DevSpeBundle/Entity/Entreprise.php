@@ -18,7 +18,6 @@ class Entreprise
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -64,6 +63,16 @@ class Entreprise
      */
     private $entTel;
 
+    /**
+     * Set id
+     * @param int $id
+     * @return \Sujet2\DevSpeBundle\Entity\Entreprise
+     */
+    public function setId($id){
+    	$this->	id = $id;
+    	return $this;
+    }
+    
     /**
      * Get id
      *

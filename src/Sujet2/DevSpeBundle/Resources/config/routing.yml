@@ -1,7 +1,7 @@
 # src/Sujet2/DevSpeBundle/Resources/config/routing.yml
-sujet2devspe_homepage:
+sujet2devspe_acceuil:
     path: /acceuil
-    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index } 
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueil } 
 sujet2devspe_phase2:
     path: /Creation/phase2
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase2 }
@@ -11,3 +11,9 @@ sujet2devspe_phase1:
 sujet2devspe_phase3:
     path: /Creation/phase3
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }
+sujet2devspe_acceuilenseignant:
+    path: /acceuilens
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilens }
+sujet2devspe_acceuilgestionnaire:
+    path: /acceuilges
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }

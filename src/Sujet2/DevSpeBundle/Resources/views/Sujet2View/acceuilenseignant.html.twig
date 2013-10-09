@@ -1,0 +1,28 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/acceuilenseignant.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %} Acceuil {% endblock %}
+
+{% block body %} 
+{% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
+
+<div class="span12" id="span12intérieur">
+	<legend color="dark"><h2 id="h2title">Bienvenue</h2></legend>
+			<p>
+			 Vous êtes à présent connecté en tant qu'enseignant.</p><br>
+			 <p>
+			 Vous pouvez réaliser plusieurs actions différentes à savoir :
+			 </p>
+			 <div class="span6" id="spanfondblue">
+				<ul>
+				   <li>Visualiser l'état de vos voeux</li>
+				   <li>Saisir un voeux</li>
+				   <li>Modifier certains éléments de votre profil</li>
+				</ul>
+				<br>
+			 </div>
+		
+		
+</div>
+{% endblock %}

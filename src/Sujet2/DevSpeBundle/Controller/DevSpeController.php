@@ -7,8 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sujet2\DevSpeBundle\Entity\Contrainte;
 use Sujet2\DevSpeBundle\Form\ContrainteType;
-use Sujet2\DevSpeBundle\Form\SessionType;
-use Sujet2\DevSpeBundle\Entity\Session;
+use Sujet2\DevSpeBundle\Form\SessionUtType;
+use Sujet2\DevSpeBundle\Entity\SessionUt;
 use Sujet2\DevSpeBundle\Entity\Parametre;
 use Sujet2\DevSpeBundle\Form\ParametreType;
 use Sujet2\DevSpeBundle\Form\TypePtsType;
@@ -19,9 +19,18 @@ use Sujet2\DevSpeBundle\Entity\Quota;
 class DevSpeController extends Controller
 {
 
-  public function indexAction(){
+  public function acceuilensAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilens.html.twig');
+  }
+  
+  public function acceuilgesAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilges.html.twig');
+  }
+  
+  public function accueilAction(){
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig');
   }
+  
   public function phase3Action()
   {
      //On cree l'objet Quota
@@ -83,10 +92,10 @@ class DevSpeController extends Controller
 	//$sessionn = new Session();
 	//$sessionn->start();
     // On cree l'objet Contrainte
-	$session = new Session();
+	$session = new SessionUt();
 	
 	// On cree le FormBuilder grace a la methode du controlleur 
-	$form = $this->createForm(new SessionType, $session);
+	$form = $this->createForm(new SessionUtType, $session);
 	
 	 // On récupère la requête
     $request = $this->get('request');
@@ -104,7 +113,7 @@ class DevSpeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($session);
         $em->flush();
-		$_SESSION['id'] = $session->getID();
+		//$_SESSION['id'] = $session->getID();
 	return $this->redirect($this->generateUrl('sujet2devspe_phase2', 301));
 	
 	 }

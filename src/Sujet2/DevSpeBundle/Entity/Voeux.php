@@ -50,7 +50,7 @@ class Voeux
     
     /**
      * @var object
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lieu_Depart")
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\LieuDepart")
      */
     private $lieuDepart;
     
@@ -156,14 +156,14 @@ class Voeux
     
     /**
      * Set lieu_depart
-     * @param \Sujet2\DevSpeBundle\Entity\Lieu_Depart $lieuDepart
+     * @param \Sujet2\DevSpeBundle\Entity\LieuDepart $lieuDepart
      */
     public function setLieuDepart(\Sujet2\DevSpeBundle\Entity\Lot $lieuDepart){
     	$this->lieuDepart=$lieuDepart;
     }
     
     /**
-     * @return Sujet2\DevSpeBundle\Entity\Lieu_Depart
+     * @return Sujet2\DevSpeBundle\Entity\LieuDepart
      */
     public function getLieuDepart(){
     	return $this->lieuDepart;
