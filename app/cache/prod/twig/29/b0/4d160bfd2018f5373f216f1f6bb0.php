@@ -22,7 +22,11 @@ class __TwigTemplate_29b04d160bfd2018f5373f216f1f6bb0 extends Twig_Template
 \t\t\t<div class=\"container\">
 \t\t\t  <ul class=\"nav\">
 \t\t\t\t<li class=\"brand\"><a class=\"dropdown-toogle\" data-toggle=\"dropdown\" href=\"";
+<<<<<<< HEAD
         // line 7
+=======
+        // line 16
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
         echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuilgestionnaire");
         echo "\" >Gestionnaire</a></li>
 \t\t\t\t<li class=\"dropdown\"> <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"> Session <b class=\"caret\"></b> </a>
@@ -57,6 +61,10 @@ class __TwigTemplate_29b04d160bfd2018f5373f216f1f6bb0 extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  32 => 10,  26 => 7,  19 => 2,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+=======
+        return array (  41 => 19,  19 => 2,  42 => 9,  40 => 8,  35 => 16,  29 => 5,);
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
     }
 }

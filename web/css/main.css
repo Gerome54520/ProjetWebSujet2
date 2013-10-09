@@ -5,6 +5,7 @@ body {
 }
 
 [class*="span"] {
+<<<<<<< HEAD
 	 background-color: rgb(202,196,255);
 	 
 	 border-radius: 5px 5px 5px 5px;
@@ -19,6 +20,20 @@ body {
    margin: 0px;
    padding: 0px;
 }*/
+=======
+	 background-color: white;
+	 margin-bottom: 0px;
+	 margin-left: 5px;
+	 border-radius: 5px 5px 5px 5px;
+	 line-height: 18px;
+}
+
+.span12 {
+   background-color: white;
+   margin: 0px;
+   padding: 0px;
+}
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
 
 #span12blue {
    background-color: rgb(0,69,117);
@@ -30,12 +45,20 @@ body {
 	border:solid 10px white;
 }
 
+<<<<<<< HEAD
 /*/.span12intérieur {
+=======
+#span12intérieur {
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
 	background-color: rgb(202,196,255);
 	margin: 0px;
 	margin-bottom: 0px;
 	margin-top: 15px;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
 
 #spanfondblue {
 	background-color: rgb(202,196,255);
@@ -80,8 +103,12 @@ h1 {
 
 .row-fluid {
 	width: 85%;
+<<<<<<< HEAD
 }
 
 .formconnect{
    text-align: center;
    }
+=======
+}
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac

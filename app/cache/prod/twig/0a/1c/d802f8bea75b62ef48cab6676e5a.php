@@ -36,19 +36,27 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
         echo "</title>
 </head>
 
+<<<<<<< HEAD
 
 <body>
+=======
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
 <nav class=\"navbar navbar-inverse navbar-static-top\">
   <div class=\"navbar-inner\">
     <div class=\"container\">
       <ul class=\"nav\">
 \t\t<li class=\"brand\">Appli voeux de stages</li>
         <li class=\"active\"> <a href=\"";
+<<<<<<< HEAD
         // line 25
+=======
+        // line 23
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
         echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuil");
         echo "\" >Accueil</a> </li>
 \t
 \t   <li><a id=\"lienconnect\" href=\"";
+<<<<<<< HEAD
         // line 27
         echo $this->env->getExtension('routing')->getPath("login");
         echo "\"  >
@@ -67,6 +75,26 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
         // line 32
         echo " 
 \t  </a></li>
+=======
+        // line 25
+        echo $this->env->getExtension('routing')->getPath("login");
+        echo "\"  >
+\t   ";
+        // line 26
+        if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
+            // line 27
+            echo "\t   Connexion 
+\t   ";
+        } else {
+            // line 28
+            echo " 
+\t   Deconnexion
+\t   </a></li>
+\t   ";
+        }
+        // line 32
+        echo "\t\t
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
       </ul>
     </div>
   </div>
@@ -84,9 +112,15 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
 \t\t</div>\t
 
 ";
+<<<<<<< HEAD
         // line 47
         $this->displayBlock('body', $context, $blocks);
         // line 50
+=======
+        // line 49
+        $this->displayBlock('body', $context, $blocks);
+        // line 52
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
         echo "</div>
 </div>
 </body>
@@ -100,11 +134,19 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
    <link href=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
+<<<<<<< HEAD
         echo "\" rel=\"stylesheet\" type=\"text/css\"/>
    <link href=\"";
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\"/>
+=======
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+   <link href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
    <script src=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
@@ -122,10 +164,17 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
         echo " Gestion des stages - ";
     }
 
+<<<<<<< HEAD
     // line 47
     public function block_body($context, array $blocks = array())
     {
         // line 48
+=======
+    // line 49
+    public function block_body($context, array $blocks = array())
+    {
+        // line 50
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
         echo "  
 ";
     }
@@ -142,6 +191,10 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  129 => 48,  126 => 47,  120 => 15,  114 => 12,  110 => 11,  106 => 10,  102 => 9,  97 => 8,  90 => 50,  88 => 47,  82 => 44,  68 => 32,  63 => 30,  59 => 29,  57 => 28,  53 => 27,  48 => 25,  35 => 15,  32 => 14,  30 => 8,  22 => 2,);
+=======
+        return array (  131 => 50,  128 => 49,  122 => 15,  116 => 12,  112 => 11,  108 => 10,  104 => 9,  99 => 8,  91 => 52,  89 => 49,  81 => 44,  67 => 32,  61 => 28,  55 => 26,  51 => 25,  35 => 15,  32 => 14,  30 => 8,  22 => 2,  65 => 24,  57 => 27,  52 => 17,  46 => 23,  43 => 11,  37 => 9,  34 => 8,  31 => 6,  28 => 5,);
+>>>>>>> de579f47cca4e8553f8852583bd7b16b0c1676ac
     }
 }
