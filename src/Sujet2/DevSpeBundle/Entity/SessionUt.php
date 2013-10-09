@@ -60,6 +60,10 @@ class SessionUt
      * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
      */
     private $lots;
+    
+    public function __construct(){
+    	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**

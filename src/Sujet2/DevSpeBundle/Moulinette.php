@@ -101,6 +101,8 @@ class CsvController extends Controller {
 						$lot->setTutPrenom ( $infos [1] );
 						
 						// Récupération de l'entreprise à partir du CSV
+							//Récup entreprise <------------------------------------------------------------
+						
 						$lot->setEntreprise ( $tab [3] );
 						
 						$stage->setLot ( $lot );
