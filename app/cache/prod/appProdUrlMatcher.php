@@ -66,6 +66,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        // sujet2devspe_profilenseignant
+        if ($pathinfo === '/profilens') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // login
