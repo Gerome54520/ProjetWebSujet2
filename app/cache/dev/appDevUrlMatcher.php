@@ -161,22 +161,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/acceuil')) {
-            // sujet2devspe_acceuilenseignant
-            if ($pathinfo === '/acceuilens') {
-                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilensAction',  '_route' => 'sujet2devspe_acceuilenseignant',);
-            }
-
-            // sujet2devspe_acceuilgestionnaire
-            if ($pathinfo === '/acceuilges') {
-                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilgesAction',  '_route' => 'sujet2devspe_acceuilgestionnaire',);
-            }
-
+        // sujet2devspe_acceuilenseignant
+        if ($pathinfo === '/acceuilens') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilensAction',  '_route' => 'sujet2devspe_acceuilenseignant',);
         }
 
         // sujet2devspe_profilenseignant
-        if ($pathinfo === '/profilens') {
-            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
+        if ($pathinfo === '/profiladr') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::adresse_enseignantAction',  '_route' => 'sujet2devspe_profilenseignant',);
+        }
+
+        // sujet2devspe_acceuilgestionnaire
+        if ($pathinfo === '/acceuilges') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilgesAction',  '_route' => 'sujet2devspe_acceuilgestionnaire',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {
