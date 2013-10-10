@@ -10,6 +10,7 @@ login:
 login_check:
     path:   /login_check
 logout:
+<<<<<<< HEAD
     path:   /logout
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -31,3 +32,6 @@ fos_user_change_password:
     prefix: /profile
 
  
+=======
+    path:   /logout
+>>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
