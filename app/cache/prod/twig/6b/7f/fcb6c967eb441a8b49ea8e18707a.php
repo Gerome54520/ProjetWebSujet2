@@ -60,10 +60,14 @@ class __TwigTemplate_6b7ffcb6c967eb441a8b49ea8e18707a extends Twig_Template
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["enseignant"]) ? $context["enseignant"] : $this->getContext($context, "enseignant")), "ensAdresse"), "html", null, true);
         echo "</li>
 \t\t\t </ul>
+<<<<<<< HEAD
 \t\t\t<a href=\"";
         // line 20
         echo $this->env->getExtension('routing')->getPath("sujet2devspe_adresseenseignant");
         echo "\" > Modifier l'adresse </a>
+=======
+\t\t\t<a href=\"#\" > Modifier l'adresse </a>
+>>>>>>> 22e32ae7071b7448e2d74c5bc1567e7cad628a73
 \t\t\t<a href=\"#\"> Modifier le mot de passe </a>
 ";
     }
@@ -80,6 +84,10 @@ class __TwigTemplate_6b7ffcb6c967eb441a8b49ea8e18707a extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  65 => 20,  60 => 18,  55 => 16,  50 => 14,  45 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+=======
+        return array (  60 => 18,  55 => 16,  50 => 14,  45 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+>>>>>>> 22e32ae7071b7448e2d74c5bc1567e7cad628a73
     }
 }

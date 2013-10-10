@@ -79,6 +79,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         // sujet2devspe_acceuilgestionnaire
         if ($pathinfo === '/acceuilges') {
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilgesAction',  '_route' => 'sujet2devspe_acceuilgestionnaire',);
+<<<<<<< HEAD
         }
 
         if (0 === strpos($pathinfo, '/Creation')) {
@@ -97,6 +98,8 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::validersessionAction',  '_route' => 'sujet2_devspevalidersession',);
             }
 
+=======
+>>>>>>> 22e32ae7071b7448e2d74c5bc1567e7cad628a73
         }
 
         if (0 === strpos($pathinfo, '/log')) {
