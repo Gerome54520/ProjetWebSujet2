@@ -27,12 +27,12 @@ class DevSpeController extends Controller
   public function profilensAction(){
     $repository = $this->getDoctrine()
                    ->getManager()
-                   ->getRepository('DevSpeBundle:Enseignant');
- 
-    $enseignant = $repository->findOneBy(array('nom' => 'user'));
+                   ->getRepository('Sujet2DevSpeBundle:Enseignant');
+				   
+    $enseignant = $repository->find(1);
 // $article est une instance de Article
 
-return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  array( 'form' => $enseignant ));
+return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' ,  array( 'enseignant' => $enseignant ));
   }
   
   public function acceuilensAction(){
@@ -59,7 +59,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
 	$lots = $query->getResult ();
   
   
-  
+  }
   
   
   

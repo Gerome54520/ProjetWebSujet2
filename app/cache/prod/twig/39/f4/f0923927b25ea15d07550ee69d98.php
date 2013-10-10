@@ -30,12 +30,33 @@ class __TwigTemplate_39f4f0923927b25ea15d07550ee69d98 extends Twig_Template
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo " </br></br>
     <input type=\"submit\" class=\"btn btn-primary\" />
+
+  <form class=\"form-horizontal well\">   
+  <div class=\"progress progress-striped active\">
+   <div class=\"bar\" style=\"width: 20%\"></div> </blockquote><label>\t\t20%</label>\t
+  </div>
+   <div id=\"alerte\" class=\"alert alert-error\" style=\"display:none\"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>   
+\t<form method=\"post\" ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+        echo ">
+    ";
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo " </br></br>
+    <input type=\"submit\" class=\"btn btn-primary\" />
+  </form>
+
+    <input type=\"submit\" class=\"btn btn-primary\" value=\"Suivant\" />
+
   </form>
 </div>
 
 <script>
 \$(\"form input.date\").datepicker({
     dateFormat: 'dd/MM/yyyy', 
+    dateFormat: 'ddMMyy', 
+    firstDay:1
 }).attr(\"readonly\",\"readonly\"); 
 </script>
 ";
@@ -53,6 +74,6 @@ class __TwigTemplate_39f4f0923927b25ea15d07550ee69d98 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  30 => 8,  26 => 7,  19 => 2,  45 => 12,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
+        return array (  41 => 16,  30 => 8,  26 => 7,  34 => 12,  28 => 9,  19 => 2,  45 => 17,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
     }
 }
