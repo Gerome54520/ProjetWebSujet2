@@ -82,15 +82,7 @@ class Lot
      * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Entreprise")
      */
     private $entreprise;
-    
-    /**
-     * @var object
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\SessionUt")
-     */
-    private $sessionUt;
-    
-
-
+  
     /**
      * Get id
      *
@@ -292,23 +284,5 @@ class Lot
     public function getEntreprise(){
     	return $this->entreprise;
     }
-    
-    /**
-     * Set sessionUt
-     *
-     * @param Sujet2\DevSpeBundle\Entity\SessionUt $sessionUt
-     */
-    public function setSessionUt(Sujet2\DevSpeBundle\Entity\SessionUt $sessionUt) {
-    	$this->sessionUt = $sessionUt;
-    }
-    
-    /**
-     * Get sessionUt
-     *
-     * @return Sujet2\DevSpeBundle\Entity\SessionUt
-     */
-    public function getSessionUt() {
-    	return $this->sessionUt;
-    }
-    
+        
 }

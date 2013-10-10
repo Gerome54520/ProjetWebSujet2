@@ -11,6 +11,9 @@ sujet2devspe_phase1:
 sujet2devspe_phase3:
     path: /Creation/phase3
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }
+sujet2devspe_phase4:
+    path: /Creation/phase4
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase4 }
 sujet2devspe_acceuilenseignant:
     path: /acceuilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilens }

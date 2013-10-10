@@ -51,6 +51,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase3Action',  '_route' => 'sujet2devspe_phase3',);
             }
 
+            // sujet2devspe_phase4
+            if ($pathinfo === '/Creation/phase4') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase4Action',  '_route' => 'sujet2devspe_phase4',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/acceuil')) {
@@ -64,6 +69,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilgesAction',  '_route' => 'sujet2devspe_acceuilgestionnaire',);
             }
 
+        }
+
+        // sujet2devspe_profilenseignant
+        if ($pathinfo === '/profilens') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

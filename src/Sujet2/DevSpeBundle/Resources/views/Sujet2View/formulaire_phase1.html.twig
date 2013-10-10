@@ -1,53 +1,17 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase1.html.twig #}
 
-<legend>Choix des paramètres pour la session - Phase 1/5</legend>
+ <div class="well">
 
-  <form class="form-horizontal well">   
-  <div class="progress progress-striped active">
-   <div class="bar" style="width: 20%"></div> </blockquote><label>		20%</label>
-	
-  </div>
- 
-   <div id="alerte" class="alert alert-error" style="display:none"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>
-    <fieldset>
-	Nom de la session :</br>{{ form_widget(form.sesLibelle) }} </br>
-	<label>Date de départ : </label>
-    <input id="dateOuv" type="text" class="input-mini" data-date-format="dd/mm/yy">
-    <label>Date de retour : </label>
-    <input id="dateClo" type="text" class="input-mini" data-date-format="dd/mm/yy"></br></br>
-	
-    </fieldset>
-    <input type="submit" class="btn btn-primary" value="Suivant" />
+<legend>Choix des paramètres pour la session - Phase 1/5</legend> 
+
+  <form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }} </br></br>
+    <input type="submit" class="btn btn-primary" />
   </form>
+</div>
 
-</body>
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('bootstrap/js/bootstrap-datepicker.js')}}"></script>
 <script>
-$(function (){
-   function get_date(text) {
-    var d_split = text.split('/');
-    var d = new Date(0);
-    return d.setFullYear(d_split[2], d_split[1], d_split[0])
-   }
-   $('#dateOuv, #dateClo').datepicker().on('changeDate', function(e){
-    if(get_date($('#dateOuv').val()) >= get_date($('#dateClo').val())) 
-            $('#alerte').show();
-    else $('#alerte').hide();
-   });
-});     
-
-function timer(n) {
-    $(".bar").css("width", n + "%");
-    if(n < 100) {
-        setTimeout(function() {
-            timer(n + 10);
-        }, 200);
-    }
-}
-$(function (){
-    $("#animer").click(function() {
-        timer(0);
-    });
-});
+$("form input.date").datepicker({
+    dateFormat: 'dd/MM/yyyy', 
+}).attr("readonly","readonly"); 
 </script>

@@ -242,7 +242,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getAnnotationReaderService()
     {
-        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/annotations', true);
+        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/annotations', true);
     }
 
     /**
@@ -255,9 +255,9 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetManagerService()
     {
-        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/assetic/config'), true)));
+        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/assetic/config'), true)));
 
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
 
         return $instance;
     }
@@ -314,7 +314,7 @@ class appProdDebugProjectContainer extends Container
         $a = $this->get('kernel');
         $b = $this->get('templating.filename_parser');
 
-        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/Resources');
+        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/Resources');
 
         return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 3 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 4 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
@@ -461,32 +461,37 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_a671b9408cc7e33e81f7d2b2dab3bc1f');
+        $a = $this->get('annotation_reader');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_a671b9408cc7e33e81f7d2b2dab3bc1f');
+        $b->setNamespace('sf2orm_default_359cd4c9dfea94408a04dfb41feb7dab');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_a671b9408cc7e33e81f7d2b2dab3bc1f');
+        $c->setNamespace('sf2orm_default_359cd4c9dfea94408a04dfb41feb7dab');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $d->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\src\\Sujet2\\DevSpeBundle\\Entity')), 'Sujet2\\DevSpeBundle\\Entity');
+        $d = new \Doctrine\Common\Cache\ArrayCache();
+        $d->setNamespace('sf2orm_default_359cd4c9dfea94408a04dfb41feb7dab');
 
-        $e = new \Doctrine\ORM\Configuration();
-        $e->setEntityNamespaces(array('Sujet2DevSpeBundle' => 'Sujet2\\DevSpeBundle\\Entity'));
-        $e->setMetadataCacheImpl($a);
-        $e->setQueryCacheImpl($b);
-        $e->setResultCacheImpl($c);
-        $e->setMetadataDriverImpl($d);
-        $e->setProxyDir('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/doctrine/orm/Proxies');
-        $e->setProxyNamespace('Proxies');
-        $e->setAutoGenerateProxyClasses(true);
-        $e->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $e->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $e->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => 'C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\src\\Sujet2\\DevSpeBundle\\Entity', 1 => 'C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\src\\Acme\\SecurityBundle\\Entity'));
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $e);
+        $f = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $f->addDriver($e, 'Sujet2\\DevSpeBundle\\Entity');
+        $f->addDriver($e, 'Acme\\SecurityBundle\\Entity');
+
+        $g = new \Doctrine\ORM\Configuration();
+        $g->setEntityNamespaces(array('Sujet2DevSpeBundle' => 'Sujet2\\DevSpeBundle\\Entity', 'AcmeSecurityBundle' => 'Acme\\SecurityBundle\\Entity'));
+        $g->setMetadataCacheImpl($b);
+        $g->setQueryCacheImpl($c);
+        $g->setResultCacheImpl($d);
+        $g->setMetadataDriverImpl($f);
+        $g->setProxyDir('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/doctrine/orm/Proxies');
+        $g->setProxyNamespace('Proxies');
+        $g->setAutoGenerateProxyClasses(true);
+        $g->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $g->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $g->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $g);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -574,7 +579,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getFileLocatorService()
     {
-        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/Resources');
+        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/Resources');
     }
 
     /**
@@ -1285,7 +1290,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getMonolog_Handler_NestedService()
     {
-        return $this->services['monolog.handler.nested'] = new \Monolog\Handler\StreamHandler('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/logs/prod.log', 100, true);
+        return $this->services['monolog.handler.nested'] = new \Monolog\Handler\StreamHandler('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/logs/prod.log', 100, true);
     }
 
     /**
@@ -1478,7 +1483,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getRouterService()
     {
-        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/config/routing.yml', array('cache_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appProdUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appProdUrlMatcher', 'strict_requirements' => NULL), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/config/routing.yml', array('cache_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appProdUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appProdUrlMatcher', 'strict_requirements' => NULL), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -1614,7 +1619,11 @@ class appProdDebugProjectContainer extends Container
         $a = $this->get('security.context');
         $b = $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE);
 
-        return $this->services['security.firewall.map.context.main_login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'main_login', $b, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '5253af5b4b3c3', $b), 3 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $this->get('security.http_utils'), 'main_login', NULL, NULL, NULL, $b));
+<<<<<<< HEAD
+        return $this->services['security.firewall.map.context.main_login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'main_login', $b, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '5255d4e3e4e1c', $b), 3 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $this->get('security.http_utils'), 'main_login', NULL, NULL, NULL, $b));
+=======
+        return $this->services['security.firewall.map.context.main_login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'main_login', $b, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '525589d740d99', $b), 3 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $this->get('security.http_utils'), 'main_login', NULL, NULL, NULL, $b));
+>>>>>>> cd03383123d96e913a477ceeb77654f5af76cefe
     }
 
     /**
@@ -1640,7 +1649,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getSecurity_SecureRandomService()
     {
-        return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -1801,7 +1810,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getSession_HandlerService()
     {
-        return $this->services['session.handler'] = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/sessions');
+        return $this->services['session.handler'] = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/sessions');
     }
 
     /**
@@ -1814,7 +1823,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getSession_Storage_FilesystemService()
     {
-        return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/sessions');
+        return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/sessions');
     }
 
     /**
@@ -2060,7 +2069,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_CodeService()
     {
-        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app', 'UTF-8');
+        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app', 'UTF-8');
     }
 
     /**
@@ -2552,7 +2561,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getTranslator_DefaultService()
     {
-        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/translations', 'debug' => true));
+        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/translations', 'debug' => true));
     }
 
     /**
@@ -2565,14 +2574,14 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/twig', 'charset' => 'UTF-8', 'paths' => array()));
+        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/twig', 'charset' => 'UTF-8', 'paths' => array()));
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\LogoutUrlExtension($this->get('templating.helper.logout_url')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator')));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\AssetsExtension($this));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($this));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app', 'UTF-8'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app', 'UTF-8'));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler')));
@@ -2624,15 +2633,15 @@ class appProdDebugProjectContainer extends Container
     {
         $this->services['twig.loader'] = $instance = new \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader($this->get('templating.locator'), $this->get('templating.name_parser'));
 
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', 'Framework');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', 'Security');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', 'Twig');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\src\\Sujet2\\DevSpeBundle/Resources/views', 'Sujet2DevSpe');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\src\\Acme\\SecurityBundle/Resources/views', 'AcmeSecurity');
-        $instance->addPath('C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/Resources/views');
-        $instance->addPath('C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', 'Framework');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', 'Security');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', 'Twig');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\src\\Sujet2\\DevSpeBundle/Resources/views', 'Sujet2DevSpe');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\src\\Acme\\SecurityBundle/Resources/views', 'AcmeSecurity');
+        $instance->addPath('C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/Resources/views');
+        $instance->addPath('C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
 
         return $instance;
     }
@@ -2706,7 +2715,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetFactoryService()
     {
-        return $this->services['assetic.asset_factory'] = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/../web', true);
+        return $this->services['assetic.asset_factory'] = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/../web', true);
     }
 
     /**
@@ -2808,7 +2817,11 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5253af5b4b3c3'), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true)), true);
+<<<<<<< HEAD
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5255d4e3e4e1c'), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true)), true);
+=======
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('525589d740d99'), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true)), true);
+>>>>>>> cd03383123d96e913a477ceeb77654f5af76cefe
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -2921,7 +2934,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getTemplating_LocatorService()
     {
-        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod');
+        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod');
     }
 
     /**
@@ -2955,7 +2968,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getValidator_Mapping_ClassMetadataFactoryService()
     {
-        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
+        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
     }
 
     /**
@@ -3009,12 +3022,12 @@ class appProdDebugProjectContainer extends Container
     protected function getDefaultParameters()
     {
         return array(
-            'kernel.root_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app',
+            'kernel.root_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app',
             'kernel.environment' => 'prod',
             'kernel.debug' => true,
             'kernel.name' => 'app',
-            'kernel.cache_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod',
-            'kernel.logs_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/logs',
+            'kernel.cache_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod',
+            'kernel.logs_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/logs',
             'kernel.bundles' => array(
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle',
@@ -3088,7 +3101,7 @@ class appProdDebugProjectContainer extends Container
             'debug.errors_logger_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ErrorsLoggerListener',
             'debug.event_dispatcher.class' => 'Symfony\\Component\\HttpKernel\\Debug\\TraceableEventDispatcher',
             'debug.stopwatch.class' => 'Symfony\\Component\\Stopwatch\\Stopwatch',
-            'debug.container.dump' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/appProdDebugProjectContainer.xml',
+            'debug.container.dump' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/appProdDebugProjectContainer.xml',
             'debug.controller_resolver.class' => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
             'kernel.secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'kernel.http_method_override' => true,
@@ -3110,7 +3123,7 @@ class appProdDebugProjectContainer extends Container
             'session.storage.options' => array(
 
             ),
-            'session.save_path' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/sessions',
+            'session.save_path' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/sessions',
             'form.resolved_type_factory.class' => 'Symfony\\Component\\Form\\ResolvedFormTypeFactory',
             'form.registry.class' => 'Symfony\\Component\\Form\\FormRegistry',
             'form.factory.class' => 'Symfony\\Component\\Form\\FormFactory',
@@ -3166,7 +3179,7 @@ class appProdDebugProjectContainer extends Container
             'validator.mapping.loader.yaml_files_loader.class' => 'Symfony\\Component\\Validator\\Mapping\\Loader\\YamlFilesLoader',
             'validator.validator_factory.class' => 'Symfony\\Bundle\\FrameworkBundle\\Validator\\ConstraintValidatorFactory',
             'validator.mapping.loader.xml_files_loader.mapping_files' => array(
-                0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-13.1VC9\\data\\localweb\\my portable files\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
+                0 => 'C:\\Program Files\\EasyPHP-12.1\\www\\ProjetWebSujet2\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
             ),
             'validator.mapping.loader.yaml_files_loader.mapping_files' => array(
 
@@ -3196,7 +3209,7 @@ class appProdDebugProjectContainer extends Container
             'router.request_context.host' => 'localhost',
             'router.request_context.scheme' => 'http',
             'router.request_context.base_url' => '',
-            'router.resource' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/config/routing.yml',
+            'router.resource' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/config/routing.yml',
             'router.cache_class_prefix' => 'appProd',
             'request_listener.http_port' => 80,
             'request_listener.https_port' => 443,
@@ -3308,7 +3321,7 @@ class appProdDebugProjectContainer extends Container
                 'exception_controller' => 'twig.controller.exception:showAction',
                 'autoescape_service' => NULL,
                 'autoescape_service_method' => NULL,
-                'cache' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/twig',
+                'cache' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/twig',
                 'charset' => 'UTF-8',
                 'paths' => array(
 
@@ -3361,7 +3374,7 @@ class appProdDebugProjectContainer extends Container
             'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
             'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
             'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
-            'swiftmailer.spool.default.memory.path' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/swiftmailer/spool/default',
+            'swiftmailer.spool.default.memory.path' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/swiftmailer/spool/default',
             'swiftmailer.mailer.default.spool.enabled' => true,
             'swiftmailer.mailer.default.single_address' => NULL,
             'swiftmailer.spool.enabled' => true,
@@ -3386,7 +3399,7 @@ class appProdDebugProjectContainer extends Container
             'assetic.node.paths' => array(
 
             ),
-            'assetic.cache_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/assetic',
+            'assetic.cache_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/assetic',
             'assetic.bundles' => array(
 
             ),
@@ -3398,12 +3411,12 @@ class appProdDebugProjectContainer extends Container
             'assetic.debug' => true,
             'assetic.use_controller' => false,
             'assetic.enable_profiler' => false,
-            'assetic.read_from' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/../web',
-            'assetic.write_to' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/../web',
+            'assetic.read_from' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/../web',
+            'assetic.write_to' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/../web',
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
+            'assetic.java.bin' => 'C:\\WINDOWS\\system32\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
@@ -3467,7 +3480,7 @@ class appProdDebugProjectContainer extends Container
             'doctrine.orm.naming_strategy.default.class' => 'Doctrine\\ORM\\Mapping\\DefaultNamingStrategy',
             'doctrine.orm.naming_strategy.underscore.class' => 'Doctrine\\ORM\\Mapping\\UnderscoreNamingStrategy',
             'doctrine.orm.auto_generate_proxy_classes' => true,
-            'doctrine.orm.proxy_dir' => 'C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/my portable files/Symfony/app/cache/prod/doctrine/orm/Proxies',
+            'doctrine.orm.proxy_dir' => 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/cache/prod/doctrine/orm/Proxies',
             'doctrine.orm.proxy_namespace' => 'Proxies',
             'sensio_framework_extra.view.guesser.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Templating\\TemplateGuesser',
             'sensio_framework_extra.controller.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ControllerListener',

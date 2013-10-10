@@ -54,7 +54,16 @@ class SessionUt
      * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Parametre")
      */
     private $parametre;
-
+  
+    /**
+     * @var Doctrine\Common\Collections\Collection
+     * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
+     */
+    private $lots;
+    
+    public function __construct(){
+    	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -172,6 +181,25 @@ class SessionUt
      */
     public function  getParametre(){
     	return $this->parametre;
+    }
+    
+    /**
+     * Set lot
+     * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
+     */
+    public function addLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
+    	$this->lots[]=$lot;
+    }
+    
+    public function removeLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
+    	$this->lots->removeElement($lot);
+    }
+    
+    /**
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getLots(){
+    	return $this->lots;
     }
     
     

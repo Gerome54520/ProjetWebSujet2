@@ -41,19 +41,7 @@ class Enseignant
      */
     private $ensPrenom;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ens_login", type="string", length=50)
-     */
-    private $ensLogin;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ens_mdp", type="string", length=50)
-     */
-    private $ensMdp;
 
     /**
      * @var string
@@ -149,52 +137,6 @@ class Enseignant
     public function getEnsPrenom()
     {
         return $this->ensPrenom;
-    }
-
-    /**
-     * Set ensLogin
-     *
-     * @param string $ensLogin
-     * @return Enseignant
-     */
-    public function setEnsLogin($ensLogin)
-    {
-        $this->ensLogin = $ensLogin;
-    
-        return $this;
-    }
-
-    /**
-     * Get ensLogin
-     *
-     * @return string 
-     */
-    public function getEnsLogin()
-    {
-        return $this->ensLogin;
-    }
-
-    /**
-     * Set ensMdp
-     *
-     * @param string $ensMdp
-     * @return Enseignant
-     */
-    public function setEnsMdp($ensMdp)
-    {
-        $this->ensMdp = $ensMdp;
-    
-        return $this;
-    }
-
-    /**
-     * Get ensMdp
-     *
-     * @return string 
-     */
-    public function getEnsMdp()
-    {
-        return $this->ensMdp;
     }
 
     /**

@@ -8,10 +8,12 @@
  {% block style %}  
    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
    <link href="{{ asset('css/main.css')}}" rel="stylesheet" type="text/css">
-   <link href="{{ asset('bootstrap/css/datepicker.css')}}" rel="stylesheet" type="text/css">
+   <link href="{{ asset('css/datepicker.css')}}" rel="stylesheet" type="text/css">
+   
    <script src="{{ asset('js/jquery.js') }}"></script> 
    <script src="{{ asset('js/bootstrap.min.js')}}" ></script>  
-   <script src="{{ asset('bootstrap/js/bootstrap-datepicker.js')}}" ></script>  
+   <script src="{{ asset('js/bootstrap-datepicker.js')}}" ></script>  
+   <link href="{{ asset('less/datepicker.less')}}" rel="stylesheet" type="text/less">
  {% endblock %}
  
    <title>{% block title %} Gestion des stages - {% endblock %}</title>
@@ -29,9 +31,9 @@
 	   Connexion 
 	   {% else %} 
 	   Deconnexion
-	   </a></li>
+	   
 	   {% endif %}
-		
+		</a></li>
       </ul>
     </div>
   </div>
