@@ -5,10 +5,8 @@ namespace Acme\SecurityBundle\Entity;
  
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-<<<<<<< HEAD
-=======
+
 use Doctrine\DBAL\Types\BooleanType;
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
  
 /**
  * @ORM\Entity
@@ -22,10 +20,7 @@ class User extends BaseUser
    * @ORM\GeneratedValue(strategy="AUTO")
    */
   protected $id;
-<<<<<<< HEAD
-=======
-  
-  
+
   /**
    * @var object
    * @ORM\OneToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Enseignant", cascade={"persist"})
@@ -65,6 +60,4 @@ class User extends BaseUser
   	return $this->admin;
   }
   
-
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
 }

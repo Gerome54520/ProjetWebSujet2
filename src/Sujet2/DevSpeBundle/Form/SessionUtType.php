@@ -16,22 +16,13 @@ class SessionUtType extends AbstractType
     {
         $builder
             ->add('sesLibelle', 'text') 
-<<<<<<< HEAD
+
             ->add('dateOuv', 'date' ,array('input' => 'datetime','widget' => 'single_text','format' => 'dd/MM/yyyy', 'attr' => array('class' => 'date')))
             ->add('dateClo', 'date', array(
                                                 'widget' => 'single_text',
                                                 'input' => 'datetime',
                                                 'format' => 'dd/MM/yyyy',
-=======
-            ->add('dateClo', 'date' ,array('input' => 'datetime','widget' => 'single_text','format' => 'ddMMyyyy', 'attr' => array('class' => 'date')))
-            ->add('dateOuv', 'date', array(
-                                                'widget' => 'single_text',
-                                                'input' => 'datetime',
-                                                'format' => 'ddMMyyyy',
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
-                                                'attr' => array('class' => 'date'))
-            
-        );
+        ));
     }
     
     /**

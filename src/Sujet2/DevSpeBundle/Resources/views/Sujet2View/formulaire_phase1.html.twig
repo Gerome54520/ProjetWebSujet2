@@ -2,39 +2,31 @@
 
  <div class="well">
 
-<<<<<<< HEAD
 <legend>Choix des paramètres pour la session - Phase 1/5</legend> 
 
   <form method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }} </br></br>
     <input type="submit" class="btn btn-primary" />
-=======
+
   <form class="form-horizontal well">   
   <div class="progress progress-striped active">
-   <div class="bar" style="width: 20%"></div> </blockquote><label>		20%</label>
-	
+   <div class="bar" style="width: 20%"></div> </blockquote><label>		20%</label>	
   </div>
- 
-   <div id="alerte" class="alert alert-error" style="display:none"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>
-    
+   <div id="alerte" class="alert alert-error" style="display:none"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>   
 	<form method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }} </br></br>
     <input type="submit" class="btn btn-primary" />
   </form>
 
-
     <input type="submit" class="btn btn-primary" value="Suivant" />
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
+
   </form>
 </div>
 
 <script>
 $("form input.date").datepicker({
-<<<<<<< HEAD
     dateFormat: 'dd/MM/yyyy', 
-=======
     dateFormat: 'ddMMyy', 
     firstDay:1
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
 }).attr("readonly","readonly"); 
 </script>

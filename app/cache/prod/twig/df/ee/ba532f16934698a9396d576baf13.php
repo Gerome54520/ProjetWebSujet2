@@ -34,7 +34,10 @@ class __TwigTemplate_dfeeba532f16934698a9396d576baf13 extends Twig_Template
 \t\t\t\t\t<li><a href=\"#\">Faire un voeux</a></li>
 \t\t\t\t  </ul>
 \t\t\t\t</li>
-\t\t\t\t<li> <a href=\"#\">Profil</a> </li>
+\t\t\t\t<li> <a href=\"";
+        // line 17
+        echo $this->env->getExtension('routing')->getPath("sujet2devspe_enseignant");
+        echo "\">Profil</a> </li>
 \t\t\t  </ul>
 \t\t\t</div>
 \t\t  </div>
@@ -55,6 +58,6 @@ class __TwigTemplate_dfeeba532f16934698a9396d576baf13 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  28 => 9,  19 => 2,  45 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+        return array (  39 => 17,  28 => 9,  19 => 2,);
     }
 }
