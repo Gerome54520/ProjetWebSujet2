@@ -51,10 +51,7 @@ class __TwigTemplate_c3b418310a6cc7bdc0325d20832d7b5b extends Twig_Template
 \t\t\t Une fois tout vos voeux saisis, un gestionnaire consulte vos choix et prend la décision final d'attribution.
 \t\t\t</b></p>
 \t\t\t<br>
-\t\t\tSession en cours : ";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["idsession"]) ? $context["idsession"] : $this->getContext($context, "idsession")), "html", null, true);
-        echo "
+\t\t\t
 
 ";
     }
@@ -71,6 +68,6 @@ class __TwigTemplate_c3b418310a6cc7bdc0325d20832d7b5b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  56 => 23,  42 => 11,  35 => 7,  29 => 5,);
+        return array (  42 => 11,  35 => 7,  29 => 5,);
     }
 }

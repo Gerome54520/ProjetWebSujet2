@@ -61,29 +61,10 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' 
 	$contrainte = $parametre->getContraintes();
 	$lots = $session->getLots();
 
-	 return $this->render('Sujet2DevSpeBundle:Sujet2View:phase5.html.twig', array( 'session' => $session , 'parametre' => $parametre , 'lots' => $lots , 'contraintes' => $contraintes , */'idsession' => $sessionn->get('idsession')));
+	 return $this->render('Sujet2DevSpeBundle:Sujet2View:phase5.html.twig', array( 'session' => $session , 'parametre' => $parametre , 'lots' => $lots , 'contraintes' => $contraintes));
   }
 
-  
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
->>>>>>> 22e32ae7071b7448e2d74c5bc1567e7cad628a73
-  
+   
   public function phase4Action(){
   
     $repository = $this->getDoctrine()

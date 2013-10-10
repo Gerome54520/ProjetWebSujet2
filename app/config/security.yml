@@ -19,7 +19,10 @@ security:
             security: false
         main_login:
             pattern:   ^/login$
-            anonymous: true 
+            anonymous: true
+        acceuil:
+           pattern: ^/acceuil
+           anonymous: true
         main:
             pattern: ^/
             anonymous: false
