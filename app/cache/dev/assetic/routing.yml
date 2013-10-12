@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/config/routing_dev.yml'

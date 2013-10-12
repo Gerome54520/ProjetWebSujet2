@@ -23,6 +23,10 @@ use Sujet2\DevSpeBundle\Form\SessionUtType1;
 
 class DevSpeController extends Controller
 {
+ 
+  public function indexAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig' );
+  }
 
   public function profilensAction(){
     $repository = $this->getDoctrine()
