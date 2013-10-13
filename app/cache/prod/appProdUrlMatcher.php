@@ -46,11 +46,16 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase3Action',  '_route' => 'sujet2devspe_phase3',);
             }
 
-            // sujet2devspe_phase4
-            if ($pathinfo === '/Creation/phase4') {
-                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase4Action',  '_route' => 'sujet2devspe_phase4',);
-            }
+        }
 
+        // sujet2devspe_profilenseignant
+        if ($pathinfo === '/profilens') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
+        }
+
+        // sujet2devspe_phase4
+        if ($pathinfo === '/Creation/phase4') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::phase4Action',  '_route' => 'sujet2devspe_phase4',);
         }
 
         // sujet2devspe_acceuilenseignant
@@ -58,17 +63,19 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilensAction',  '_route' => 'sujet2devspe_acceuilenseignant',);
         }
 
-        if (0 === strpos($pathinfo, '/profil')) {
-            // sujet2devspe_enseignant
-            if ($pathinfo === '/profilens') {
-                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_enseignant',);
-            }
+        // sujet2devspe_adresseenseignant
+        if ($pathinfo === '/profiladr') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::adresse_enseignantAction',  '_route' => 'sujet2devspe_adresseenseignant',);
+        }
 
-            // sujet2devspe_adresseenseignant
-            if ($pathinfo === '/profiladr') {
-                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::adresse_enseignantAction',  '_route' => 'sujet2devspe_adresseenseignant',);
-            }
+        // sujet2devspe_voeuxenseignant
+        if ($pathinfo === '/voeuxens') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::voeux_enseignantAction',  '_route' => 'sujet2devspe_voeuxenseignant',);
+        }
 
+        // sujet2devspe_etatvoeuxenseignant
+        if ($pathinfo === '/etatvoeux') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::etatvoeuxAction',  '_route' => 'sujet2devspe_etatvoeuxenseignant',);
         }
 
         // sujet2devspe_acceuilgestionnaire
@@ -108,7 +115,6 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  '_route' => 'sujet2devspe_homepage',);
         }
 
-<<<<<<< HEAD
         // sujet2devspe_visualisersession
         if ($pathinfo === '/visualiser') {
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::visualisersessionAction',  '_route' => 'sujet2devspe_visualisersession',);
@@ -119,8 +125,6 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\MoulinetteController::choixfichierAction',  '_route' => 'sujet2devpspe_uploadcsv',);
         }
 
-=======
->>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login

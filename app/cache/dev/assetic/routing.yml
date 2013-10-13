@@ -2,8 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-<<<<<<< HEAD
     resource: 'C:/wamp2/www/ProjetWebSujet2/app/config/routing_dev.yml'
-=======
-    resource: 'C:/Program Files/EasyPHP-12.1/www/ProjetWebSujet2/app/config/routing_dev.yml'
->>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
