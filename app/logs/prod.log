@@ -20594,6 +20594,7 @@ SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'path' cannot be nu
 [2013-10-13 22:08:46] event.DEBUG: Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener::onKernelResponse". [] []
 [2013-10-13 22:08:46] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\StreamedResponseListener::onKernelResponse". [] []
 [2013-10-13 22:08:46] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onKernelTerminate". [] []
+<<<<<<< HEAD
 [2013-10-14 00:36:23] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
 [2013-10-14 00:36:23] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\FragmentListener::onKernelRequest". [] []
 [2013-10-14 00:36:23] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest". [] []
@@ -20845,3 +20846,5 @@ SQLSTATE[42S02]: Base table or view not found: 1146 La table 'test.voeux' n'exis
 [2013-10-14 00:49:00] event.DEBUG: Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener::onKernelResponse". [] []
 [2013-10-14 00:49:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\StreamedResponseListener::onKernelResponse". [] []
 [2013-10-14 00:49:00] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onKernelTerminate". [] []
+=======
+>>>>>>> 7b160890c23327ebb462a8a50dbf4f283bf22bb5
