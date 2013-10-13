@@ -18206,6 +18206,7 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 't0.sessionUt_id' in 'fie
 [2013-10-11 16:58:05] event.DEBUG: Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener::onKernelResponse". [] []
 [2013-10-11 16:58:05] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\StreamedResponseListener::onKernelResponse". [] []
 [2013-10-11 16:58:05] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onKernelTerminate". [] []
+<<<<<<< HEAD
 [2013-10-12 12:56:57] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
 [2013-10-12 12:56:57] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\FragmentListener::onKernelRequest". [] []
 [2013-10-12 12:56:57] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest". [] []
@@ -20485,3 +20486,5 @@ SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'path' cannot be nu
 [2013-10-13 17:37:54] event.DEBUG: Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener::onKernelResponse". [] []
 [2013-10-13 17:37:54] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\StreamedResponseListener::onKernelResponse". [] []
 [2013-10-13 17:37:54] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onKernelTerminate". [] []
+=======
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5

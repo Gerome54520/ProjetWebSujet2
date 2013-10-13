@@ -39,6 +39,11 @@ class __TwigTemplate_d0263a4ac7dfdeb01859234ca61cd77b extends Twig_Template
         // line 8
         $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig")->display($context);
         // line 9
+<<<<<<< HEAD
+=======
+        echo "  Numero de session : ";
+        echo twig_escape_filter($this->env, (isset($context["idsession"]) ? $context["idsession"] : $this->getContext($context, "idsession")), "html", null, true);
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
         echo "
 ";
         // line 11
@@ -71,6 +76,10 @@ class __TwigTemplate_d0263a4ac7dfdeb01859234ca61cd77b extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  45 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+=======
+        return array (  47 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
     }
 }

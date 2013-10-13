@@ -47,3 +47,5 @@ sujet2devspe_visualisersession:
 sujet2devpspe_uploadcsv:
    path: /csv
    defaults: { _controller: Sujet2DevSpeBundle:Moulinette:choixfichier }
+
+

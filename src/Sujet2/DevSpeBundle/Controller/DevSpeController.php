@@ -24,6 +24,7 @@ use Sujet2\DevSpeBundle\Entity\Voeux;
 
 class DevSpeController extends Controller
 {
+
   public function visualisersessionAction (){
      $repository = $this->getDoctrine()
 	                    ->getManager()
@@ -35,8 +36,7 @@ class DevSpeController extends Controller
  
  }
      
-  
-  
+
   public function indexAction(){
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig' );
   }
