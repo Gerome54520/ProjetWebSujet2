@@ -25,7 +25,7 @@ class Type_PtsType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Sujet2\DevSpeBundle\Entity\Type_Pts'
+            'data_class' => 'Sujet2\DevSpeBundle\Entity\TypePts'
         ));
     }
 

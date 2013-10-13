@@ -1,0 +1,14 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/voeux_enseignant.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}{{ parent() }} - Saisir un voeux{% endblock %}
+
+
+ 
+{% block body %}
+    {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
+	<div class="span12" id="span12interieur">
+    {% include "Sujet2DevSpeBundle:Sujet2View:formulaire_voeux_enseignant.html.twig" %}
+
+{% endblock %}

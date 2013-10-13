@@ -15,10 +15,11 @@ class SessionUtType1 extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
+		    
             ->add('lots' , 'entity' , array( 'class' => 'Sujet2DevSpeBundle:Lot',
 												'property' => 'entreprise.entrs',
 												'multiple' => true,
-												'expanded' => true))
+												'expanded' => false))
             
         ;
     }

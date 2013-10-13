@@ -139,7 +139,7 @@ class Voeux
      * Set lot
      * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
      */
-    public function addLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
+    public function setLots(\Sujet2\DevSpeBundle\Entity\Lot $lot){
     	$this->lots[]=$lot;
     }
     

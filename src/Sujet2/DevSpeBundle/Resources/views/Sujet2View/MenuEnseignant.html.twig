@@ -2,19 +2,19 @@
 
 
         
-		<nav class="navbar navbar-inverse" id="navbar">
+		<nav class="navbar navbar-inverse">
 		  <div class="navbar-inner">
 			<div class="container">
 			  <ul class="nav">
-				<li class="brand"><a class="dropdown-toogle" data-toggle="dropdown" href="{{ path ('sujet2devspe_acceuilenseignant') }}" >Enseignant</a></li>
+				<li class="brand" id="brandsousmenu"><a class="dropdown-toogle" data-toggle="dropdown" href="{{ path ('sujet2devspe_acceuilenseignant') }}" >Enseignant</a></li>
 				<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Voeux <b class="caret"></b> </a>
 				  <ul class="dropdown-menu">
-					<li><a href="#">Etat des voeux</a></li>
+					<li><a href="{{path('sujet2devspe_etatvoeuxenseignant')}}">Etat des voeux</a></li>
 					<li class="divider"></li>
-					<li><a href="#">Faire un voeux</a></li>
+					<li><a href="{{path('sujet2devspe_voeuxenseignant')}}">Faire un voeux</a></li>
 				  </ul>
 				</li>
-				<li> <a href="#">Profil</a> </li>
+				<li> <a href="{{path('sujet2devspe_profilenseignant')}}">Profil</a> </li>
 			  </ul>
 			</div>
 		  </div>

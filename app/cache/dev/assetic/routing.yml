@@ -2,8 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-<<<<<<< HEAD
-    resource: 'C:/Users/Pandagruel/Documents/GitHub/ProjetWebSujet2/app/config/routing_dev.yml'
-=======
-    resource: 'C:/wamp/www/ProjetWebSujet2/app/config/routing_dev.yml'
->>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
+    resource: 'C:/wamp2/www/ProjetWebSujet2/app/config/routing_dev.yml'

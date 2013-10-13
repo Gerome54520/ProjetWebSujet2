@@ -18,65 +18,75 @@ use Sujet2\DevSpeBundle\Entity\Quota;
 use Sujet2\DevSpeBundle\Form\EnseignantType;
 use Sujet2\DevSpeBundle\Form\EnseignantTypeAdresse;
 use Sujet2\DevSpeBundle\Entity\Enseignant;
+use Sujet2\DevSpeBundle\Form\VoeuxType;
+use Sujet2\DevSpeBundle\Entity\Voeux;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Sujet2\DevSpeBundle\Form\SessionUtType1;
+
 
 class DevSpeController extends Controller
 {
 
-  public function profilensAction(){
-    $repository = $this->getDoctrine()
-                   ->getManager()
-                   ->getRepository('DevSpeBundle:Enseignant');
- 
-    $enseignant = $repository->findOneBy(array('nom' => 'user'));
-// $article est une instance de Article
+  public function visualisersessionAction (){
+     $repository = $this->getDoctrine()
+	                    ->getManager()
+                        ->getRepository('Sujet2DevSpeBundle:Voeux');
+						
+     $voeuxs = $repository->findAll();
 
-return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  array( 'form' => $enseignant ));
+     return $this->render('Sujet2DevSpeBundle:Sujet2View:visualisersession.html.twig', array ('voeuxs' => $voeuxs )); 
+ 
+ }
+     
+
+  public function indexAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig' );
+  }
+
+
+  public function profilensAction()
+  {
+	$repository = $this->getDoctrine()
+				   ->getManager()
+				   ->getRepository('Sujet2DevSpeBundle:Enseignant');
+
+	$enseignant = $repository->find(1);
+	// $article est une instance de Article
+
+	return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' ,  array( 'enseignant' => $enseignant ));
   }
   
-  public function acceuilensAction(){
-    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilens.html.twig');
+  public function accueilensAction()
+  {
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilenseignant.html.twig');
   }
   
-  public function acceuilgesAction(){
-    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilges.html.twig');
+  public function accueilgesAction()
+  {
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilgestionnaire.html.twig');
   }
   
-  public function accueilAction(){
+  public function accueilAction()
+  {
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig');
   }
   
-  
   public function phase5Action(){
-      
+   
      $repository = $this->getDoctrine()
                    ->getManager()
                    ->getRepository('Sujet2DevSpeBundle:SessionUt');
 	 
-	$query = $repo->createQueryBuilder ( 'l' )->where ( 'l.session = :session' )->setParameter ( 'session', 1 )->getQuery ();
-			
-	$lots = $query->getResult ();
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+	$session = $repository->find(1);
+	
+	$parametre = $session->getParametre();
+	$contrainte = $parametre->getContraintes();
+	$lots = $session->getLots();
+
+	 return $this->render('Sujet2DevSpeBundle:Sujet2View:phase5.html.twig', array( 'session' => $session , 'parametre' => $parametre , 'lots' => $lots , 'contraintes' => $contraintes));
+  }
+
+   
   public function phase4Action(){
   
     $repository = $this->getDoctrine()
@@ -103,9 +113,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
 	}
 	 return $this->render('Sujet2DevSpeBundle:Sujet2View:phase4.html.twig' , array( 'form' => $form->createView()));
 }	 
-	 
-	 
-	 
+	 	 
   public function phase3Action()
   {
     $j = 0;
@@ -147,14 +155,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
 	   }
 	return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array( 'form' => $sform, 'listeEnseignants' => $listeEnseignants, 'i' => $j ,'fo' => $f->createView()));
    }
-   /*
-    	
-	}	 
-
-     return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array( 'form' => $form->createView() ));
-  }*/
- 
- 
+  
   public function phase2Action()
   {
     // On cree l'objet Contrainte
@@ -180,7 +181,6 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
 	}	 
     return $this->render('Sujet2DevSpeBundle:Sujet2View:phase2.html.twig', array( 'form' => $form->createView() ));
   }
-  
   
   public function phase1Action()
   {
@@ -210,18 +210,33 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
         $em->persist($session);
         $em->flush();
 	  // définit et récupère des attributs de session
-	  $sessionn->set('idsession', $session->getID());
+	  
 	
 	return $this->redirect($this->generateUrl('sujet2devspe_phase2', 301));
 	
 	 }
     return $this->render('Sujet2DevSpeBundle:Sujet2View:phase1.html.twig', array( 'form' => $form->createView() ));
   
+  }
+  
+  public function validersessionAction(){
+    return $this->redirect($this->generateUrl('sujet2devspe_acceuilgestionnaire', 301));
+  }
+  
+  public function annulersessionAction() {
+    $em = $this->getDoctrine()->getManager();
+    $repository = $this->getDoctrine()->getManager()->getRepository('Sujet2DevSpeBundle:SessionUt');
+	$sessionut = $repository->find(1);
+	
+    $em->remove($sessionut);
+    $em->flush();
+    
+	return $this->redirect($this->generateUrl('sujet2devspe_acceuilgestionnaire', 301));
+    
 }
 
   public function adresse_enseignantAction()
   {
-	
 	 // On récupère la requête
 	$repository = $this->getDoctrine()->getManager()->getRepository('Sujet2DevSpeBundle:Enseignant');
     $enseignant = $repository->find(1);
@@ -238,19 +253,63 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilens.html.twig' ,  arra
       // À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
 	  
        $form->bind($request);
-       $session->setSesActif(false);
            
         // On l'enregistre notre objet $session dans la base de données
         $em = $this->getDoctrine()->getManager();
-        $em->persist($session);
+        $em->persist($enseignant);
         $em->flush();
 		//$_SESSION['id'] = $session->getID();
-	return $this->redirect($this->generateUrl('sujet2devspe_phase2', 301));
+	return $this->redirect($this->generateUrl('sujet2devspe_acceuilenseignant'));
 	
 	 }
     return $this->render('Sujet2DevSpeBundle:Sujet2View:adresse_enseignant.html.twig', array( 'form' => $form->createView() ));
+  }
+
+    public function voeux_enseignantAction()
+  {
+	
+	 // On récupère la requête
+	$repository = $this->getDoctrine()->getManager()->getRepository('Sujet2DevSpeBundle:Enseignant');
+    $enseignant = $repository->find(1);
+	$voeux = new Voeux();
+	$voeux->setEnseignant($enseignant);
+	
+	// On cree le FormBuilder grace a la methode du controlleur 
+	$form = $this->createForm(new VoeuxType, $voeux);
+	
+	$request = $this->get('request');
+	
+	// On vérifie qu'elle est de type POST
+    if ($request->getMethod() == 'POST') {
+	
+      // On fait le lien Requête <-> Formulaire
+      // À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
+	  
+       $form->bind($request);
+           
+        // On l'enregistre notre objet $session dans la base de données
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($voeux);
+        $em->flush();
+		//$_SESSION['id'] = $session->getID();
+	return $this->redirect($this->generateUrl('sujet2devspe_acceuilenseignant', 301));
+	
+	 }
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:voeux_enseignant.html.twig', array( 'form' => $form->createView() ));
   
   }
+  
+  public function etatvoeuxAction (){
+     $repository = $this->getDoctrine()
+                     ->getManager()
+                        ->getRepository('Sujet2DevSpeBundle:Voeux');
+      
+     $voeux = $repository->find(1);
+
+     return $this->render('Sujet2DevSpeBundle:Sujet2View:etatdesvoeux.html.twig', array ('voeux' => $voeux )); 
+ 
+ }
+  
 
 }
 
