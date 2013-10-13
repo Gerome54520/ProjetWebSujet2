@@ -10,16 +10,28 @@ sujet2devspe_phase1:
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase1 }
 sujet2devspe_phase3:
     path: /Creation/phase3
+<<<<<<< HEAD
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }	
 sujet2devspe_acceuilenseignant:
     path: /acceuilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilens }
 sujet2devspe_profilenseignant:
+=======
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }
+sujet2devspe_phase4:
+    path: /Creation/phase4
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase4 }
+sujet2devspe_acceuilenseignant:
+    path: /acceuilens
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilens }
+sujet2devspe_enseignant:
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
     path: /profilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:profilens }
 sujet2devspe_adresseenseignant:
     path: /profiladr
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:adresse_enseignant }
+<<<<<<< HEAD
 sujet2devspe_voeuxenseignant:
     path: /voeuxens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:voeux_enseignant }
@@ -30,3 +42,23 @@ sujet2devspe_acceuilgestionnaire:
     path: /acceuilges
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }
 
+=======
+sujet2devspe_acceuilgestionnaire:
+    path: /acceuilges
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }
+sujet2devspe_phase5:
+    path: /Creation/phase5
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase5 }
+sujet2_devspeannullersession:
+    path: /Creation/annuler
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:annulersession }
+sujet2_devspevalidersession:
+    path: /Creation/valider
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:validersession }
+sujet2redirect:
+    path: /choix
+    defaults: { _controller: AcmeSecurityBundle:Security:choix }
+sujet2devspe_homepage:
+    path: /
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index }
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5

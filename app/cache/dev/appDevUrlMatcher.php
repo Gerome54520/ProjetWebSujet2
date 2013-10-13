@@ -164,6 +164,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // sujet2devspe_acceuilenseignant
         if ($pathinfo === '/acceuilens') {
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::accueilensAction',  '_route' => 'sujet2devspe_acceuilenseignant',);
+<<<<<<< HEAD
         }
 
         if (0 === strpos($pathinfo, '/profil')) {
@@ -187,6 +188,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // sujet2devspe_etatvoeuxenseignant
         if ($pathinfo === '/etatvoeux') {
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::etatvoeuxAction',  '_route' => 'sujet2devspe_etatvoeuxenseignant',);
+=======
+        }
+
+        // sujet2devspe_profilenseignant
+        if ($pathinfo === '/profiladr') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::adresse_enseignantAction',  '_route' => 'sujet2devspe_profilenseignant',);
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
         }
 
         // sujet2devspe_acceuilgestionnaire

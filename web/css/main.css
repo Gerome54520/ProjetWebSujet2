@@ -87,3 +87,10 @@ legend {
 .row-fluid {
 	width: 85%;
 }
+.inline{
+ 
+ border-width:1px;
+ border-style:dotted;
+ border-color:black;
+ 
+ }

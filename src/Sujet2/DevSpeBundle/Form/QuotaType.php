@@ -15,13 +15,8 @@ class QuotaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-		    ->add('enseignant' , 'entity', array(
-									'class' => 'Sujet2DevSpeBundle:Enseignant',
-										'property' => 'ensNom',
-										'multiple' => false,
-										'expanded' => true))
-            ->add('nbSuivi', 'choice', array('empty_value'=>true))
-            
+            ->add('nbSuivi', 'integer')
+            ->add ('save', 'submit')
         ;
     }
     

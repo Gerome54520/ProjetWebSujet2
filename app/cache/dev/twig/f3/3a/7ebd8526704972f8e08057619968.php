@@ -28,10 +28,10 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
  ";
         // line 8
         $this->displayBlock('style', $context, $blocks);
-        // line 16
+        // line 18
         echo " 
    <title>";
-        // line 17
+        // line 19
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
 </head>
@@ -42,29 +42,39 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
       <ul class=\"nav\">
 \t\t<li class=\"brand\">Appli voeux de stages</li>
         <li class=\"active\"> <a href=\"";
-        // line 25
+        // line 27
         echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuil");
         echo "\" >Accueil</a> </li>
 \t
 \t   <li><a id=\"lienconnect\" href=\"";
-        // line 27
-        echo $this->env->getExtension('routing')->getPath("login");
+        // line 29
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
         echo "\"  >
-\t   ";
-        // line 28
+\t ";
+        // line 30
         if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
-            // line 29
+            // line 31
             echo "\t   Connexion 
 \t   ";
         } else {
-            // line 30
+            // line 32
             echo " 
+<<<<<<< HEAD:app/cache/dev/twig/f3/3a/7ebd8526704972f8e08057619968.php
 \t   Deconnexion
 \t   ";
         }
         // line 33
         echo "\t   </a></li>
 \t\t
+=======
+\t   Deconnexion   
+\t   ";
+        }
+        // line 34
+        echo " 
+\t\t</a></li>
+
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5:app/cache/prod/twig/0a/1c/d802f8bea75b62ef48cab6676e5a.php
       </ul>
     </div>
   </div>
@@ -77,7 +87,7 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
 \t\t<div class=\"span12\" id=\"span12blue\">
 \t\t\t<div class=\"span6\"><p><h1>Gestion des affectations des stages aux enseignants<br></h1></p></div>
 \t\t\t<div class=\"span4 offset2\" id=\"span4image\"><img src=\" ";
-        // line 46
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/logo_univ.jpg"), "html", null, true);
         echo "\" class=\"img-circle\"></div>
 \t\t</div>\t
@@ -85,11 +95,11 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
 
 
 ";
-        // line 51
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 54
+        // line 56
         echo "\t\t";
-        // line 55
+        // line 57
         echo "\t</div>
 </div>
 </body>
@@ -110,33 +120,38 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
         echo "\" rel=\"stylesheet\" type=\"text/css\">
    <link href=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/datepicker.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/datepicker.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
+   
    <script src=\"";
-        // line 12
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
         echo "\"></script> 
    <script src=\"";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\" ></script>  
    <script src=\"";
-        // line 14
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap-datepicker.js"), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap-datepicker.js"), "html", null, true);
         echo "\" ></script>  
+   <link href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("less/datepicker.less"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/less\">
  ";
     }
 
-    // line 17
+    // line 19
     public function block_title($context, array $blocks = array())
     {
         echo " Gestion des stages - ";
     }
 
-    // line 51
+    // line 53
     public function block_body($context, array $blocks = array())
     {
-        // line 52
+        // line 54
         echo "\t\t\t\t\t\t
 ";
     }
@@ -153,6 +168,10 @@ class __TwigTemplate_f33a7ebd8526704972f8e08057619968 extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD:app/cache/dev/twig/f3/3a/7ebd8526704972f8e08057619968.php
         return array (  140 => 52,  137 => 51,  131 => 17,  125 => 14,  121 => 13,  117 => 12,  113 => 11,  109 => 10,  105 => 9,  100 => 8,  93 => 55,  91 => 54,  89 => 51,  81 => 46,  66 => 33,  61 => 30,  57 => 29,  55 => 28,  51 => 27,  46 => 25,  32 => 16,  30 => 8,  22 => 2,  42 => 9,  40 => 8,  35 => 17,  29 => 5,);
+=======
+        return array (  146 => 54,  143 => 53,  137 => 19,  131 => 16,  127 => 15,  123 => 14,  119 => 13,  114 => 11,  110 => 10,  106 => 9,  101 => 8,  94 => 57,  92 => 56,  90 => 53,  82 => 48,  66 => 34,  61 => 32,  57 => 31,  55 => 30,  51 => 29,  46 => 27,  35 => 19,  32 => 18,  30 => 8,  22 => 2,);
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5:app/cache/prod/twig/0a/1c/d802f8bea75b62ef48cab6676e5a.php
     }
 }

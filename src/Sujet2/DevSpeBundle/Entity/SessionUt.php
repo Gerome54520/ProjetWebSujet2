@@ -54,7 +54,7 @@ class SessionUt
      * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Parametre")
      */
     private $parametre;
-    
+
     /**
      * @var Doctrine\Common\Collections\Collection
      * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
@@ -64,7 +64,6 @@ class SessionUt
     public function __construct(){
     	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -140,9 +139,9 @@ class SessionUt
      *
      * @return \DateTime 
      */
-    public function getDateClo()
+    public function getDateClo($format = 'd-m-Y')
     {
-        return $this->dateClo;
+        return $this->dateClo->format($format);
     }
 
     /**
@@ -163,9 +162,9 @@ class SessionUt
      *
      * @return \DateTime
      */
-    public function getDateOuv()
+    public function getDateOuv($format = 'd-m-Y')
     {
-    	return $this->dateOuv;
+    	return $this->dateOuv->format($format);
     }
     
     /**

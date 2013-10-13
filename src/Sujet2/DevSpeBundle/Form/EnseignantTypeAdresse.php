@@ -15,7 +15,11 @@ class EnseignantTypeAdresse extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+<<<<<<< HEAD
             ->add('ensAdresse','text',array('label'=>"Saisir votre adresse :"))
+=======
+            ->add('ensAdresse','text', array ( 'label' => 'Votre nouvelle adresse:'))
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
         ;
     }
     

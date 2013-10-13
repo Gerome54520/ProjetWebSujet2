@@ -5,11 +5,12 @@
 <!--<h5>Choix des paramètres pour la session - Phase 2/5</h5>-->
 <legend>Choix des paramètres pour la session - Phase 2/5</legend> 
 
-
-  <form method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }} </br></br>
-    <input type="submit" class="btn btn-primary" />
-  </form>
+ 
+   <form class="inline" method="post" {{ form_enctype(form) }}>
+     {{ form_widget(form) }} </br></br>
+      <input type="submit" class="btn btn-primary" />
+   </form>
+  
 </div>
 
 {# On charge la bibliothèque jQuery. Ici, je la prends depuis le site jquery.com,

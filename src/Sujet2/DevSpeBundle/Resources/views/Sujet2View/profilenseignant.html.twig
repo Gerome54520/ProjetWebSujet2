@@ -6,6 +6,7 @@
 
 {% block body %} 
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
+<<<<<<< HEAD
 <div class="span12" id="span12interieur">
 			<legend><h2 id="h2title">Profil</h2></legend>
 			<p>
@@ -20,4 +21,19 @@
 				<a href="{{path('sujet2devspe_adresseenseignant')}}" > Modifier l'adresse </a><br>
 				<a href="#"> Modifier le mot de passe </a>
 			</p>
+=======
+<div id="alerte" class="alert alert-error" style="display:none"> <strong>Les deux mots de passe doivent être identiques !</strong> </div>
+{#<div class="span12" id="span12intérieur">#}
+			<legend color="dark"><h2 id="h2title">Profil</h2></legend>
+			<ul>
+			Nom :
+            <li>{{ enseignant.ensNom }}</li>
+			Prénom :
+			<li>{{ enseignant.ensPrenom }}</li>
+			Adresse : 
+			<li>{{ enseignant.ensAdresse }}</li>
+			 </ul>
+			<a href="{{path('sujet2devspe_adresseenseignant')}}" > Modifier l'adresse </a>
+			<a href="#"> Modifier le mot de passe </a>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
 {% endblock %}
