@@ -10,7 +10,7 @@ class SecurityController extends Controller
 {
   public function loginAction()
   {
-    // Si le visiteur est déjà identifié, on le redirige vers l'accueil
+  // Si le visiteur est déjà identifié, on le redirige vers l'accueil
     if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
       return $this->redirect($this->generateUrl('sujet2devspe_homepage'));
     }
@@ -26,12 +26,14 @@ class SecurityController extends Controller
       $session->remove(SecurityContext::AUTHENTICATION_ERROR);
     }
  
-    return $this->render('AcmeSecurityBundle:Security:login.html.twig', array(
+    return $this->render('FOSUserBundle:Security:login.html.twig', array(
       // Valeur du précédent nom d'utilisateur entré par l'internaute
       'last_username' => $session->get(SecurityContext::LAST_USERNAME),
       'error'         => $error,
     ));
   }
+  
+   
 
 
  public function choixAction() {

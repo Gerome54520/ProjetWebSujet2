@@ -26,12 +26,12 @@
 		<li class="brand">Appli voeux de stages</li>
         <li class="active"> <a href="{{ path('sujet2devspe_acceuil') }}" >Accueil</a> </li>
 	
-	   <li><a id="lienconnect" href="{{ path('login')}}"  >
-	   {% if ( app.user is empty ) %}
+	   <li><a id="lienconnect" href="{{ path('fos_user_security_login')}}"  >
+	 {% if ( app.user is empty ) %}
 	   Connexion 
 	   {% else %} 
 	   Deconnexion   
-	   {% endif %}
+	   {% endif %} 
 		</a></li>
 
       </ul>

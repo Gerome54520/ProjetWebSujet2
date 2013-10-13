@@ -1,0 +1,20 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/uploadcsv.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %} Profil {% endblock %}
+
+{% block body %} 
+{% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+
+<h1>Upload File</h1>
+
+<form action="#" method="post" {{ form_enctype(form) }}>
+   Choisir le type de fichier :
+   {{ form_widget(form.type)}} </br>
+   Fichier : {{ form_widget(form.file) }}</br>
+
+    <input type="submit" value="Upload Document" />
+</form>
+
+{% endblock %}

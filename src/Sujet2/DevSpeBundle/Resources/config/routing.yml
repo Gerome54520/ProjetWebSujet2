@@ -35,3 +35,15 @@ sujet2_devspeannullersession:
 sujet2_devspevalidersession:
     path: /Creation/valider
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:validersession }
+sujet2redirect:
+    path: /choix
+    defaults: { _controller: AcmeSecurityBundle:Security:choix }
+sujet2devspe_homepage:
+    path: /
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:index }
+sujet2devspe_visualisersession:
+    path: /visualiser
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:visualisersession }
+sujet2devpspe_uploadcsv:
+   path: /csv
+   defaults: { _controller: Sujet2DevSpeBundle:Moulinette:choixfichier }

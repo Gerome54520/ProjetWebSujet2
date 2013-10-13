@@ -48,9 +48,9 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
 \t
 \t   <li><a id=\"lienconnect\" href=\"";
         // line 29
-        echo $this->env->getExtension('routing')->getPath("login");
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
         echo "\"  >
-\t   ";
+\t ";
         // line 30
         if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
             // line 31
@@ -62,8 +62,9 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
 \t   Deconnexion   
 \t   ";
         }
-        // line 35
-        echo "\t\t</a></li>
+        // line 34
+        echo " 
+\t\t</a></li>
 
       </ul>
     </div>
@@ -158,6 +159,6 @@ class __TwigTemplate_0a1cd802f8bea75b62ef48cab6676e5a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  145 => 54,  142 => 53,  136 => 19,  130 => 16,  126 => 15,  122 => 14,  118 => 13,  113 => 11,  109 => 10,  105 => 9,  100 => 8,  93 => 57,  91 => 56,  89 => 53,  81 => 48,  66 => 35,  61 => 32,  55 => 30,  51 => 29,  35 => 19,  32 => 18,  30 => 8,  22 => 2,  65 => 24,  57 => 31,  52 => 17,  46 => 27,  43 => 11,  37 => 9,  34 => 8,  31 => 6,  28 => 5,);
+        return array (  146 => 54,  143 => 53,  137 => 19,  131 => 16,  127 => 15,  123 => 14,  119 => 13,  114 => 11,  110 => 10,  106 => 9,  101 => 8,  94 => 57,  92 => 56,  90 => 53,  82 => 48,  66 => 34,  61 => 32,  57 => 31,  55 => 30,  46 => 27,  32 => 18,  30 => 8,  22 => 2,  51 => 29,  47 => 12,  42 => 9,  40 => 8,  35 => 19,  29 => 5,);
     }
 }

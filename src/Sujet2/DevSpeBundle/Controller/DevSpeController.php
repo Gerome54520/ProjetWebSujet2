@@ -20,9 +20,26 @@ use Sujet2\DevSpeBundle\Form\EnseignantTypeAdresse;
 use Sujet2\DevSpeBundle\Entity\Enseignant;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Sujet2\DevSpeBundle\Form\SessionUtType1;
+use Sujet2\DevSpeBundle\Entity\Voeux;
 
 class DevSpeController extends Controller
 {
+  public function visualisersessionAction (){
+     $repository = $this->getDoctrine()
+	                    ->getManager()
+                        ->getRepository('Sujet2DevSpeBundle:Voeux');
+						
+     $voeuxs = $repository->findAll();
+
+     return $this->render('Sujet2DevSpeBundle:Sujet2View:visualisersession.html.twig', array ('voeuxs' => $voeuxs )); 
+ 
+ }
+     
+  
+  
+  public function indexAction(){
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig' );
+  }
 
   public function profilensAction(){
     $repository = $this->getDoctrine()
@@ -222,7 +239,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' 
         $em = $this->getDoctrine()->getManager();
         $em->persist($enseignant);
         $em->flush();
-		//$_SESSION['id'] = $session->getID();
+		
 	return $this->redirect($this->generateUrl('sujet2devspe_acceuilenseignant', 301));
 	 }
 	 
@@ -246,6 +263,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' 
 	return $this->redirect($this->generateUrl('sujet2devspe_acceuilgestionnaire', 301));
     
 }
+
 }
 
 ?>
