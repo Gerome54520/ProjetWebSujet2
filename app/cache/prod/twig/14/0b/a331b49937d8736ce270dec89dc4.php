@@ -48,6 +48,10 @@ class __TwigTemplate_140ba331b49937d8736ce270dec89dc4 extends Twig_Template
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
+        return array (  31 => 7,  26 => 5,  21 => 2,  28 => 9,  19 => 1,  45 => 12,  42 => 11,  39 => 17,  36 => 9,  29 => 5,);
+=======
         return array (  31 => 7,  26 => 5,  21 => 2,  19 => 1,);
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
     }
 }

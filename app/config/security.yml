@@ -23,7 +23,11 @@ security:
             anonymous: true
             logout:
                 path:       fos_user_security_logout
+<<<<<<< HEAD
+                target:     /login
+=======
                 target:     /acceuil
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }

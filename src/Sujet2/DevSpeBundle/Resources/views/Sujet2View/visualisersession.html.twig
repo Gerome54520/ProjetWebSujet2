@@ -1,0 +1,18 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/visualisersession.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %} Profil {% endblock %}
+
+{% block body %} 
+{% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+
+{% for voeux in voeuxs %}
+      {{ voeux.enseignant.ensNom  }} :           <br>
+	    {% for lot in voeux.lots %}
+		  Dans l'entreprise {{ lot.entreprise.entRs }} auprès de {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}         </br>
+	    {% endfor %}
+{% endfor %}
+
+
+{% endblock %}

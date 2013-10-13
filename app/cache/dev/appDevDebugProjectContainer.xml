@@ -37,9 +37,19 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">3306</parameter>
+<<<<<<< HEAD
     <parameter key="database_name">test</parameter>
     <parameter key="database_user">admin</parameter>
     <parameter key="database_password">null</parameter>
+=======
+    <parameter key="database_name">freche1u_devspe2</parameter>
+    <parameter key="database_user">freche1u_appli</parameter>
+<<<<<<< HEAD
+    <parameter key="database_password">devspe</parameter>
+=======
+    <parameter key="database_password">31006883</parameter>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
+>>>>>>> ecbf82b6602c38f49653161d2be31fe967518577
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -1704,7 +1714,11 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
+            <argument>525ac2a522551</argument>
+=======
             <argument>5258156166ff3</argument>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
           </service>
         </argument>
       </argument>
@@ -1902,7 +1916,11 @@
                     <argument type="service" id="router" on-invalid="null"/>
                   </service>
                 </argument>
+<<<<<<< HEAD
+                <argument>/login</argument>
+=======
                 <argument>/acceuil</argument>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
               </service>
             </argument>
             <argument type="collection">
@@ -1985,7 +2003,11 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
+<<<<<<< HEAD
+            <argument>525ac2a522551</argument>
+=======
             <argument>5258156166ff3</argument>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2386,8 +2408,17 @@
         <argument key="dbname">test</argument>
         <argument key="host">localhost</argument>
         <argument key="port">3306</argument>
+<<<<<<< HEAD
         <argument key="user">admin</argument>
         <argument key="password">null</argument>
+=======
+        <argument key="user">freche1u_appli</argument>
+<<<<<<< HEAD
+        <argument key="password">devspe</argument>
+=======
+        <argument key="password">31006883</argument>
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
+>>>>>>> ecbf82b6602c38f49653161d2be31fe967518577
         <argument key="charset">null</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>

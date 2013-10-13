@@ -108,6 +108,19 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::indexAction',  '_route' => 'sujet2devspe_homepage',);
         }
 
+<<<<<<< HEAD
+        // sujet2devspe_visualisersession
+        if ($pathinfo === '/visualiser') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::visualisersessionAction',  '_route' => 'sujet2devspe_visualisersession',);
+        }
+
+        // sujet2devpspe_uploadcsv
+        if ($pathinfo === '/csv') {
+            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\MoulinetteController::choixfichierAction',  '_route' => 'sujet2devpspe_uploadcsv',);
+        }
+
+=======
+>>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login

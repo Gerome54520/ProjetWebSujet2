@@ -18,22 +18,32 @@ use Sujet2\DevSpeBundle\Entity\Quota;
 use Sujet2\DevSpeBundle\Form\EnseignantType;
 use Sujet2\DevSpeBundle\Form\EnseignantTypeAdresse;
 use Sujet2\DevSpeBundle\Entity\Enseignant;
-<<<<<<< HEAD
 use Sujet2\DevSpeBundle\Form\VoeuxType;
 use Sujet2\DevSpeBundle\Entity\Voeux;
-=======
 use Symfony\Component\HttpFoundation\Session\Session;
 use Sujet2\DevSpeBundle\Form\SessionUtType1;
->>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
+
 
 class DevSpeController extends Controller
 {
+
+  public function visualisersessionAction (){
+     $repository = $this->getDoctrine()
+	                    ->getManager()
+                        ->getRepository('Sujet2DevSpeBundle:Voeux');
+						
+     $voeuxs = $repository->findAll();
+
+     return $this->render('Sujet2DevSpeBundle:Sujet2View:visualisersession.html.twig', array ('voeuxs' => $voeuxs )); 
  
+ }
+     
+
   public function indexAction(){
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig' );
   }
 
-<<<<<<< HEAD
+
   public function profilensAction()
   {
 	$repository = $this->getDoctrine()
@@ -58,30 +68,6 @@ class DevSpeController extends Controller
   
   public function accueilAction()
   {
-=======
-  public function profilensAction(){
-    $repository = $this->getDoctrine()
-                   ->getManager()
-                   ->getRepository('Sujet2DevSpeBundle:Enseignant');
-				   
-    $enseignant = $repository->find(1);
-// $article est une instance de Article
-
-return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' ,  array( 'enseignant' => $enseignant ));
-  }
-  
-  public function accueilensAction(){
-   
-    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilenseignant.html.twig');
-  }
-  
-  public function accueilgesAction(){
-    return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilgestionnaire.html.twig');
-  }
-  
-  public function accueilAction(){
-	
->>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuil.html.twig');
   }
   
@@ -258,7 +244,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' 
         $em = $this->getDoctrine()->getManager();
         $em->persist($enseignant);
         $em->flush();
-		//$_SESSION['id'] = $session->getID();
+		
 	return $this->redirect($this->generateUrl('sujet2devspe_acceuilenseignant', 301));
 	 }
 	 
@@ -358,6 +344,7 @@ return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' 
  
  }
   
+
 }
 
 ?>
