@@ -29,10 +29,10 @@ body {
 }
 
 #span12interieur {
-	background-color: rgb(0,0,0);
+	background-color: rgb(202,196,255);
 	margin: 0px;
 	margin-bottom: 0px;
-	margin-top: 50px;
+	margin-top: -5px;
 }
 
 #spanfondblue {
@@ -50,10 +50,6 @@ body {
 
 #well{
 	background-color: rgb(202,196,255);
-}
-
-#navbar {
-	margin-bottom: 0px;
 }
 
 ul {
@@ -74,6 +70,18 @@ h1 {
 #h2title {
 	text-align: center;
 	color: rgb(0,69,117);
+}
+
+form {
+	margin: 10px;
+}
+
+legend {
+	padding: -20px;
+}
+
+#brandsousmenu{
+	margin: -10px;
 }
 
 .row-fluid {

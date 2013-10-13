@@ -10,13 +10,23 @@ sujet2devspe_phase1:
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase1 }
 sujet2devspe_phase3:
     path: /Creation/phase3
-    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase3 }	
 sujet2devspe_acceuilenseignant:
     path: /acceuilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilens }
-sujet2devspe_acceuilgestionnaire:
-    path: /acceuilges
-    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }
 sujet2devspe_profilenseignant:
     path: /profilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:profilens }
+sujet2devspe_adresseenseignant:
+    path: /profiladr
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:adresse_enseignant }
+sujet2devspe_voeuxenseignant:
+    path: /voeuxens
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:voeux_enseignant }
+sujet2devspe_etatvoeuxenseignant:
+    path: /etatvoeux
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:etatvoeux }
+sujet2devspe_acceuilgestionnaire:
+    path: /acceuilges
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:accueilges }
+
