@@ -5,11 +5,11 @@
 {% block title %} Profil {% endblock %}
 
 {% block body %} 
+{% if is_granted('ROLE_ADMIN') %}
+{% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+{% else %}
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7b160890c23327ebb462a8a50dbf4f283bf22bb5
+{% endif %}
 <div class="span12" id="span12interieur">
 			<legend><h2 id="h2title">Profil</h2></legend>
 			<p>
@@ -17,30 +17,16 @@
 				Nom : 
 				{{ enseignant.ensNom }} <br>
 				Prénom : 
-				{{ enseignant.ensPrenom }} <br>
-				Adresse : 
+				{{ enseignant.ensPrenom }} <br>				             
+				
+				{% if is_granted('ROLE_ADMIN') %}
+				{% else %}
+				 Adresse : 
 				{{ enseignant.ensAdresse }} <br><br>
-
 				<a href="{{path('sujet2devspe_adresseenseignant')}}" > Modifier l'adresse </a><br>
-				<a href="#"> Modifier le mot de passe </a>
+                {% endif %}
+				<br>
+				<a href="{{ path ('fos_user_change_password') }}"> Modifier le mot de passe </a>
 			</p>
-<<<<<<< HEAD
-
-=======
-=======
-<div id="alerte" class="alert alert-error" style="display:none"> <strong>Les deux mots de passe doivent être identiques !</strong> </div>
-{#<div class="span12" id="span12intérieur">#}
-			<legend color="dark"><h2 id="h2title">Profil</h2></legend>
-			<ul>
-			Nom :
-            <li>{{ enseignant.ensNom }}</li>
-			Prénom :
-			<li>{{ enseignant.ensPrenom }}</li>
-			Adresse : 
-			<li>{{ enseignant.ensAdresse }}</li>
-			 </ul>
-			<a href="{{path('sujet2devspe_adresseenseignant')}}" > Modifier l'adresse </a>
-			<a href="#"> Modifier le mot de passe </a>
->>>>>>> 39153aa81a69b5cfddb33c90bc1dc53cc81bf1c5
->>>>>>> 7b160890c23327ebb462a8a50dbf4f283bf22bb5
+			
 {% endblock %}

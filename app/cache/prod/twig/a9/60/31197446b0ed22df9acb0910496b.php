@@ -45,7 +45,10 @@ class __TwigTemplate_a96031197446b0ed22df9acb0910496b extends Twig_Template
         // line 18
         echo $this->env->getExtension('routing')->getPath("sujet2devpspe_uploadcsv");
         echo "\">Importer CSV</a> </li>
-\t\t\t\t<li> <a href=\"#\">Profil</a> </li>
+\t\t\t\t<li> <a href=\"";
+        // line 19
+        echo $this->env->getExtension('routing')->getPath("sujet2devspe_profilgestionnaire");
+        echo "\">Profil</a> </li>
 \t\t\t  </ul>
 \t\t\t</div>
 \t\t  </div>
@@ -65,6 +68,6 @@ class __TwigTemplate_a96031197446b0ed22df9acb0910496b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  46 => 18,  39 => 14,  34 => 12,  28 => 9,  19 => 2,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
+        return array (  50 => 19,  46 => 18,  39 => 14,  34 => 12,  28 => 9,  19 => 2,  85 => 29,  82 => 28,  77 => 26,  73 => 25,  70 => 24,  67 => 23,  65 => 22,  60 => 20,  55 => 18,  48 => 13,  45 => 11,  42 => 9,  40 => 8,  35 => 7,  29 => 5,);
     }
 }

@@ -56,6 +56,17 @@ class DevSpeController extends Controller
 	return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' ,  array( 'enseignant' => $enseignant ));
   }
   
+  public function profilgesAction()
+  {
+	$repository = $this->getDoctrine()
+				   ->getManager()
+				   ->getRepository('Sujet2DevSpeBundle:Enseignant');
+
+	$enseignant = $repository->find(1);
+	// $article est une instance de Article
+
+	return $this->render('Sujet2DevSpeBundle:Sujet2View:profilenseignant.html.twig' ,  array( 'enseignant' => $enseignant ));
+  }
   public function accueilensAction()
   {
     return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilenseignant.html.twig');
@@ -116,6 +127,8 @@ class DevSpeController extends Controller
 	 	 
   public function phase3Action()
   {
+    $em = $this->getDoctrine()->getManager();
+    $subForm = new sfForm();
     $j = 0;
     $i = 0;
      $repository = $this->getDoctrine()
@@ -124,17 +137,24 @@ class DevSpeController extends Controller
  
      $listeEnseignants = $repository->findAll();
 	 
-	 foreach ( $listeEnseignants as $enseignant ) {
+	 
+	 $builder
+            ->add('nbSuivi', 'integer')
+	 
+	 
+ foreach ( $listeEnseignants as $enseignant ) {
 	     //On cree l'objet Quota
 	     $quota = new Quota();
 		 $quota->setEnseignant($enseignant);
-		 $listequota[$i] = $quota;
-	     $form = $this->createForm(new QuotaType, $quota );
-		 $sform[$i] = $form->createView();
+		 
+		 //$listequota[$i] = $quota;
+	    
+		$form = $this->createForm(new QuotaType, $quota );
+		 $subForm->embedForm($i , $form );
+		// $sform[$i] = $form->createView();
 		 $i = $i + 1;
 	}
-	 $fo = new Quota();
-	 $f = $this->createForm(new QuotaType, $fo);
+	
 	 
 	 //On recupe la requete
 	 $request = $this->get('request');
@@ -145,15 +165,14 @@ class DevSpeController extends Controller
 	     // On fait le lien Requête <-> Formulaire
       //À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
 	// foreach ( $listequota as $quota ) { 
-      $form->bind($request);
-	    $em = $this->getDoctrine()->getManager();
+        $form->bind($request); 
         $em->persist($quota);
         $em->flush();
 	   
-	  
+	  */
 	   return $this->redirect($this->generateUrl('sujet2devspe_phase4',301));
 	   }
-	return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array( 'form' => $sform, 'listeEnseignants' => $listeEnseignants, 'i' => $j ,'fo' => $f->createView()));
+	return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array(/* 'form' => $sform*/ 'subform' => $subForm , 'listeEnseignants' => $listeEnseignants, 'i' => $j ));
    }
   
   public function phase2Action()
@@ -202,7 +221,7 @@ class DevSpeController extends Controller
       // On fait le lien Requête <-> Formulaire
       // À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
 	  
-      $form->bind($request);
+       $form->bind($request);
        $session->setSesActif(false);
            
         // On l'enregistre notre objet $session dans la base de données
@@ -215,7 +234,7 @@ class DevSpeController extends Controller
 	return $this->redirect($this->generateUrl('sujet2devspe_phase2', 301));
 	
 	 }
-    return $this->render('Sujet2DevSpeBundle:Sujet2View:phase1.html.twig', array( 'form' => $form->createView() ));
+    return $this->render('Sujet2DevSpeBundle:Sujet2View:phase1.html.twig', array( 'form' => $form->createView() , 'session' => $session));
   
   }
   

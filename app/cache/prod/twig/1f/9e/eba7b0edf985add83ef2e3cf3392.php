@@ -69,6 +69,10 @@ class __TwigTemplate_1f9eeba7b0edf985add83ef2e3cf3392 extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
 </form>
+<a href=\"";
+        // line 24
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "\">S'inscrire</a>
 ";
     }
 
@@ -84,6 +88,6 @@ class __TwigTemplate_1f9eeba7b0edf985add83ef2e3cf3392 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 22,  63 => 19,  57 => 16,  52 => 14,  48 => 13,  42 => 10,  39 => 9,  33 => 7,  31 => 6,  28 => 5,);
+        return array (  74 => 24,  69 => 22,  63 => 19,  57 => 16,  52 => 14,  48 => 13,  42 => 10,  39 => 9,  33 => 7,  31 => 6,  28 => 5,);
     }
 }

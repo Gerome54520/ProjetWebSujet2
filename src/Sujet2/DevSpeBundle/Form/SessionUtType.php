@@ -21,8 +21,8 @@ class SessionUtType extends AbstractType
             ->add('dateClo', 'date', array(
                                                 'widget' => 'single_text',
                                                 'input' => 'datetime',
-                                                'format' => 'dd/MM/yyyy',
-        ));
+                                                'format' => 'dd-MM-yy',
+												'attr' => array('class' => 'date')));
     }
     
     /**

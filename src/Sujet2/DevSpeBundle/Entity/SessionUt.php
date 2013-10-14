@@ -139,9 +139,9 @@ class SessionUt
      *
      * @return \DateTime 
      */
-    public function getDateClo($format = 'd-m-Y')
+    public function getDateClo()
     {
-        return $this->dateClo->format($format);
+        return $this->dateClo;
     }
 
     /**
@@ -162,9 +162,9 @@ class SessionUt
      *
      * @return \DateTime
      */
-    public function getDateOuv($format = 'd-m-Y')
+    public function getDateOuv()
     {
-    	return $this->dateOuv->format($format);
+    	return $this->dateOuv;
     }
     
     /**

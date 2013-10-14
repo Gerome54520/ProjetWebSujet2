@@ -37,7 +37,8 @@ class SecurityController extends Controller
 
 
  public function choixAction() {
-
+    // $sessionn = new Session();
+	// $session->set('iduser', 
      if ($this->get('security.context')->isGranted('ROLE_ADMIN'))
 	   return $this->render('Sujet2DevSpeBundle:Sujet2View:acceuilgestionnaire.html.twig');
 	 else

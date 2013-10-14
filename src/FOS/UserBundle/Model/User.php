@@ -55,7 +55,14 @@ abstract class User implements UserInterface, GroupableInterface
      * @var string
      */
     protected $salt;
-
+	
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enseignant", type="integer")
+     */
+    protected $enseignant;
+	
     /**
      * Encrypted password. Must be persisted.
      *
@@ -121,6 +128,7 @@ abstract class User implements UserInterface, GroupableInterface
      * @var \DateTime
      */
     protected $credentialsExpireAt;
+    
 
     public function __construct()
     {
@@ -220,7 +228,8 @@ abstract class User implements UserInterface, GroupableInterface
     {
         return $this->usernameCanonical;
     }
-
+	
+	
     public function getSalt()
     {
         return $this->salt;

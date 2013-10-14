@@ -2,9 +2,10 @@
 
 Acme\SecurityBundle\Entity\User:
     type:  entity
-    table: fos_user
+    table: fos_users
     id:
         id:
             type: integer
             generator:
                 strategy: AUTO
+    

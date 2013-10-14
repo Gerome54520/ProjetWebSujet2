@@ -1,63 +1,65 @@
 <?php
-// src/Acme/SecurityBundle/Entity/User.php
- 
+
 namespace Acme\SecurityBundle\Entity;
-use FOS\UserBundle\Model\User as BaseUser; 
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Entity\User as BaseUser;
 
-use Doctrine\DBAL\Types\BooleanType;
- 
 /**
- * @ORM\Entity
+ * User
+ * @ InheritanceType ("reuni")
  * @ORM\Table(name="sdz_user")
+ * @ORM\Entity(repositoryClass="Acme\SecurityBundle\Entity\UserRepository")
  */
 class User extends BaseUser
 {
-  /**
-   * @ORM\Id
-   * @ORM\Column(type="integer")
-   * @ORM\GeneratedValue(strategy="AUTO")
-   */
-  protected $id;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 
-  /**
-   * @var object
-   * @ORM\OneToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Enseignant", cascade={"persist"})
-   */
-  private $enseignant;
-  
-  /**
-   * @var boolean
-   */  
-  private $admin;
-  
-  /**
-   * Set enseignant
-   * @param \Sujet2\DevSpeBundle\Entity\Enseignant $enseignant
-   */
-  public function setEnseignant(\Sujet2\DevSpeBundle\Entity\Enseignant $enseignant){
-  	$this->enseignant=$enseignant;
-  }
-  
-  /**
-   * @return Sujet2\DevSpeBundle\Entity\Enseignant
-   */
-  public function getEnseignant(){
-  	return $this->enseignant;
-  }
-  /**
-   * @param boolean $admin
-   */
-  public function setAdmin($admin)  {
-  	$this->admin = $admin;
-  }
-  
-  /**
-   * @return boolean
-   */
-  public function getAdmin(){
-  	return $this->admin;
-  }
-  
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="enseignant", type="integer")
+     */
+    protected $enseignant;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set enseignant
+     *
+     * @param integer $enseignant
+     * @return User
+     */
+    public function setEnseignant($enseignant)
+    {
+        $this->enseignant = $enseignant;
+    
+        return $this;
+    }
+
+    /**
+     * Get enseignant
+     *
+     * @return integer 
+     */
+    public function getEnseignant()
+    {
+        return $this->enseignant;
+    }
 }
