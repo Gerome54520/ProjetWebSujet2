@@ -6,6 +6,7 @@ sujet2_dev_spe:
     prefix:
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+<<<<<<< HEAD
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /profile
@@ -15,6 +16,21 @@ fos_user_register:
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /resetting
+=======
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+ 
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+ 
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+ 
+>>>>>>> ed7d05e5e2418add799a6a4bb8d348e4a4706a99
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile

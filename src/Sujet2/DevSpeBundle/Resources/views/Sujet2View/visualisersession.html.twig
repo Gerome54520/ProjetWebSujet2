@@ -7,6 +7,7 @@
 {% block body %} 
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
 
+<<<<<<< HEAD
 <div class="span12" id="span12interieur">
 	<legend><h2 id="h2title">Etat de la session</h2></legend>
 	<p>
@@ -22,5 +23,14 @@
 				<br><legend></legend>
 		{% endfor %}
 	</p>
+=======
+{% for voeux in voeuxs %}
+      {{ voeux.enseignant.ensNom  }} :           <br>
+	    {% for lot in voeux.lots %}
+		  Dans l'entreprise {{ lot.entreprise.entRs }} auprès de {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}         </br>
+	    {% endfor %}
+{% endfor %}
+
+>>>>>>> ed7d05e5e2418add799a6a4bb8d348e4a4706a99
 
 {% endblock %}
