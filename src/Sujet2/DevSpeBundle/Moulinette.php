@@ -73,7 +73,11 @@ class CsvController extends Controller {
 			
 			// Récupération de tous les lots se situant dans la même entreprise
 			$repo = $this->getDoctrine ()->getRepository ( 'Sujet2\DevSpeBundle\Sujet2DevSpeBundle:Lot' );
+<<<<<<< HEAD
+			$query = $repo->createQueryBuilder ( 'l' )->where ( 'l.id = :entreprise' )->setParameter ( 'entreprise', $tab [3] )->getQuery ();
+=======
 			$query = $repo->createQueryBuilder ( 'l' )->where ( 'l.entreprise = :entreprise' )->setParameter ( 'entreprise', $tab [3] )->getQuery ();
+>>>>>>> 1044f5c55a9e9ccbbb9e2b616ae8eebea2513595
 			
 			$lots = $query->getResult ();
 			

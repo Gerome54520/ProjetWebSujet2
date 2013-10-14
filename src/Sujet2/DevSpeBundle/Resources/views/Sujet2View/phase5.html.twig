@@ -1,0 +1,67 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/phase5.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}{{ parent() }} - Phase5{% endblock %}
+
+
+ 
+{% block body %}
+    {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+	<div class="span12" id="span12interieur">
+	 <legend><h2 id="h2title">Recapitulatif - Phase 5/5</h2></legend>
+	      
+			 <h2 id="h2subtitle"> Session </h2>
+				<p>
+				  Nom de la session : {{ session.sesLibelle }} </br>
+				  Date d'ouverture : {{ session.dateOuv }}</br>
+				  Date de fermeture : {{ session.dateClo }}</br>
+				</p>  
+			 
+			  <h2 id="h2subtitle"> Parametre </h2>
+				<p>
+				  Kilometre maximun : {{ parametre.distMax }}</br>
+				  Tolerance : {{ parametre.tolerance }}</br>
+				</p>
+			  
+			  <h2 id="h2subtitle">Liste des contraintes associé a la session </h2>
+				<p>
+				  {% for contrainte in contraintes %}
+					 Contraite : {{ contrainte.pts }}
+				   {% endfor %}
+					{% for contrainte in contraintes %}
+						{% set i = i +1 %}
+							{% if  contrainte.typePts.id == 1  %}
+									<h4> Contrainte de suivi n° {{i}}</h4>
+										 Nombre de points : {{ contrainte.pts }}
+										 
+							{% endif %}
+					{% endfor %}		
+						{% set i = 0 %}
+						
+					{% for contrainte in contraintes %}
+						{ set i = i + 1 %}
+							{% if contrainte.typePts.id == 2  %}
+									<h4> Contraite de temps n° {{i}}</h4>
+										 Nombre de points : {{ contrainte.pts }}
+							{% endif %}
+					{% endfor %}
+				</p>
+					
+				<h2 id="h2subtitle"> Liste des lots associe à la session </h2>
+					<p>
+					 {% for lot in lots %}
+						 Entreprise : {{ lot.entreprise.entRs }}</br>
+						 Tuteur : {{ lot.tutNom }} {{ lot.tutPrenom }}</br>
+					 {% endfor %}
+					</p>
+	 
+						<form method="link" action="{{path('sujet2_devspeannullersession')}}"> 
+								<input type="submit" value="Annuler">
+						</form>
+
+						<form method="link" action="{{path('sujet2_devspevalidersession')}}"> 
+								<input type="submit" value="Valider">
+						</form>
+		   
+{% endblock %}

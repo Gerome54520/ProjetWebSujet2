@@ -6,27 +6,18 @@
 
 {% block body %} 
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
-<div id="alerte" class="alert alert-error" style="display:none"> <strong>Les deux mots de passe doivent être identiques !</strong> </div>
-{#<div class="span12" id="span12intérieur">#}
-			<legend color="dark"><h2 id="h2title">Profil</h2></legend>
-			<ul>
-            {% for e in enseignant %}
-			Nom :</br>
-            <li>{{ e.ensNom }}</li>
-			Prénom :</br>
-			<li>{{ e.ensPrenom }}</li>
-            {% endfor %}
-            </ul>
-			Adresse :</br>{{ form_widget(form.ensAdresse) }} </br>
-			Mot de passe :</br>
-			<input id="mdp1" type="text"></br>
-			Confirmer mot de passe : </br>
-			<input id="mdp2" type="text"></br>
-			<input type="submit" class="btn btn-primary" value="Valider" />
-			 {#
-			 {% if ( mdp1 == mdp2 ) %}
-	         form.ensMdp=mdp1
-	         {% endif %}
-			 #}
-			 
+<div class="span12" id="span12interieur">
+			<legend><h2 id="h2title">Profil</h2></legend>
+			<p>
+
+				Nom : 
+				{{ enseignant.ensNom }} <br>
+				Prénom : 
+				{{ enseignant.ensPrenom }} <br>
+				Adresse : 
+				{{ enseignant.ensAdresse }} <br><br>
+
+				<a href="{{path('sujet2devspe_adresseenseignant')}}" > Modifier l'adresse </a><br>
+				<a href="#"> Modifier le mot de passe </a>
+			</p>
 {% endblock %}

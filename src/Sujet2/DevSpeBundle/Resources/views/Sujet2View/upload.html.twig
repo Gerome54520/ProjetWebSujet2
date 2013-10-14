@@ -1,0 +1,20 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/uploadcsv.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %} Profil {% endblock %}
+
+{% block body %} 
+{% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+
+<div class="span12" id="span12interieur">
+<legend><h2 id="h2title">Importation d'une table</h2></legend>
+	<form action="#" method="post" {{ form_enctype(form) }}>
+	   <br>Choisir le type de fichier :
+	   {{ form_widget(form.type)}} </br></br>
+	   Fichier : {{ form_widget(form.file) }}</br></br></br>
+
+		<input type="submit" value="Upload Document" />
+	</form>
+	</br>
+{% endblock %}

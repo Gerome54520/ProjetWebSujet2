@@ -54,7 +54,7 @@ class SessionUt
      * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Parametre")
      */
     private $parametre;
-    
+
     /**
      * @var Doctrine\Common\Collections\Collection
      * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
@@ -64,7 +64,6 @@ class SessionUt
     public function __construct(){
     	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Get id

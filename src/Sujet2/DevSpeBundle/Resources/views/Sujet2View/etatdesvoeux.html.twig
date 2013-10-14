@@ -1,0 +1,22 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/etatdesvoeux.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}{{ parent() }} - Etat des voeux{% endblock %}
+
+
+ 
+{% block body %}
+    {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
+	<div class="span12" id="span12interieur">
+	<legend><h2 id="h2title">Etat des voeux</h2></legend>
+	<p>
+	{% for lot in voeux.lots %}
+		Entreprise : {{ lot.entreprise.entRs }} <br>
+		Adresse : {{ lot.entreprise.entAdr }}, {{ lot.entreprise.entCp }} {{ lot.entreprise.entVille }} {{ lot.entreprise.entPays }}<br>
+		T&eacutel&eacutephone : {{ lot.entreprise.entTel }} <br>
+		Tuteur : {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}         </br></br>
+		<legend></legend>
+    {% endfor %}
+	</p>
+{% endblock %}

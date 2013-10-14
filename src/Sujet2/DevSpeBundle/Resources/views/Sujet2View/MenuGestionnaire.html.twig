@@ -2,20 +2,20 @@
 
 
 	
-		<nav class="navbar navbar-inverse" id="navbar">
+		<nav class="navbar navbar-inverse" id="navsousmenu">
 		  <div class="navbar-inner">
 			<div class="container">
 			  <ul class="nav">
-				<li class="brand"><a class="dropdown-toogle" data-toggle="dropdown" href="{{ path ('sujet2devspe_acceuilgestionnaire') }}" >Gestionnaire</a></li>
+				<li class="brand" id="brandsousmenu"><a class="dropdown-toogle" data-toggle="dropdown" href="{{ path ('sujet2devspe_acceuilgestionnaire') }}" >Gestionnaire</a></li>
 				<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Session <b class="caret"></b> </a>
 				  <ul class="dropdown-menu">
 					<li><a href="{{path('sujet2devspe_phase1')}}">Créer</a></li>
 					<li class="divider"></li>
-					<li><a href="#">Visualiser</a></li>
+					<li><a href="{{ path('sujet2devspe_visualisersession') }}">Visualiser</a></li>
 				  </ul>
 				</li>
 				<li> <a href="#">Validation des voeux</a> </li>
-				<li> <a href="#">Importer CSV</a> </li>
+				<li> <a href="{{ path('sujet2devpspe_uploadcsv') }}">Importer CSV</a> </li>
 				<li> <a href="#">Profil</a> </li>
 			  </ul>
 			</div>

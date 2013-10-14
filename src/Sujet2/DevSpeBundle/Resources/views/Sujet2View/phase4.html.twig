@@ -1,0 +1,15 @@
+{# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/phase4.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}{{ parent() }} - Phase4{% endblock %}
+
+
+ 
+{% block body %}
+    {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
+	<div class="span12" id="span12interieur">
+	<legend><h2 id="h2title">Choix des lots de la session - Phase 4/5</h2></legend>
+	<p><b>Sélectionnez les lots qui font parties de la session : </b></p>
+    {% include "Sujet2DevSpeBundle:Sujet2View:formulaire_phase4.html.twig" %}
+{% endblock %}

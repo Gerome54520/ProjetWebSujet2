@@ -1,13 +1,15 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase3.html.twig #}
 
 
- <div class="well">
+<form method="post" {{ form_enctype(fo) }}>
+	  <ul>
+	  {% for enseignant in listeEnseignants %}
+		<li>{{ enseignant.ensNom }}  {{ enseignant.ensPrenom }} </li>  	
+			  {{ form_widget(form[i].nbSuivi) }} </br></br>
+	  {% set i = i + 1 %}
+	  <legend></legend>
+	  {% endfor %}
+	</ul>
+	<input type="submit" class="btn btn-primary" />
+</form>
 
-<legend>Choix des quotas - Phase 3/5</legend> 
-
-
-  <form method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }} </br></br>
-    <input type="submit" class="btn btn-primary" />
-  </form>
-</div>

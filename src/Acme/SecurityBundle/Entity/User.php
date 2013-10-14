@@ -2,9 +2,10 @@
 // src/Acme/SecurityBundle/Entity/User.php
  
 namespace Acme\SecurityBundle\Entity;
- 
-use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser; 
+
 use Doctrine\ORM\Mapping as ORM;
+
 use Doctrine\DBAL\Types\BooleanType;
  
 /**
@@ -19,8 +20,7 @@ class User extends BaseUser
    * @ORM\GeneratedValue(strategy="AUTO")
    */
   protected $id;
-  
-  
+
   /**
    * @var object
    * @ORM\OneToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Enseignant", cascade={"persist"})
@@ -60,5 +60,4 @@ class User extends BaseUser
   	return $this->admin;
   }
   
-
 }
