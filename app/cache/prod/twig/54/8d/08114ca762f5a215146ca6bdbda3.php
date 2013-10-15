@@ -18,46 +18,42 @@ class __TwigTemplate_548d08114ca762f5a215146ca6bdbda3 extends Twig_Template
         // line 2
         echo "
 
- <div class=\"well\">
-
-<legend>Choix des quotas - Phase 3/5</legend> 
 <form method=\"post\" ";
-        // line 7
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["fo"]) ? $context["fo"] : $this->getContext($context, "fo")), 'enctype');
+        // line 4
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo ">
-  <ul>
-  ";
-        // line 9
+\t  <ul>
+\t  ";
+        // line 6
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listeEnseignants"]) ? $context["listeEnseignants"] : $this->getContext($context, "listeEnseignants")));
         foreach ($context['_seq'] as $context["_key"] => $context["enseignant"]) {
-            // line 10
-            echo "    <li>";
+            // line 7
+            echo "\t\t<li>";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["enseignant"]) ? $context["enseignant"] : $this->getContext($context, "enseignant")), "ensNom"), "html", null, true);
             echo "  ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["enseignant"]) ? $context["enseignant"] : $this->getContext($context, "enseignant")), "ensPrenom"), "html", null, true);
             echo " </li>  \t
-          ";
-            // line 11
-            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")), array(), "array"), 'widget');
+\t\t\t  ";
+            // line 8
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")), array(), "array"), "nbSuivi"), 'widget');
             echo " </br></br>
-  ";
-            // line 12
+\t  ";
+            // line 9
             $context["i"] = ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) + 1);
-            // line 13
-            echo "  ";
+            // line 10
+            echo "\t  <legend></legend>
+\t  ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['enseignant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
-        echo "</ul>
-<input type=\"submit\" class=\"btn btn-primary\" />
+        // line 12
+        echo "\t  </ul>
+\t<input type=\"submit\" class=\"btn btn-primary\" />
 </form>
 
 
-  
-</div>
 ";
     }
 
@@ -73,6 +69,6 @@ class __TwigTemplate_548d08114ca762f5a215146ca6bdbda3 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  54 => 14,  48 => 13,  46 => 12,  35 => 10,  31 => 9,  26 => 7,  19 => 2,  45 => 12,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
+        return array (  52 => 12,  45 => 10,  43 => 9,  39 => 8,  32 => 7,  28 => 6,  23 => 4,  19 => 2,);
     }
 }

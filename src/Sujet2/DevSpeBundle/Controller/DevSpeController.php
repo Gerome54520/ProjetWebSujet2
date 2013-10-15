@@ -127,8 +127,8 @@ class DevSpeController extends Controller
 	 	 
   public function phase3Action()
   {
-    $em = $this->getDoctrine()->getManager();
-    $subForm = new sfForm();
+    /*$em = $this->getDoctrine()->getManager();
+    //$subForm = new sfForm();
     $j = 0;
     $i = 0;
      $repository = $this->getDoctrine()
@@ -136,26 +136,32 @@ class DevSpeController extends Controller
                    ->getRepository('Sujet2DevSpeBundle:Enseignant');
  
      $listeEnseignants = $repository->findAll();
-	 
-	 
-	 $builder
-            ->add('nbSuivi', 'integer')
-	 
-	 
- foreach ( $listeEnseignants as $enseignant ) {
-	     //On cree l'objet Quota
-	     $quota = new Quota();
-		 $quota->setEnseignant($enseignant);
-		 
-		 //$listequota[$i] = $quota;
-	    
-		$form = $this->createForm(new QuotaType, $quota );
-		 $subForm->embedForm($i , $form );
-		// $sform[$i] = $form->createView();
-		 $i = $i + 1;
-	}
 	
 	 
+	 
+    foreach ( $listeEnseignants as $enseignant ) {
+	     //On cree l'objet Quota
+	     $quota = new Quota();
+		 $quota->setEnseignant($enseignant); 
+		 
+		 $listequota[$i] = $quota;
+		 
+		 $form = $this->createForm(new QuotaType, $quota );
+		// $subForm->embedForm($i , $form );
+		$sform[$i] = $form->createView();
+		 $i = $i + 1;
+	}
+	*/
+	 $groupform = new GroupForm();
+	 
+	 $repository = $this->getDoctrine()
+                   ->getManager()
+                   ->getRepository('Sujet2DevSpeBundle:Enseignant');
+ 
+     $listeEnseignants = $repository->findAll();
+	 
+	 $form = $this->createForm(new GroupFormType, $groupform );
+     
 	 //On recupe la requete
 	 $request = $this->get('request');
 	 
@@ -166,13 +172,13 @@ class DevSpeController extends Controller
       //À partir de maintenant, la variable $Session contient les valeurs entrées dans le formulaire par le visiteur
 	// foreach ( $listequota as $quota ) { 
         $form->bind($request); 
-        $em->persist($quota);
+        $em->persist($groupform);
         $em->flush();
 	   
-	  */
+	  
 	   return $this->redirect($this->generateUrl('sujet2devspe_phase4',301));
 	   }
-	return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array(/* 'form' => $sform*/ 'subform' => $subForm , 'listeEnseignants' => $listeEnseignants, 'i' => $j ));
+	return $this->render('Sujet2DevSpeBundle:Sujet2View:phase3.html.twig' ,  array( 'form' => $sform , 'listeEnseignants' => $listeEnseignants, 'i' => $j ));
    }
   
   public function phase2Action()

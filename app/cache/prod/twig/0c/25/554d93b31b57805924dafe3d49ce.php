@@ -39,6 +39,8 @@ class __TwigTemplate_0c25554d93b31b57805924dafe3d49ce extends Twig_Template
         // line 8
         $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig")->display($context);
         // line 9
+        echo "Numero de user : ";
+        echo twig_escape_filter($this->env, (isset($context["userid"]) ? $context["userid"] : $this->getContext($context, "userid")), "html", null, true);
         echo "
 <div class=\"span12\" id=\"span12interieur\">
 \t\t\t<legend color=\"dark\"><h2 id=\"h2title\">Bienvenue</h2></legend>

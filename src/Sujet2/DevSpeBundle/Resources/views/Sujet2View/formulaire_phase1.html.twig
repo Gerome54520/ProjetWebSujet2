@@ -1,44 +1,23 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase1.html.twig #}
 
- <div class="well">
-
-<legend>Choix des paramètres pour la session - Phase 1/5</legend> 
-
+<div id="alerte" class="alert alert-error" style="display:none"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>   
  
-
-  <form class="form-horizontal well">   
-		<div class="progress progress-striped active">
-		<div class="bar" style="width: 20%"></div> </blockquote><label>		20%</label>	
-		</div>
-  </form>
-  
-  
-   <div id="alerte" class="alert alert-error" style="display:none"> <strong>La date de retour doit être postérieure à la date de départ !</strong> </div>   
-	
-	
-   
-  
-
 <form method="post" {{ form_enctype(form) }}>
    <div>
-        <label for="form_sesLibelle">Nom de la session :</label>	
-			<input type="text" id="form_sesLibelle" name="form[sesLibelle]" />
-			
-		<label for="form_dateOuv">Date Ouverture :</label>
-			
-			<input type="text" id="form_dateOuv" name="form[dateOuv]" class="input-mini" data-date-format="dd/mm/yy"/>
-			
-	       <label for="form_dateClo">Date Ouverture :</label>
-			
-			<input type="text" id="form_dateClo" name="form[dateClo]" class="input-mini" data-date-format="dd/mm/yy"/>
-			
-	<input type="submit" class="btn btn-primary" />
-	
-  </div>
+		<label for="form_sesLibelle">Nom de la session :</label> 
+		<input type="text" id="form_sesLibelle" name="form[sesLibelle]" /><br><br>
+	   
+		<label for="form_dateOuv">Date Ouverture :</label>	   
+		<input type="text" id="form_dateOuv" name="form[dateOuv]" class="input-mini" data-date-format="dd/mm/yy"/><br><br>
+	   
+		<label for="form_dateClo">Date Ouverture :</label>
+		<input type="text" id="form_dateClo" name="form[dateClo]" class="input-mini" data-date-format="dd/mm/yy"/><br>
+		
+		<br><br>
+		<input type="submit" class="btn btn-primary" />
+	</div>
 </form>
 
-
-</div>
 
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{ asset('js/bootstrap-datepicker.js')}}" ></script> 
@@ -54,8 +33,9 @@ $(function (){
     if(get_date($('#form_dateOuv').val()) >= get_date($('#form_dateClo').val()))
             $('#alerte').show();
     else $('#alerte').hide();
-	
+ 
    });
 });    
 
 </script>
+

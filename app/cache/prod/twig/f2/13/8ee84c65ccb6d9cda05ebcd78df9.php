@@ -39,9 +39,11 @@ class __TwigTemplate_f2138ee84c65ccb6d9cda05ebcd78df9 extends Twig_Template
         echo "    ";
         $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig")->display($context);
         // line 11
-        echo "\t<div class=\"span12\" id=\"span12intérieur\">
+        echo "\t<div class=\"span12\" id=\"span12interieur\">
+\t<legend><h2 id=\"h2title\">Choix des quotas - Phase 3/5</h2></legend>
+\t<p><b>Nombre de stages suivi pour chaque enseignant :</b></p>  <br><br>
     ";
-        // line 12
+        // line 14
         $this->env->loadTemplate("Sujet2DevSpeBundle:Sujet2View:formulaire_phase3.html.twig")->display($context);
     }
 
@@ -57,6 +59,6 @@ class __TwigTemplate_f2138ee84c65ccb6d9cda05ebcd78df9 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  45 => 12,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
+        return array (  47 => 14,  42 => 11,  39 => 10,  36 => 9,  29 => 5,);
     }
 }

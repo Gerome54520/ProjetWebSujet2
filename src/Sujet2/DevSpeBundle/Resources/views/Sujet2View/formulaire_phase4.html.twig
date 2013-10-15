@@ -1,13 +1,8 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase4.html.twig #}
 
 
-<div class="well">
-
-<legend>Choix des lots de la session - Phase 4/5</legend> 
-
-   	 <form method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }} </br></br>
+<form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form.lots) }} </br></br>
     <input type="submit" class="btn btn-primary" />
-  </form>
+</form>
  
-</div>

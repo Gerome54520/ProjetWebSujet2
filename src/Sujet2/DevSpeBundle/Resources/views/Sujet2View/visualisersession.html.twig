@@ -7,12 +7,19 @@
 {% block body %} 
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
 
-{% for voeux in voeuxs %}
-      {{ voeux.enseignant.ensNom  }} :           <br>
-	    {% for lot in voeux.lots %}
-		  Dans l'entreprise {{ lot.entreprise.entRs }} auprès de {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}         </br>
-	    {% endfor %}
-{% endfor %}
-
-
+<div class="span12" id="span12interieur">
+	<legend><h2 id="h2title">Etat de la session</h2></legend>
+	<p>
+		{% for voeux in voeuxs %}
+			  {{ voeux.enseignant.ensNom  }} :           <br><br>
+				{% for lot in voeux.lots %}
+				  </br>
+				  Entreprise : {{ lot.entreprise.entRs }} <br>
+				  Adresse : {{ lot.entreprise.entAdr }}, {{ lot.entreprise.entCp }} {{ lot.entreprise.entVille }} {{ lot.entreprise.entPays }}<br>
+				  T&eacutel&eacutephone : {{ lot.entreprise.entTel }} <br>
+				  Tuteur : {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}} </br></br>
+				{% endfor %}
+				<br><legend></legend>
+		{% endfor %}
+	</p>
 {% endblock %}

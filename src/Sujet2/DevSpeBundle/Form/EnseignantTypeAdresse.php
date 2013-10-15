@@ -16,7 +16,7 @@ class EnseignantTypeAdresse extends AbstractType
     {
         $builder
 
-            ->add('ensAdresse','text',array('label'=>"Saisir votre adresse :"))
+            ->add('ensAdresse','text')
         ;
     }
     

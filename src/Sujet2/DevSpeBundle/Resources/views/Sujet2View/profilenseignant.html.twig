@@ -10,15 +10,14 @@
 {% else %}
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
 {% endif %}
+
 <div class="span12" id="span12interieur">
 			<legend><h2 id="h2title">Profil</h2></legend>
 			<p>
-
 				Nom : 
 				{{ enseignant.ensNom }} <br>
 				Prénom : 
-				{{ enseignant.ensPrenom }} <br>				             
-				
+				{{ enseignant.ensPrenom }} <br>				             	
 				{% if is_granted('ROLE_ADMIN') %}
 				{% else %}
 				 Adresse : 
@@ -28,5 +27,5 @@
 				<br>
 				<a href="{{ path ('fos_user_change_password') }}"> Modifier le mot de passe </a>
 			</p>
-			
+
 {% endblock %}

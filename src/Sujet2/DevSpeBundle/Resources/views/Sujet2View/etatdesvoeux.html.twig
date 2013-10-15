@@ -10,10 +10,14 @@
     {% include "Sujet2DevSpeBundle:Sujet2View:MenuEnseignant.html.twig" %}
 	<div class="span12" id="span12interieur">
 	<legend><h2 id="h2title">Etat des voeux</h2></legend>
-	<br><p>
-	Vous suivez les stages :<br><br>
+
+	<p>
 	{% for lot in voeux.lots %}
-    - Dans l'entreprise {{ lot.entreprise.entRs }} aupr&egraves de {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}.         </br></br>
+		Entreprise : {{ lot.entreprise.entRs }} <br>
+		Adresse : {{ lot.entreprise.entAdr }}, {{ lot.entreprise.entCp }} {{ lot.entreprise.entVille }} {{ lot.entreprise.entPays }}<br>
+		T&eacutel&eacutephone : {{ lot.entreprise.entTel }} <br>
+		Tuteur : {{ lot.TutCiv }} {{lot.TutNom}} {{lot.TutPrenom}}         </br></br>
+		<legend></legend>
     {% endfor %}
 	</p>
 {% endblock %}

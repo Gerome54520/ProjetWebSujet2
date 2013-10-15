@@ -1,18 +1,11 @@
 {# src/Sujet2/DevSpeBundle/Resources/views/Sujet2View/formulaire_phase2.html.twig #}
  
+   <form method="post" {{ form_enctype(form) }}>
 
- <div class="well">
-<!--<h5>Choix des paramètres pour la session - Phase 2/5</h5>-->
-<legend>Choix des paramètres pour la session - Phase 2/5</legend> 
-
- 
-   <form class="inline" method="post" {{ form_enctype(form) }}>
      {{ form_widget(form) }} </br></br>
       <input type="submit" class="btn btn-primary" />
    </form>
   
-</div>
-
 {# On charge la bibliothèque jQuery. Ici, je la prends depuis le site jquery.com,
    mais si vous l'avez en local, changez simplement l'adresse. #}
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>

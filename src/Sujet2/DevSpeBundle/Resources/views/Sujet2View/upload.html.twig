@@ -7,14 +7,15 @@
 {% block body %} 
 {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
 
-<h1>Upload File</h1>
+<div class="span12" id="span12interieur">
+<legend><h2 id="h2title">Importation d'une table</h2></legend>
+	<form action="#" method="post" {{ form_enctype(form) }}>
+	   <br>Choisir le type de fichier :
+	   {{ form_widget(form.type)}} </br></br>
+	   Fichier : {{ form_widget(form.file) }}</br></br></br>
 
-<form action="#" method="post" {{ form_enctype(form) }}>
-   Choisir le type de fichier :
-   {{ form_widget(form.type)}} </br>
-   Fichier : {{ form_widget(form.file) }}</br>
-
-    <input type="submit" value="Upload Document" />
-</form>
+		<input type="submit" value="Upload Document" />
+	</form>
+	</br>
 
 {% endblock %}
