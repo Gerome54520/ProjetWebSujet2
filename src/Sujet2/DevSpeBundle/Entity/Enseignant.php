@@ -23,7 +23,7 @@ class Enseignant
     /**
      * @var string
      *
-     * @ORM\Column(name="ens_civ", type="string", length=10)
+     * @ORM\Column(name="ens_civ", type="string", length=10, nullable=true)
      */
     private $ensCiv;
 
@@ -45,10 +45,35 @@ class Enseignant
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="ens_adresse", type="string", length=100)
+     * @ORM\Column(name="numRue", type="string", length=10, nullable=true)
      */
-    private $ensAdresse;
+    private $numRue;
+    
+    
+    /**
+     * @var string
+     * @ORM\Column(name="rue", type="string", length=50, nullable=true)
+     */
+    private $rue;
+    
+    /**
+     * @var string
+     * @ORM\Column(name="codePost", type="string", length=10, nullable=true)
+     */
+    private $codePost;
+    
+    /**
+     * @var string
+     * @ORM\Column(name="ville", type="string", length=50, nullable=true)
+     */
+    private $ville;
+    
+    /**
+     * @var string
+     * @ORM\Column(name="pays", type="string", length=50, nullable=true)
+     */
+    private $pays;
+    
     
     /**
      * Set id
@@ -140,25 +165,73 @@ class Enseignant
     }
 
     /**
-     * Set ensAdresse
+     * Set numRue
      *
-     * @param string $ensAdresse
+     * @param string $numRue
      * @return Enseignant
      */
-    public function setEnsAdresse($ensAdresse)
+    public function setnumRue($numRue)
     {
-        $this->ensAdresse = $ensAdresse;
+        $this->numRue = $numRue;
     
         return $this;
     }
 
     /**
-     * Get ensAdresse
-     *
+     * Get numRue
      * @return string 
      */
-    public function getEnsAdresse()
+    public function getnumRue()
     {
-        return $this->ensAdresse;
+        return $this->numRue;
     }    
+    
+
+    public function setRue($Rue)
+    {
+    	$this->Rue = $Rue;
+    
+    	return $this;
+    }    
+
+    public function getRue()
+    {
+    	return $this->Rue;
+    }
+    
+    public function setCodePost($codePost)
+    {
+    	$this->codePost = $codePost;
+    
+    	return $this;
+    }
+    
+    public function getCodePost()
+    {
+    	return $this->codePost;
+    }
+    
+    public function setPays($pays)
+    {
+    	$this->pays = $pays;
+    
+    	return $this;
+    }
+    
+    public function getpays()
+    {
+    	return $this->pays;
+    }
+    
+    public function setVille($ville)
+    {
+    	$this->ville = $ville;
+    
+    	return $this;
+    }
+    
+    public function getVille()
+    {
+    	return $this->ville;
+    }
 }

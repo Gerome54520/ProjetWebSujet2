@@ -23,7 +23,7 @@ class Stage
     /**
      * @var string
      *
-     * @ORM\Column(name="stage_comment", type="string", length=255)
+     * @ORM\Column(name="stage_comment", type="string", length=255, nullable=true)
      */
     private $stageComment;
     
@@ -33,11 +33,6 @@ class Stage
      */
     private $etudiant;
 
-    /**
-     * @var object
-     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
-     */
-    private $lot;
 
     /**
      * Set id
@@ -95,19 +90,4 @@ class Stage
     public function getEtudiant(){
     	return $this->etudiant;
     }    
-    
-    /**
-     * Set lot
-     * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
-     */
-    public function setLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lot= $lot;
-    }
-    
-    /**
-     * @return \Sujet2\DevSpeBundle\Entity\Lot
-     */
-    public function getLots(){
-    	return $this->lot;
-    }
 }

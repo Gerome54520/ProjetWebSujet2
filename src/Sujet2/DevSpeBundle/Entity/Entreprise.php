@@ -52,14 +52,14 @@ class Entreprise
     /**
      * @var string
      *
-     * @ORM\Column(name="ent_pays", type="string", length=30)
+     * @ORM\Column(name="ent_pays", type="string", length=30, nullable=true)
      */
     private $entPays;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ent_tel", type="string", length=15)
+     * @ORM\Column(name="ent_tel", type="string", length=15, nullable=true)
      */
     private $entTel;
 

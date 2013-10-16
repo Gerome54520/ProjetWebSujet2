@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="Sujet2\DevSpeBundle\Entity\VoeuxRepository")
  */
 class Voeux
-{
+{	
     /**
      * @var integer
      *

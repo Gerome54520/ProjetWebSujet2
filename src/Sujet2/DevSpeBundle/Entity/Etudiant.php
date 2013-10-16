@@ -23,7 +23,7 @@ class Etudiant
     /**
      * @var string
      *
-     * @ORM\Column(name="etud_civ", type="string", length=5)
+     * @ORM\Column(name="etud_civ", type="string", length=5, nullable=true)
      */
     private $etudCiv;
 
@@ -44,7 +44,7 @@ class Etudiant
     /**
      * @var string
      *
-     * @ORM\Column(name="etud_mel", type="string", length=50)
+     * @ORM\Column(name="etud_mel", type="string", length=50, nullable=true)
      */
     private $etudMel;
 
