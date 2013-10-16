@@ -23,14 +23,12 @@ class Voeux
 
     /**
      * @var float
-     *
      * @ORM\Column(name="temps_trajet", type="float")
      */
     private $tempsTrajet;
 
     /**
      * @var integer
-     *
      * @ORM\Column(name="points", type="integer")
      */
     private $points;
@@ -43,10 +41,10 @@ class Voeux
     private $enseignant;
     
     /**
-     * @var Doctrine\Common\Collections\Collection
-     * @ORM\ManyToMany(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
+     * @var object
+     * @ORM\ManyToOne(targetEntity="Sujet2\DevSpeBundle\Entity\Lot")
      */
-    private $lots;
+    private $lot;
     
     /**
      * @var object
@@ -59,10 +57,6 @@ class Voeux
      */
     private $distance;
 
-
-    public function __construct(){
-    	$this->lots = new \Doctrine\Common\Collections\ArrayCollection();
-    }
     
     /**
      * Get id
@@ -124,7 +118,7 @@ class Voeux
      * Set enseignant
      * @param \Sujet2\DevSpeBundle\Entity\Enseignant $enseignant
      */
-    public function setEnseignant(\Sujet2\DevSpeBundle\Entity\Enseignant $enseignant){
+    public function setEnseignant($enseignant){
     	$this->enseignant=$enseignant;
     }
     
@@ -139,26 +133,22 @@ class Voeux
      * Set lot
      * @param \Sujet2\DevSpeBundle\Entity\Lot $lot
      */
-    public function setLots(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lots[]=$lot;
-    }
-    
-    public function removeLot(\Sujet2\DevSpeBundle\Entity\Lot $lot){
-    	$this->lots->removeElement($lot);
-    }
-    
+    public function setLot($lot){
+    	$this->lot=$lot;
+        }
+        
     /**
      * @return Doctrine\Common\Collections\Collection
      */
-    public function getLots(){
-    	return $this->lots;
+    public function getLot(){
+    	return $this->lot;
     }
     
     /**
      * Set lieu_depart
      * @param \Sujet2\DevSpeBundle\Entity\LieuDepart $lieuDepart
      */
-    public function setLieuDepart(\Sujet2\DevSpeBundle\Entity\Lot $lieuDepart){
+    public function setLieuDepart($lieuDepart){
     	$this->lieuDepart=$lieuDepart;
     }
     

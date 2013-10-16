@@ -108,14 +108,12 @@ class MoulinetteController extends Controller {
 			$stage->setId ( $tab [0] );
 			
 			// Récupération de tous les lots se situant dans la même entreprise
-			$repo = $this->getDoctrine ()->getRepository ( 'Sujet2\DevSpeBundle\Sujet2DevSpeBundle:Lot' );
+			$repo = $this->getDoctrine ()->getRepository ( 'Sujet2DevSpeBundle:Lot' );
 
-	//		$query = $repo->createQueryBuilder ( 'l' )->where ( 'l.id = :entreprise' )->setParameter ( 'entreprise', $tab [3] )->getQuery ();
-
-			$query = $repo->createQueryBuilder ( 'l' )->where ( 'l.entreprise = :entreprise' )->setParameter ( 'entreprise', $tab [3] )->getQuery ();
+			$query = $repo->createQueryBuilder ()->where ( 'l.entreprise = :entreprise' )->setParameter ( 'entreprise', $tab [3] );
 
 			
-			$lots = $query->getResult ();
+			$lots = $query->getQuery ()->getResult ();
 			
 			// Vérification des tuteurs pour voir si le stage fait parti du même lot.
 			if (count ( $lots ) > 0) {
@@ -141,7 +139,7 @@ class MoulinetteController extends Controller {
 						$lot->setTutPrenom ( $infos [1] );
 						
 						// Récupération de l'entreprise à partir du CSV
-							//Récup entreprise <------------------------------------------------------------
+						$entreprise = $em->find('Sujet2DevSpeBundle:Entreprise', $tab[3]);
 						
 						$lot->setEntreprise ( $tab [3] );
 						
@@ -190,13 +188,13 @@ class MoulinetteController extends Controller {
 			$user->setUsername ( $tab [1] );
 			$user->setAdmin(false);	
 			$em->persist ( $user );
+			$em->flush();
 			
 			$assoc = new Assoc();
 			$assoc->setEnseignantId($tab[0]);
 			$assoc->setUserId($user->getId());			
 
-			$em->persist($assoc);
-			
+			$em->persist($assoc);						
 		}
 		
 		$enseignant->setEnsNom ( $tab [1] );
