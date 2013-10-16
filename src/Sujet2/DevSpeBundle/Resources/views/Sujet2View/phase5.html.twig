@@ -8,7 +8,7 @@
  
 {% block body %}
     {% include "Sujet2DevSpeBundle:Sujet2View:MenuGestionnaire.html.twig" %}
-<<<<<<< HEAD
+
 	<div class="span12" id="span12interieur">
 	 <legend><h2 id="h2title">Recapitulatif - Phase 5/5</h2></legend>
 	      
@@ -65,53 +65,5 @@
 								<input type="submit" value="Valider">
 						</form>
 		   
-=======
-	<div class="span12" id="span12intérieur">
-	 <legend> Recapitulatif </legend>
-	      <h3> Session </h3>
-		 
-          Nom de la session : {{ session.sesLibelle }} </br>
-		  Date d'ouverture : {{ session.dateOuv }}</br>
-		  Date de fermeture : {{ session.dateClo }}</br>
-		  
-		  <h3> Parametre </h3>
-		  Kilometre maximun : {{ parametre.distMax }}</br>
-		  Tolerance : {{ parametre.tolerance }}</br>
-		  
-		  <h3>Liste des contraintes associé a la session </h3>
-		      {% for contrainte in contraintes %}
-			     Contraite : {{ contrainte.pts }}
-			   {% endfor %}
-	            {% for contrainte in contraintes %}
-				    {% set i = i +1 %}
-					    {% if  contrainte.typePts.id == 1  %}
-						        <h4> Contrainte de suivi n° {{i}}</h4>
-						             Nombre de points : {{ contrainte.pts }}
-						             
-						{% endif %}
-				{% endfor %}		
-				    {% set i = 0 %}
-					
-				{% for contrainte in contraintes %}
-				    { set i = i + 1 %}
-				        {% if contrainte.typePts.id == 2  %}
-					            <h4> Contraite de temps n° {{i}}</h4>
-						             Nombre de points : {{ contrainte.pts }}
-					    {% endif %}
-				{% endfor %}		
-				<h3> Liste des lots associe à la session </h3>
-				 {% for lot in lots %}
-				     Entreprise : {{ lot.entreprise.entRs }}</br>
- 					 Tuteur : {{ lot.tutNom }} {{ lot.tutPrenom }}</br>
-				 {% endfor %}
-				 
-<form method="link" action="{{path('sujet2_devspeannullersession')}}"> 
-        <input type="submit" value="Annuler">
-</form>
 
-<form method="link" action="{{path('sujet2_devspevalidersession')}}"> 
-        <input type="submit" value="Valider">
-</form>
- 
->>>>>>> ed7d05e5e2418add799a6a4bb8d348e4a4706a99
 {% endblock %}

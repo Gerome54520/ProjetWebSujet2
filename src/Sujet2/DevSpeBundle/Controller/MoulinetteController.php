@@ -94,7 +94,7 @@ class MoulinetteController extends Controller {
 		$etudiant->setEtudNom ( $tab [1] );
 		$etudiant->setEtudPrenom ( $tab [2] );
 		$em->persist ( $etudiant );
-		$flush ();
+		$em->$flush ();
 	}
 	function setStage(array $tab) {
 		$em = $this->getDoctrine ()->getManager ();

@@ -37,38 +37,37 @@ class __TwigTemplate_1f9eeba7b0edf985add83ef2e3cf3392 extends Twig_Template
         }
         // line 9
         echo "
-<form action=\"";
-        // line 10
+<div class=\"span12\" id=\"span12interieur\">
+\t<legend color=\"dark\"><h2 id=\"h2title\">Connexion</h2></legend>
+\t<form action=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-  
-
-    <label for=\"username\">";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Pseudo :", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 14
+\t\t<p>
+\t\tIdentifiant :<br><br>
+\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 15
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" required=\"required\" />
-
-    <label for=\"password\">";
-        // line 16
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Mot de passe :", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
-
-    <label for=\"remember_me\">";
-        // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Se souvenir de moi", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-\t
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 22
+        echo "\" required=\"required\" /><br><br>
+\t\t
+\t\tMot de passe :<br><br>
+\t\t<input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" /><br><br>
+\t\t
+\t\tSe souvenir de moi :
+\t\t<input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" /><br>
+\t\t
+\t\t<br><br>
+\t\t<input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" />
-</form>
+        echo "\" /><br><br>
+\t\t</p>
+\t</form>
+\t<a href=\"";
+        // line 27
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "\">S'inscrire</a>
+
 ";
     }
 
@@ -84,6 +83,6 @@ class __TwigTemplate_1f9eeba7b0edf985add83ef2e3cf3392 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 22,  63 => 19,  57 => 16,  52 => 14,  48 => 13,  42 => 10,  39 => 9,  33 => 7,  31 => 6,  28 => 5,);
+        return array (  68 => 27,  62 => 24,  50 => 15,  44 => 12,  39 => 9,  33 => 7,  31 => 6,  28 => 5,);
     }
 }

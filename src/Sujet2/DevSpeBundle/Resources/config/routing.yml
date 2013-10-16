@@ -14,6 +14,9 @@ sujet2devspe_phase3:
 sujet2devspe_profilenseignant:
     path: /profilens
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:profilens }
+sujet2devspe_profilgestionnaire:
+    path: /profilges
+    defaults: { _controller: Sujet2DevSpeBundle:DevSpe:profilges }
 sujet2devspe_phase4:
     path: /Creation/phase4
     defaults: { _controller: Sujet2DevSpeBundle:DevSpe:phase4 }

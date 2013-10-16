@@ -16,7 +16,7 @@ class QuotaType extends AbstractType
     {
         $builder
             ->add('nbSuivi', 'integer')
-            ->add ('save', 'submit')
+            
         ;
     }
     

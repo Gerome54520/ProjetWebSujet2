@@ -23,13 +23,20 @@
   <div class="navbar-inner">
     <div class="container">
       <ul class="nav">
-		<li class="brand">Appli voeux de stages</li>
-        <li class="active"> <a href="{{ path('sujet2devspe_acceuil') }}" >Accueil</a> </li>
-	{% if ( app.user is empty ) %}
-		<li><a id="lienconnect" href="{{ path('fos_user_security_login')}}" > Connexion</a></li> 
-    {% else %} 
-		<li><a id="lienconnect" href="{{ path('fos_user_security_logout')}}" > Deconnexion</a></li>  
-    {% endif %}
+		<li class="brand">Appli voeux de stages</li>	
+     {% if is_granted('ROLE_ADMIN') %}
+        <li><a href="{{ path('sujet2devspe_acceuilgestionnaire') }}">Accueil</a></li>
+     {% elseif ( is_granted('ROLE_USER')) %}
+	    <li><a href="{{ path('sujet2devspe_acceuilenseignant') }}">Accueil</a></li>
+	 {% else %}
+	    <li><a href="{{path('sujet2devspe_acceuil')}}">Acceuil</a></li>
+	 {% endif%}
+
+	 {% if ( app.user is empty ) %}
+	  <li><a id="lienconnect" href="{{ path('fos_user_security_login')}}" > Connexion</a></li> 
+	   {% else %} 
+	   <li><a id="lienconnect" href="{{ path('fos_user_security_logout')}}" > Deconnexion</a></li>  
+	   {% endif %} 		
       </ul>
     </div>
   </div>

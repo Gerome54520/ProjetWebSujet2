@@ -40,31 +40,49 @@ class __TwigTemplate_896418a375e0963f02bc551c6f99d721 extends Twig_Template
   <div class=\"navbar-inner\">
     <div class=\"container\">
       <ul class=\"nav\">
-\t\t<li class=\"brand\">Appli voeux de stages</li>
-        <li class=\"active\"> <a href=\"";
+\t\t<li class=\"brand\">Appli voeux de stages</li>\t
+     ";
         // line 27
-        echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuil");
-        echo "\" >Accueil</a> </li>
-\t
-\t   <li><a id=\"lienconnect\" href=\"";
-        // line 29
-        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-        echo "\"  >
+        if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
+            // line 28
+            echo "        <li><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuilgestionnaire");
+            echo "\">Accueil</a></li>
+     ";
+        } elseif ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
+            // line 30
+            echo "\t    <li><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuilenseignant");
+            echo "\">Accueil</a></li>
 \t ";
-        // line 30
-        if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
-            // line 31
-            echo "\t   Connexion 
-\t   ";
         } else {
             // line 32
-            echo " 
-\t   Deconnexion   
-\t   ";
+            echo "\t    <li><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("sujet2devspe_acceuil");
+            echo "\">Acceuil</a></li>
+\t ";
         }
         // line 34
-        echo " 
-\t\t</a></li>
+        echo "
+\t ";
+        // line 35
+        if (twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"))) {
+            // line 36
+            echo "\t  <li><a id=\"lienconnect\" href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\" > Connexion</a></li> 
+\t   ";
+        } else {
+            // line 37
+            echo " 
+\t   <li><a id=\"lienconnect\" href=\"";
+            // line 38
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\" > Deconnexion</a></li>  
+\t   ";
+        }
+        // line 39
+        echo " \t\t
       </ul>
     </div>
   </div>
@@ -77,7 +95,7 @@ class __TwigTemplate_896418a375e0963f02bc551c6f99d721 extends Twig_Template
 \t\t<div class=\"span12\" id=\"span12blue\">
 \t\t\t<div class=\"span6\"><p><h1>Gestion des affectations des stages aux enseignants<br></h1></p></div>
 \t\t\t<div class=\"span4 offset2\" id=\"span4image\"><img src=\" ";
-        // line 47
+        // line 51
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/logo_univ.jpg"), "html", null, true);
         echo "\" class=\"img-circle\"></div>
 \t\t</div>\t
@@ -85,11 +103,11 @@ class __TwigTemplate_896418a375e0963f02bc551c6f99d721 extends Twig_Template
 
 
 ";
-        // line 52
-        $this->displayBlock('body', $context, $blocks);
-        // line 55
-        echo "\t\t";
         // line 56
+        $this->displayBlock('body', $context, $blocks);
+        // line 59
+        echo "\t\t";
+        // line 60
         echo "\t</div>
 </div>
 </body>
@@ -138,10 +156,10 @@ class __TwigTemplate_896418a375e0963f02bc551c6f99d721 extends Twig_Template
         echo " Gestion des stages - ";
     }
 
-    // line 52
+    // line 56
     public function block_body($context, array $blocks = array())
     {
-        // line 53
+        // line 57
         echo "\t\t\t\t\t\t
 ";
     }
@@ -158,6 +176,6 @@ class __TwigTemplate_896418a375e0963f02bc551c6f99d721 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  145 => 53,  142 => 52,  136 => 19,  130 => 16,  126 => 15,  122 => 14,  118 => 13,  113 => 11,  109 => 10,  105 => 9,  100 => 8,  93 => 56,  91 => 55,  89 => 52,  81 => 47,  66 => 34,  61 => 32,  57 => 31,  55 => 30,  51 => 29,  46 => 27,  32 => 18,  30 => 8,  22 => 2,  35 => 19,  29 => 5,);
+        return array (  163 => 57,  160 => 56,  154 => 19,  148 => 16,  144 => 15,  140 => 14,  136 => 13,  131 => 11,  127 => 10,  123 => 9,  118 => 8,  111 => 60,  109 => 59,  107 => 56,  99 => 51,  85 => 39,  80 => 38,  77 => 37,  71 => 36,  69 => 35,  66 => 34,  60 => 32,  54 => 30,  48 => 28,  46 => 27,  32 => 18,  30 => 8,  22 => 2,  42 => 9,  40 => 8,  35 => 19,  29 => 5,);
     }
 }

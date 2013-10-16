@@ -48,9 +48,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
-        // sujet2devspe_profilenseignant
-        if ($pathinfo === '/profilens') {
-            return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
+        if (0 === strpos($pathinfo, '/profil')) {
+            // sujet2devspe_profilenseignant
+            if ($pathinfo === '/profilens') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilensAction',  '_route' => 'sujet2devspe_profilenseignant',);
+            }
+
+            // sujet2devspe_profilgestionnaire
+            if ($pathinfo === '/profilges') {
+                return array (  '_controller' => 'Sujet2\\DevSpeBundle\\Controller\\DevSpeController::profilgesAction',  '_route' => 'sujet2devspe_profilgestionnaire',);
+            }
+
         }
 
         // sujet2devspe_phase4

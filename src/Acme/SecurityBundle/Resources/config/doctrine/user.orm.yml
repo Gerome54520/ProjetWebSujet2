@@ -2,13 +2,10 @@
 
 Acme\SecurityBundle\Entity\User:
     type:  entity
-<<<<<<< HEAD
-    table: fos_users
-=======
     table: fos_user
->>>>>>> ed7d05e5e2418add799a6a4bb8d348e4a4706a99
     id:
         id:
             type: integer
             generator:
                 strategy: AUTO
+    
