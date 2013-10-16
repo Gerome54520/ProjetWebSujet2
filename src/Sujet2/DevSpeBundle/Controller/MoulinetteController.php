@@ -1,7 +1,7 @@
 <?php
 namespace Sujet2\DevSpeBundle\Controller;
 
-
+use Sujet2\DevSpeBundle\Entity\Assoc;
 use Sujet2\DevSpeBundle\Entity\Etudiant;
 use Sujet2\DevSpeBundle\Entity\Enseignant;
 use Sujet2\DevSpeBundle\Entity\Entreprise;
@@ -188,10 +188,15 @@ class MoulinetteController extends Controller {
 			$user = new User ();
 			$user->setPassword ( "1234" );
 			$user->setUsername ( $tab [1] );
-			$user->setEnseignant ( $enseignant );
-			$user->setAdmin(false);
-			
+			$user->setAdmin(false);	
 			$em->persist ( $user );
+			
+			$assoc = new Assoc();
+			$assoc->setEnseignantId($tab[0]);
+			$assoc->setUserId($user->getId());			
+
+			$em->persist($assoc);
+			
 		}
 		
 		$enseignant->setEnsNom ( $tab [1] );
